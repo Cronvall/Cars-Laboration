@@ -7,10 +7,19 @@ public abstract class Car implements Vehicle{
     protected double enginePower; // Engine power of the car
     protected Color color; // Color of the car
     protected String modelName; // The car model name
+    protected Point position = new Point();
     protected double currentSpeed;
-    protected double[] position = new double[2];
 
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
+
+
+    //Constructor
+    public Car(int _nrDoors, double _enginePower, Color col, String _mName){
+        nrDoors = _nrDoors;
+        enginePower = _enginePower;
+        color = col;
+        modelName = _mName;
+    }
 
     //Methods
     public int getNrDoors() { return nrDoors;}
@@ -25,7 +34,7 @@ public abstract class Car implements Vehicle{
         return currentDirectionInteger;
     }
 
-    public double[] getPosition(){
+    public Point getPosition(){
         return position;
     }
 
@@ -70,18 +79,16 @@ public abstract class Car implements Vehicle{
 
     @Override
     public void move(){
-        double x = position[0];
-        double y = position[1];
         switch (currentDirectionInteger) {
             //position[0] acts as X-axis and position[1] acts as Y-axis.
             //Forward
-            case 1 -> position[1] += getCurrentSpeed();
+            case 1 -> position.y += getCurrentSpeed();
             //Right
-            case 2 -> position[0] += getCurrentSpeed();
+            case 2 -> position.x += getCurrentSpeed();
             //Reverse
-            case 3 -> position[1] -= getCurrentSpeed();
+            case 3 -> position.y -= getCurrentSpeed();
             //Left
-            case 4 -> position[0] -= getCurrentSpeed();
+            case 4 -> position.x -= getCurrentSpeed();
             //In case of Invalid direction input.
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }

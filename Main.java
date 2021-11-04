@@ -15,6 +15,6 @@ public class Main {
         Saab.setTurboOn();
         Saab.turnLeft();
         Saab.move();
-        System.out.println("X: " + Saab.getPosition()[0] + " Y: " + Saab.getPosition()[1]);
+        System.out.println(Saab.getPosition());
     }
 }
