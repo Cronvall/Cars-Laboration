@@ -3,13 +3,12 @@ import java.util.Vector;
 
 public abstract class Car implements Vehicle{
     //Variables
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected Point position = new Point();
-    protected double currentSpeed;
-
+    private int nrDoors; // Number of doors on the car
+    private double enginePower; // Engine power of the car
+    private Color color; // Color of the car
+    private String modelName; // The car model name
+    private Point position = new Point();
+    private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
 
 
@@ -27,9 +26,17 @@ public abstract class Car implements Vehicle{
     public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
-
     public Point getPosition(){
         return position;
+    }
+
+    // Set methods
+    protected void setCurrentSpeed(double speed){
+        if(speed >= 0 && speed < getEnginePower())
+            currentSpeed = speed;
+        else{
+            // TODO, error-catching
+        }
     }
 
 
