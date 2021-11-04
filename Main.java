@@ -4,7 +4,7 @@ import java.lang.System.*;
 public class Main {
 
     public static void main(String[] args){
-        Saab95 Saab = new Saab95();
+        Saab95 Saab = new Saab95(2,125,Color.red);
 
         Saab.startEngine();
         Saab.turnRight();

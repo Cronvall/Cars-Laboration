@@ -26,14 +26,7 @@ public abstract class Car implements Vehicle{
     public double getEnginePower(){return enginePower;}
     public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
-    public double getX_coordinate(){return x_coordinate;}
-    public double getY_coordinate(){return y_coordinate;}
     public double getDirection(){return currentDirectionInteger;}
-
-
-    public void positions(){
-        System.out.printf("Current positions of %a is X = %b and Y = %c", modelName, x_coordinate, y_coordinate);
-    }
 
     public Point getPosition(){
         return position;
