@@ -1,4 +1,4 @@
-public interface Vehicle extends Moveable{
+public interface Vehicle extends Movable {
      void startEngine();
      void stopEngine();
 

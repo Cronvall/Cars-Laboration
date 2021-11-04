@@ -70,7 +70,7 @@ public abstract class Car implements Vehicle{
             case 4: position[0] -= getCurrentSpeed();
                 break;
             //In case of Invalid direction input.
-            default: print("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
+            default: System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }
     }
 
