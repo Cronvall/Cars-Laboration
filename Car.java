@@ -24,20 +24,23 @@ public abstract class Car implements Vehicle{
     //Methods
     public int getNrDoors() { return nrDoors;}
     public double getEnginePower(){return enginePower;}
-
     public Color getColor(){return color;}
-    public void setColor(Color clr){color = clr;}
     public double getCurrentSpeed(){return currentSpeed;}
+    public double getX_coordinate(){return x_coordinate;}
+    public double getY_coordinate(){return y_coordinate;}
+    public double getDirection(){return currentDirectionInteger;}
 
 
-    private int getDirection(){
-        return currentDirectionInteger;
+    public void positions(){
+        System.out.printf("Current positions of %a is X = %b and Y = %c", modelName, x_coordinate, y_coordinate);
     }
 
     public Point getPosition(){
         return position;
     }
 
+
+    public void setColor(Color clr){color = clr;}
     /* TODO fix this method according to lab pm
      *   Gas() and Break() should only accept values in the interval [0,1]
      *   No speed bellow 0 or greater then enginePower
