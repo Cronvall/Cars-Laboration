@@ -35,21 +35,23 @@ public abstract class Car implements Vehicle{
         if(speed >= 0 && speed < getEnginePower())
             currentSpeed = speed;
         else{
-            // TODO, error-catching
+            System.out.print("Speed was not within required intervall [0, 1].");
         }
     }
-
-
     public void setColor(Color clr){color = clr;}
-    /* TODO fix this method according to lab pm
-     *   Gas() and Break() should only accept values in the interval [0,1]
-     *   No speed bellow 0 or greater then enginePower
-     *   Gas should not decrease speed
-     *   brake should not increase speed */
-    public void gas(double amount){
-        incrementSpeed(amount);
-    }
 
+
+    // "Actions methods" for cars
+
+    public void gas(double amount){
+        if(amount >= 0 && amount <= 1){
+            incrementSpeed(amount);
+        }
+        else{
+            System.out.println("The amount of gas exceeds allowed interval of [0,1].");
+        }
+
+    }
     public void brake(double amount){
         decrementSpeed(amount);
     }
@@ -71,7 +73,6 @@ public abstract class Car implements Vehicle{
         else
             currentDirectionInteger--;
     }
-
     @Override
     public void turnRight(){
         if(getDirection() == 4)
@@ -96,4 +97,9 @@ public abstract class Car implements Vehicle{
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }
     }
+    /* TODO fix this method according to lab pm
+     *   Gas() and Break() should only accept values in the interval [0,1]
+     *   No speed bellow 0 or greater then enginePower
+     *   Gas should not decrease speed
+     *   brake should not increase speed */
 }
