@@ -41,8 +41,13 @@ public abstract class Car implements Vehicle{
     public void setColor(Color clr){color = clr;}
 
 
-    // "Actions methods" for cars
+    // Speed-factor
+    public double speedFactor(){
+        return getEnginePower() * 0.01;
+    }
 
+    // "Actions methods" for cars
+    @Override
     public void gas(double amount){
         if(amount >= 0 && amount <= 1){
             incrementSpeed(amount);
@@ -52,11 +57,27 @@ public abstract class Car implements Vehicle{
         }
 
     }
+    @Override
     public void brake(double amount){
-        decrementSpeed(amount);
+        if (amount >= 0 && amount <= 1){
+            decrementSpeed(amount);
+        }
+        else{
+            System.out.println("The amount of braking is not within the allowed interval [0, 1].");
+        }
+
     }
 
     //Overriding methods
+    @Override
+    public void incrementSpeed(double amount){
+        double newSpeed = getEnginePower() * 0.01 + getCurrentSpeed();
+        setCurrentSpeed(newSpeed);
+    }
+    public void decrementSpeed(double amount){
+        double newSpeed = getCurrentSpeed() - speedFactor();
+        setCurrentSpeed(newSpeed);
+    }
     @Override
     public void startEngine() {
         currentSpeed = 0.1;

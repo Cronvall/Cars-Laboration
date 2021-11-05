@@ -5,6 +5,9 @@ public interface Vehicle extends Movable {
      void startEngine();
      void stopEngine();
 
+     void gas(double amount);
+     void brake(double amount);
+
      void incrementSpeed(double amount);
      void decrementSpeed(double amount);
 
