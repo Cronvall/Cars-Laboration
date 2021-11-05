@@ -1,5 +1,6 @@
 import java.awt.*;
-import java.util.Vector;
+import junit.*;
+import org.junit.Test;
 
 public abstract class Car implements Vehicle{
     //Variables
@@ -10,7 +11,6 @@ public abstract class Car implements Vehicle{
     private Point position = new Point();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
-
 
     //Constructor
     public Car(int _nrDoors, double _enginePower, Color col, String _mName){
@@ -26,6 +26,7 @@ public abstract class Car implements Vehicle{
     public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
+<<<<<<< Updated upstream
     public Point getPosition(){
         return position;
     }
@@ -39,8 +40,13 @@ public abstract class Car implements Vehicle{
         }
     }
 
+=======
+
+    public Point getPosition(){return position;}
+>>>>>>> Stashed changes
 
     public void setColor(Color clr){color = clr;}
+
     /* TODO fix this method according to lab pm
      *   Gas() and Break() should only accept values in the interval [0,1]
      *   No speed bellow 0 or greater then enginePower
