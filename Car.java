@@ -1,16 +1,16 @@
 import java.awt.*;
-import java.util.Vector;
+import junit.*;
+import org.junit.Test;
 
 public abstract class Car implements Vehicle{
     //Variables
-    private int nrDoors; // Number of doors on the car
+    final int nrDoors; // Number of doors on the car
+    final String modelName; // The car model name
     private double enginePower; // Engine power of the car
     private Color color; // Color of the car
-    private String modelName; // The car model name
     private Point position = new Point();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
-
 
     //Constructor
     public Car(int _nrDoors, double _enginePower, Color col, String _mName){
@@ -32,10 +32,15 @@ public abstract class Car implements Vehicle{
 
     // Set methods
     protected void setCurrentSpeed(double speed){
-        if(speed >= 0 && speed < getEnginePower())
+        if(speed >= 0 && speed < getEnginePower())  //Accepted interval
             currentSpeed = speed;
         else{
             System.out.print("Speed was not within required intervall [0, 1].");
+            if(speed < 0)
+                setCurrentSpeed(0);
+
+            else if(speed > getEnginePower())
+                setCurrentSpeed(getEnginePower());
         }
     }
     public void setColor(Color clr){color = clr;}
@@ -44,6 +49,15 @@ public abstract class Car implements Vehicle{
     // Speed-factor
     public double speedFactor(){
         return getEnginePower() * 0.01;
+    public void setColor(Color clr){color = clr;}
+
+    /*  TODO fix this method according to lab pm
+     *   Gas() and Break() should only accept values in the interval [0,1]
+     *   No speed bellow 0 or greater then enginePower
+     *   Gas should not decrease speed
+     *   brake should not increase speed */
+    public void gas(double amount){
+        incrementSpeed(amount);
     }
 
     // "Actions methods" for cars
