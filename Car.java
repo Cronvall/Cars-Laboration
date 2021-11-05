@@ -4,10 +4,10 @@ import org.junit.Test;
 
 public abstract class Car implements Vehicle{
     //Variables
-    private int nrDoors; // Number of doors on the car
+    final int nrDoors; // Number of doors on the car
+    final String modelName; // The car model name
     private double enginePower; // Engine power of the car
     private Color color; // Color of the car
-    private String modelName; // The car model name
     private Point position = new Point();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
@@ -26,28 +26,26 @@ public abstract class Car implements Vehicle{
     public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
-<<<<<<< Updated upstream
     public Point getPosition(){
         return position;
     }
 
     // Set methods
     protected void setCurrentSpeed(double speed){
-        if(speed >= 0 && speed < getEnginePower())
+        if(speed >= 0 && speed < getEnginePower())  //Accepted interval
             currentSpeed = speed;
         else{
-            // TODO, error-catching
+            if(speed < 0)
+                setCurrentSpeed(0);
+
+            else if(speed > getEnginePower())
+                setCurrentSpeed(getEnginePower());
         }
     }
 
-=======
-
-    public Point getPosition(){return position;}
->>>>>>> Stashed changes
-
     public void setColor(Color clr){color = clr;}
 
-    /* TODO fix this method according to lab pm
+    /*  TODO fix this method according to lab pm
      *   Gas() and Break() should only accept values in the interval [0,1]
      *   No speed bellow 0 or greater then enginePower
      *   Gas should not decrease speed
