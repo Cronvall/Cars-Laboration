@@ -1,6 +1,4 @@
 import java.awt.*;
-import junit.*;
-import org.junit.Test;
 
 public abstract class Car implements Vehicle{
     //Variables
@@ -45,19 +43,9 @@ public abstract class Car implements Vehicle{
     }
     public void setColor(Color clr){color = clr;}
 
-
     // Speed-factor
     public double speedFactor(){
         return getEnginePower() * 0.01;
-    public void setColor(Color clr){color = clr;}
-
-    /*  TODO fix this method according to lab pm
-     *   Gas() and Break() should only accept values in the interval [0,1]
-     *   No speed bellow 0 or greater then enginePower
-     *   Gas should not decrease speed
-     *   brake should not increase speed */
-    public void gas(double amount){
-        incrementSpeed(amount);
     }
 
     // "Actions methods" for cars
@@ -66,11 +54,10 @@ public abstract class Car implements Vehicle{
         if(amount >= 0 && amount <= 1){
             incrementSpeed(amount);
         }
-        else{
+        else
             System.out.println("The amount of gas exceeds allowed interval of [0,1].");
-        }
-
     }
+
     @Override
     public void brake(double amount){
         if (amount >= 0 && amount <= 1){
@@ -79,9 +66,7 @@ public abstract class Car implements Vehicle{
         else{
             System.out.println("The amount of braking is not within the allowed interval [0, 1].");
         }
-
     }
-
     //Overriding methods
     @Override
     public void incrementSpeed(double amount){
@@ -132,9 +117,4 @@ public abstract class Car implements Vehicle{
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }
     }
-    /* TODO fix this method according to lab pm
-     *   Gas() and Break() should only accept values in the interval [0,1]
-     *   No speed bellow 0 or greater then enginePower
-     *   Gas should not decrease speed
-     *   brake should not increase speed */
 }
