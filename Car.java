@@ -41,13 +41,16 @@ public abstract class Car implements Vehicle{
         if(speed >= 0 && speed < getEnginePower())  //Accepted interval
             currentSpeed = speed;
         else{
-            System.out.print("Speed was not within required interval.");
-
-            //TODO this will result in an eternity loop? Maybe throw something
-            if(speed < 0)
+            System.out.print("Speed was not within required intervall [0, 1].");
+            if(speed < 0){
+                System.out.println("Speed defaulted to 0");
                 setCurrentSpeed(0);
-            else if(speed > getEnginePower())
+            }
+
+            else if(speed > getEnginePower()){
+                System.out.println("Speed defaulted to engine power");
                 setCurrentSpeed(getEnginePower());
+            }
         }
     }
 
