@@ -34,11 +34,15 @@ public abstract class Car implements Vehicle{
             currentSpeed = speed;
         else{
             System.out.print("Speed was not within required intervall [0, 1].");
-            if(speed < 0)
+            if(speed < 0){
+                System.out.println("Speed defaulted to 0");
                 setCurrentSpeed(0);
+            }
 
-            else if(speed > getEnginePower())
+            else if(speed > getEnginePower()){
+                System.out.println("Speed defaulted to engine power");
                 setCurrentSpeed(getEnginePower());
+            }
         }
     }
     public void setColor(Color clr){color = clr;}
