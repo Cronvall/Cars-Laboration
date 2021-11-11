@@ -1,21 +1,26 @@
 import java.awt.*;
 
 public abstract class Car implements Vehicle{
-    //Variables
-    final int nrDoors; // Number of doors on the car
-    final String modelName; // The car model name
+
+    //Variables. I.e fields
+    private final int nrDoors; // Number of doors on the car
+    private final String modelName; // The car model name
     private double enginePower; // Engine power of the car
     private Color color; // Color of the car
     private Point position = new Point();
     private double currentSpeed;
-    private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis
+    private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
+                                            // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
 
+
+    //TODO should the constructor be protected? Case against/for
     //Constructor
     public Car(int _nrDoors, double _enginePower, Color col, String _mName){
         nrDoors = _nrDoors;
         enginePower = _enginePower;
         color = col;
         modelName = _mName;
+        // TODO use stopEngine() here instead of in previous constructor?
     }
 
     //Methods
@@ -28,29 +33,30 @@ public abstract class Car implements Vehicle{
         return position;
     }
 
+
+    //TODO Another question! Should we rather use "throw new" as handling errors instead of system.out?
+
     // Set methods
     protected void setCurrentSpeed(double speed){
         if(speed >= 0 && speed < getEnginePower())  //Accepted interval
             currentSpeed = speed;
         else{
-            System.out.print("Speed was not within required intervall [0, 1].");
+            System.out.print("Speed was not within required interval.");
+
+            //TODO this will result in an eternity loop? Maybe throw something
             if(speed < 0)
                 setCurrentSpeed(0);
-
             else if(speed > getEnginePower())
                 setCurrentSpeed(getEnginePower());
         }
     }
-    public void setColor(Color clr){color = clr;}
 
-    // Speed-factor
-    public double speedFactor(){
-        return getEnginePower() * 0.01;
-    }
+    public abstract double speedFactor();
 
     // "Actions methods" for cars
     @Override
     public void gas(double amount){
+        // TODO is the engine running? Should it run to be able to gas?
         if(amount >= 0 && amount <= 1){
             incrementSpeed(amount);
         }
@@ -67,16 +73,13 @@ public abstract class Car implements Vehicle{
             System.out.println("The amount of braking is not within the allowed interval [0, 1].");
         }
     }
-    //Overriding methods
+
     @Override
-    public void incrementSpeed(double amount){
-        double newSpeed = getEnginePower() * 0.01 + getCurrentSpeed();
-        setCurrentSpeed(newSpeed);
-    }
-    public void decrementSpeed(double amount){
-        double newSpeed = getCurrentSpeed() - speedFactor();
-        setCurrentSpeed(newSpeed);
-    }
+    public abstract void incrementSpeed(double amount);
+
+    @Override
+    public abstract void decrementSpeed(double amount);
+
     @Override
     public void startEngine() {
         currentSpeed = 0.1;
