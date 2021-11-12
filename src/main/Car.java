@@ -119,13 +119,17 @@ public abstract class Car implements Vehicle{
         switch (currentDirectionInteger) {
             //position[0] acts as X-axis and position[1] acts as Y-axis.
             //Forward
-            case 1 -> position.y += getCurrentSpeed();
+            case 1 -> this.position.y += getCurrentSpeed();
+
             //Right
-            case 2 -> position.x += getCurrentSpeed();
+            case 2 -> this.position.x += getCurrentSpeed();
+
             //Reverse
-            case 3 -> position.y -= getCurrentSpeed();
+            case 3 -> this.position.y -= getCurrentSpeed();
+
             //Left
-            case 4 -> position.x -= getCurrentSpeed();
+            case 4 -> this.position.x -= getCurrentSpeed();
+
             //In case of Invalid direction input.
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }

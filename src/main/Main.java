@@ -6,15 +6,6 @@ public class Main {
     public static void main(String[] args){
 
         Saab95 Saab = new Saab95(2,125,Color.red);
-        Car[] cars = new Car[2];
-        cars[0] = Saab;
-
-        //Method further down to test volvo
-        volvoForArun();
-
-        //TODO Question: to move coordinates, we have to call instance.move.
-        // Should we rather make .move private and call it when we
-        // increment or decrement speed within the class instead?
 
         Saab.startEngine();
         Saab.turnRight();

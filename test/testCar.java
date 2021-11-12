@@ -30,6 +30,12 @@ public class testCar {
     @Test
     void testMovement(){
         Volvo240 volvo = new Volvo240(4,120,Color.red);
+        volvo.startEngine();
+
+        volvo.incrementSpeed(1);
+        double desiredSpeed = 0.1 + (120 * 0.01 * 1.25);
+        assertEquals(desiredSpeed,volvo.getCurrentSpeed(), "Asserts the correct speed is set.");
+
         assertEquals(0, volvo.getPosition().x,"Asserts starting x position");
         assertEquals(0, volvo.getPosition().y,"Asserts starting y position");
 
@@ -55,4 +61,27 @@ public class testCar {
         assertEquals(0,volvo.getPosition().x, "Asserts car moved left");
     }
 
+
+    @Test
+    void testAccelerationDeceleration(){
+        Saab95 saab = new Saab95(2,120,Color.black);
+        saab.startEngine();
+
+        saab.incrementSpeed(1);
+        double desiredSpeed = 0.1 + (120 * 0.01);
+        assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after acceleration");
+
+        saab.incrementSpeed(0.5);
+        desiredSpeed += (120 * 0.01 * 0.5);
+        assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after acceleration");
+
+        saab.decrementSpeed(0.5);
+        desiredSpeed -= (120 * 0.01 * 0.5);
+        assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after deceleration");
+
+        saab.decrementSpeed(0.3);
+        desiredSpeed -= (120 * 0.01 * 0.3);
+        assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after deceleration");
+
+    }
 }
