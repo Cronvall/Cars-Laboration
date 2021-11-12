@@ -54,6 +54,7 @@ public abstract class Car implements Vehicle{
         }
     }
 
+    //Defines that there is a speedFactor.
     public abstract double speedFactor();
 
     // "Actions methods" for cars
