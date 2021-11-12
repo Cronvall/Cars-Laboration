@@ -18,16 +18,4 @@ public class Volvo240 extends Car{
         return getEnginePower() * 0.01 * trimFactor;
     }
 
-    @Override
-    public void incrementSpeed(double amount){
-        double minSpeed = getCurrentSpeed() + speedFactor() * amount;
-        setCurrentSpeed(Math.min(minSpeed,getEnginePower()));
-    }
-
-    @Override
-    public void decrementSpeed(double amount){
-        double newSpeed = getCurrentSpeed() - speedFactor() * amount;
-        setCurrentSpeed(Math.max(newSpeed,0));
-    }
-
 }

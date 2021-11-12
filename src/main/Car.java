@@ -77,11 +77,17 @@ public abstract class Car implements Vehicle{
         }
     }
 
-    @Override
-    public abstract void incrementSpeed(double amount);
 
-    @Override
-    public abstract void decrementSpeed(double amount);
+    public  void incrementSpeed(double amount){
+        double newSpeed = getCurrentSpeed() + speedFactor() * amount;
+        setCurrentSpeed(Math.min(newSpeed,getEnginePower()));
+    }
+
+
+    public void decrementSpeed(double amount){
+        double newSpeed = getCurrentSpeed() - speedFactor() * amount;
+        setCurrentSpeed(Math.max(newSpeed,0));
+    }
 
     @Override
     public void startEngine() {
