@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Car implements Vehicle{
+public abstract class Car implements Vehicle, Movable{
 
     //Variables. I.e fields
     private final int nrDoors; // Number of doors on the car
@@ -24,9 +24,7 @@ public abstract class Car implements Vehicle{
     }
 
     //Methods
-    public int getNrDoors() { return nrDoors;}
     public double getEnginePower(){return enginePower;}
-    public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
     public Point getPosition(){

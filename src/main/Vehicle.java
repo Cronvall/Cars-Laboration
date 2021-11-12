@@ -1,4 +1,4 @@
-public interface Vehicle extends Movable {
+public interface Vehicle {
 
      // Not necessary at the moment, more of a speculative interface if more vehicles are wanted
 
