@@ -24,9 +24,7 @@ public abstract class Car implements Vehicle{
     }
 
     //Methods
-    public int getNrDoors() { return nrDoors;}
     public double getEnginePower(){return enginePower;}
-    public Color getColor(){return color;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
     public Point getPosition(){
@@ -38,18 +36,20 @@ public abstract class Car implements Vehicle{
 
     // Set methods
     protected void setCurrentSpeed(double speed){
-        if(speed >= 0 && speed < getEnginePower())  //Accepted interval
-            currentSpeed = speed;
+        if(speed >= 0 && speed <= getEnginePower())  //Accepted interval
+            this.currentSpeed = speed;
+
         else{
-            System.out.print("Speed was not within required intervall [0, 1].");
+            System.out.print("Speed was not within required interval [0, 1].");
+
             if(speed < 0){
                 System.out.println("Speed defaulted to 0");
-                setCurrentSpeed(0);
+                this.setCurrentSpeed(0);
             }
 
             else if(speed > getEnginePower()){
                 System.out.println("Speed defaulted to engine power");
-                setCurrentSpeed(getEnginePower());
+                this.setCurrentSpeed(getEnginePower());
             }
         }
     }
@@ -61,7 +61,7 @@ public abstract class Car implements Vehicle{
     @Override
     public void gas(double amount){
         // TODO is the engine running? Should it run to be able to gas?
-        if(amount >= 0 && amount <= 1){
+        if(amount > 0 && amount <= 1){
             incrementSpeed(amount);
         }
         else
