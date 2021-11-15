@@ -36,18 +36,20 @@ public abstract class Car implements Vehicle, Movable{
 
     // Set methods
     protected void setCurrentSpeed(double speed){
-        if(speed >= 0 && speed < getEnginePower())  //Accepted interval
-            currentSpeed = speed;
+        if(speed >= 0 && speed <= getEnginePower())  //Accepted interval
+            this.currentSpeed = speed;
+
         else{
-            System.out.print("Speed was not within required intervall [0, 1].");
+            System.out.print("Speed was not within required interval [0, 1].");
+
             if(speed < 0){
                 System.out.println("Speed defaulted to 0");
-                setCurrentSpeed(0);
+                this.setCurrentSpeed(0);
             }
 
             else if(speed > getEnginePower()){
                 System.out.println("Speed defaulted to engine power");
-                setCurrentSpeed(getEnginePower());
+                this.setCurrentSpeed(getEnginePower());
             }
         }
     }
@@ -59,7 +61,7 @@ public abstract class Car implements Vehicle, Movable{
     @Override
     public void gas(double amount){
         // TODO is the engine running? Should it run to be able to gas?
-        if(amount >= 0 && amount <= 1){
+        if(amount > 0 && amount <= 1){
             incrementSpeed(amount);
         }
         else
@@ -117,13 +119,17 @@ public abstract class Car implements Vehicle, Movable{
         switch (currentDirectionInteger) {
             //position[0] acts as X-axis and position[1] acts as Y-axis.
             //Forward
-            case 1 -> position.y += getCurrentSpeed();
+            case 1 -> this.position.y += getCurrentSpeed();
+
             //Right
-            case 2 -> position.x += getCurrentSpeed();
+            case 2 -> this.position.x += getCurrentSpeed();
+
             //Reverse
-            case 3 -> position.y -= getCurrentSpeed();
+            case 3 -> this.position.y -= getCurrentSpeed();
+
             //Left
-            case 4 -> position.x -= getCurrentSpeed();
+            case 4 -> this.position.x -= getCurrentSpeed();
+
             //In case of Invalid direction input.
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }
