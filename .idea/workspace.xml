@@ -7,9 +7,16 @@
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Saab95.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testCar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Volvo240.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/testCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testSaab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testSaab95.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +52,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.testCar.testBreak">
-    <configuration name="testCar.testAccelerationDeceleration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testCar">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Cars-Laboration" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="testCar" />
-      <option name="METHOD_NAME" value="testAccelerationDeceleration" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,30 +94,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testCar.testMovement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testSaab95" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testCar" />
-      <option name="METHOD_NAME" value="testMovement" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testCar.testSetCurrentSpeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Cars-Laboration" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testCar" />
-      <option name="METHOD_NAME" value="testSetCurrentSpeed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Cars-Laboration" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testCar" />
+      <option name="MAIN_CLASS_NAME" value="testSaab95" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,11 +105,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testCar" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.testSaab95" />
         <item itemvalue="JUnit.testCar.testBreak" />
         <item itemvalue="JUnit.testCar.testGas" />
-        <item itemvalue="JUnit.testCar.testSetCurrentSpeed" />
-        <item itemvalue="JUnit.testCar.testAccelerationDeceleration" />
-        <item itemvalue="JUnit.testCar.testMovement" />
       </list>
     </recent_temporary>
   </component>
@@ -130,6 +124,9 @@
       <workItem from="1636709081420" duration="178000" />
       <workItem from="1636709292117" duration="295000" />
       <workItem from="1636710960511" duration="2667000" />
+      <workItem from="1636966517302" duration="1585000" />
+      <workItem from="1636973350910" duration="35000" />
+      <workItem from="1637065852195" duration="1772000" />
     </task>
     <servers />
   </component>
@@ -149,16 +146,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95_isSpeedFactorDouble.ic" NAME="testSaab95.isSpeedFactorDouble Coverage Results" MODIFIED="1636711785411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testTurnRight.ic" NAME="testCar.testTurnRight Coverage Results" MODIFIED="1636713264263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95.ic" NAME="testSaab95 Coverage Results" MODIFIED="1636711824564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testTurnLeft.ic" NAME="testCar.testTurnLeft Coverage Results" MODIFIED="1636713047086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testAccelerationDeceleration.ic" NAME="testCar.testAccelerationDeceleration Coverage Results" MODIFIED="1636754425788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testMovement.ic" NAME="testCar.testMovement Coverage Results" MODIFIED="1636753914634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar.ic" NAME="testCar Coverage Results" MODIFIED="1636967355938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testTurnLeft.ic" NAME="testCar.testTurnLeft Coverage Results" MODIFIED="1636713047086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testSetCurrentSpeed.ic" NAME="testCar.testSetCurrentSpeed Coverage Results" MODIFIED="1636809431042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testVolvo240_testSpeedFactor.ic" NAME="testVolvo240.testSpeedFactor Coverage Results" MODIFIED="1636712550438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95_isSpeedFactorDouble.ic" NAME="testSaab95.isSpeedFactorDouble Coverage Results" MODIFIED="1636711785411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95_testSpeedFactor.ic" NAME="testSaab95.testSpeedFactor Coverage Results" MODIFIED="1636711951954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testBreak.ic" NAME="testCar.testBreak Coverage Results" MODIFIED="1636810326616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testGas.ic" NAME="testCar.testGas Coverage Results" MODIFIED="1636810154344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testVolvo240_testSpeedFactor.ic" NAME="testVolvo240.testSpeedFactor Coverage Results" MODIFIED="1636712550438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testMovement.ic" NAME="testCar.testMovement Coverage Results" MODIFIED="1636753914634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testSetCurrentSpeed.ic" NAME="testCar.testSetCurrentSpeed Coverage Results" MODIFIED="1636809431042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95_testSpeedFactor.ic" NAME="testSaab95.testSpeedFactor Coverage Results" MODIFIED="1636711951954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

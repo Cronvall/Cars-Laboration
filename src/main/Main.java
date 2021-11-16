@@ -7,6 +7,8 @@ public class Main {
 
         Saab95 Saab = new Saab95(2,125,Color.red);
 
+        volvoForArun();
+
         Saab.startEngine();
         Saab.turnRight();
         Saab.incrementSpeed(1);

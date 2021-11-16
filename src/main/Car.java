@@ -3,27 +3,24 @@ import java.awt.*;
 public abstract class Car implements Vehicle, Movable{
 
     //Variables. I.e fields
-    private final int nrDoors; // Number of doors on the car
-    private final String modelName; // The car model name
-    private double enginePower; // Engine power of the car
-    private Color color; // Color of the car
+    private final int nrDoors;
+    private final String modelName;
+    private double enginePower;
+    private Color color;
     private Point position = new Point();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
                                             // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
 
-
-    //TODO should the constructor be protected? Case against/for
-    //Constructor
-    public Car(int _nrDoors, double _enginePower, Color col, String _mName){
-        nrDoors = _nrDoors;
-        enginePower = _enginePower;
-        color = col;
-        modelName = _mName;
-        // TODO use stopEngine() here instead of in previous constructor?
+    public Car(int nrDoors, double enginePower, Color col, String modelName){
+        this.nrDoors = nrDoors;
+        this.enginePower = enginePower;
+        this.color = col;
+        this.modelName = modelName;
+        stopEngine();
     }
 
-    //Methods
+    //Get methods
     public double getEnginePower(){return enginePower;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
@@ -32,29 +29,27 @@ public abstract class Car implements Vehicle, Movable{
     }
 
 
-    //TODO Another question! Should we rather use "throw new" as handling errors instead of system.out?
-
-    // Set methods
-    protected void setCurrentSpeed(double speed){
-        if(speed >= 0 && speed <= getEnginePower())  //Accepted interval
-            this.currentSpeed = speed;
-
+    // Set method
+    protected void setCurrentSpeed(double newSpeed){
+        if(newSpeed >= 0 && newSpeed <= getEnginePower())  //Accepted interval
+            this.currentSpeed = newSpeed;
         else{
-            System.out.print("Speed was not within required interval [0, 1].");
-
-            if(speed < 0){
-                System.out.println("Speed defaulted to 0");
-                this.setCurrentSpeed(0);
-            }
-
-            else if(speed > getEnginePower()){
-                System.out.println("Speed defaulted to engine power");
-                this.setCurrentSpeed(getEnginePower());
-            }
+            this.changeSpeedIfOutsideInterval(newSpeed);
         }
     }
 
-    //Defines that there is a speedFactor.
+    protected void changeSpeedIfOutsideInterval(double speed){
+        System.out.print("Speed was not within required interval [0, 1].");
+        if(speed < 0){
+            System.out.println("Speed defaulted to 0");
+            this.setCurrentSpeed(0);
+        }
+        else if(speed > getEnginePower()){
+            System.out.println("Speed defaulted to engine power");
+            this.setCurrentSpeed(getEnginePower());
+        }
+    }
+
     public abstract double speedFactor();
 
     // "Actions methods" for cars
@@ -69,6 +64,12 @@ public abstract class Car implements Vehicle, Movable{
     }
 
     @Override
+    public  void incrementSpeed(double amount){
+        double newSpeed = getCurrentSpeed() + speedFactor() * amount;
+        setCurrentSpeed(Math.min(newSpeed,getEnginePower()));
+    }
+
+    @Override
     public void brake(double amount){
         if (amount >= 0 && amount <= 1){
             decrementSpeed(amount);
@@ -78,13 +79,7 @@ public abstract class Car implements Vehicle, Movable{
         }
     }
 
-
-    public  void incrementSpeed(double amount){
-        double newSpeed = getCurrentSpeed() + speedFactor() * amount;
-        setCurrentSpeed(Math.min(newSpeed,getEnginePower()));
-    }
-
-
+    @Override
     public void decrementSpeed(double amount){
         double newSpeed = getCurrentSpeed() - speedFactor() * amount;
         setCurrentSpeed(Math.max(newSpeed,0));
@@ -94,6 +89,7 @@ public abstract class Car implements Vehicle, Movable{
     public void startEngine() {
         currentSpeed = 0.1;
     }
+
     @Override
     public void stopEngine(){
         currentSpeed = 0;
@@ -106,6 +102,7 @@ public abstract class Car implements Vehicle, Movable{
         else
             currentDirectionInteger--;
     }
+
     @Override
     public void turnRight(){
         if(getDirection() == 4)

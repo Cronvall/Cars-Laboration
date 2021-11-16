@@ -7,13 +7,14 @@ public class Saab95 extends Car{
     public Saab95(int nrDoors, double enginePower, Color col){
         super(nrDoors,enginePower,col,"Saab-95");
 	    turboOn = false;
-        stopEngine();
     }
 
-    public void setTurboOn(){
+    public boolean getTurbo(){ return  turboOn;}
+
+    protected void setTurboOn(){
 	    turboOn = true;
     }
-    public void setTurboOff(){
+    protected void setTurboOff(){
 	    turboOn = false;
     }
 
@@ -23,8 +24,6 @@ public class Saab95 extends Car{
         if(turboOn) {turbo = 1.3;}
         return getEnginePower() * 0.01 * turbo;
     }
-
-
     @Override
     public void stopEngine(){
         setCurrentSpeed(0);
