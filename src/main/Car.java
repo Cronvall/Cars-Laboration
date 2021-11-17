@@ -26,7 +26,7 @@ public abstract class Car implements Vehicle, Movable{
     public double getEnginePower(){return enginePower;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
-    public Point2D getPosition(){
+    public Point2D.Double getPosition(){
         return position;
     }
 
