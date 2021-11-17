@@ -70,29 +70,29 @@ public class testCar {
         double desiredSpeed = 0.1 + (120 * 0.01 * 1.25);
         assertEquals(desiredSpeed,volvo.getCurrentSpeed(), "Asserts the correct speed is set.");
 
-        assertEquals(0, volvo.getPosition().x,"Asserts starting x position");
-        assertEquals(0, volvo.getPosition().y,"Asserts starting y position");
+        assertEquals(0, volvo.getPosition().getX(),"Asserts starting x position");
+        assertEquals(0, volvo.getPosition().getY(),"Asserts starting y position");
 
         //Drive forward
         volvo.move();
         System.out.println(volvo.getPosition());
-        assertEquals(0,volvo.getPosition().x, "Assert car stayed put in x-axis");
-        assertEquals(1,volvo.getPosition().y, "Asserts car moved forward");
+        assertEquals(0,volvo.getPosition().getX(), "Assert car stayed put in x-axis");
+        assertEquals(1,volvo.getPosition().getY(), "Asserts car moved forward");
         //Drive right
         volvo.turnRight();
         volvo.move();
-        assertEquals(1,volvo.getPosition().y, "Asserts car stayed put in y-axis");
-        assertEquals(1,volvo.getPosition().x, "Assert car moved right");
+        assertEquals(1,volvo.getPosition().getY(), "Asserts car stayed put in y-axis");
+        assertEquals(1,volvo.getPosition().getX(), "Assert car moved right");
         //Drive reverse
         volvo.turnRight();
         volvo.move();
-        assertEquals(1,volvo.getPosition().x, "Assert car stayed put in x-axis");
-        assertEquals(0, volvo.getPosition().y, "Assert car reversed (y-axis)");
+        assertEquals(1,volvo.getPosition().getX(), "Assert car stayed put in x-axis");
+        assertEquals(0, volvo.getPosition().getY(), "Assert car reversed (y-axis)");
         //Drive left
         volvo.turnRight();
         volvo.move();
-        assertEquals(0,volvo.getPosition().y, "Asserts car stayed put in y-axis");
-        assertEquals(0,volvo.getPosition().x, "Asserts car moved left");
+        assertEquals(0,volvo.getPosition().getY(), "Asserts car stayed put in y-axis");
+        assertEquals(0,volvo.getPosition().getX(), "Asserts car moved left");
     }
 
 

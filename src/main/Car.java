@@ -1,13 +1,15 @@
 import java.awt.*;
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
 
 public abstract class Car implements Vehicle, Movable{
 
     //Variables. I.e fields
     private final int nrDoors;
     private final String modelName;
-    private double enginePower;
-    private Color color;
-    private Point position = new Point();
+    private final double enginePower;
+    private final Color color;
+    private Point2D.Double position = new Point2D.Double();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
                                             // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
@@ -24,7 +26,7 @@ public abstract class Car implements Vehicle, Movable{
     public double getEnginePower(){return enginePower;}
     public double getCurrentSpeed(){return currentSpeed;}
     public double getDirection(){return currentDirectionInteger;}
-    public Point getPosition(){
+    public Point2D getPosition(){
         return position;
     }
 
@@ -116,16 +118,16 @@ public abstract class Car implements Vehicle, Movable{
         switch (currentDirectionInteger) {
             //position[0] acts as X-axis and position[1] acts as Y-axis.
             //Forward
-            case 1 -> this.position.y += getCurrentSpeed();
+            case 1 -> this.position.setLocation(this.position.getX(), this.position.getY() + getCurrentSpeed());
 
             //Right
-            case 2 -> this.position.x += getCurrentSpeed();
+            case 2 -> this.position.setLocation(this.position.getX() + getCurrentSpeed(), this.position.getY());
 
             //Reverse
-            case 3 -> this.position.y -= getCurrentSpeed();
+            case 3 -> this.position.setLocation(this.position.getX(), this.position.getY() - getCurrentSpeed());
 
             //Left
-            case 4 -> this.position.x -= getCurrentSpeed();
+            case 4 -> this.position.setLocation(this.position.getX() - getCurrentSpeed(), this.position.getY());
 
             //In case of Invalid direction input.
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
