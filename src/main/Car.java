@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 
-public abstract class Car implements Vehicle, Movable{
+public abstract class Car implements IVehicle{
 
     //Variables. I.e fields
     private final int nrDoors;
@@ -12,7 +12,7 @@ public abstract class Car implements Vehicle, Movable{
     private Point2D.Double position = new Point2D.Double();
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
-                                            // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
+                                                             // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
 
     public Car(int nrDoors, double enginePower, Color col, String modelName){
         this.nrDoors = nrDoors;
@@ -23,10 +23,10 @@ public abstract class Car implements Vehicle, Movable{
     }
 
     //Get methods
-    public double getEnginePower(){return enginePower;}
-    public double getCurrentSpeed(){return currentSpeed;}
-    public double getDirection(){return currentDirectionInteger;}
-    public Point2D.Double getPosition(){
+    protected double getEnginePower(){return enginePower;}
+    protected double getCurrentSpeed(){return currentSpeed;}
+    protected double getDirection(){return currentDirectionInteger;}
+    protected Point2D.Double getPosition(){
         return position;
     }
 
@@ -40,7 +40,7 @@ public abstract class Car implements Vehicle, Movable{
         }
     }
 
-    protected void changeSpeedIfOutsideInterval(double speed){
+    private void changeSpeedIfOutsideInterval(double speed){
         System.out.print("Speed was not within required interval [0, 1].");
         if(speed < 0){
             System.out.println("Speed defaulted to 0");
@@ -55,6 +55,7 @@ public abstract class Car implements Vehicle, Movable{
     public abstract double speedFactor();
 
     // "Actions methods" for cars
+
     @Override
     public void gas(double amount){
         // TODO is the engine running? Should it run to be able to gas?
@@ -132,5 +133,21 @@ public abstract class Car implements Vehicle, Movable{
             //In case of Invalid direction input.
             default -> System.out.println("Invalid direction: " + currentDirectionInteger + " (1-4 are valid).");
         }
+    }
+
+    @Override
+    public String toString(){
+        return(
+                this.getClass().toString() +
+                        ": {" +
+                        "modelName "+ modelName +
+                        ", numberOfDoors: " + nrDoors +
+                        ", enginePower: " + getEnginePower() +
+                        ", Color: " + color +
+                        ", Position: " + getPosition() +
+                        ", Speed: " + getCurrentSpeed() +
+                        ", DirectionInteger: " + getDirection() +
+                        " }"
+                );
     }
 }

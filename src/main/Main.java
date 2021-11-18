@@ -5,9 +5,9 @@ public class Main {
     public static void main(String[] args){
 
         Saab95 Saab = new Saab95(2,125,Color.red);
-
+        System.out.println(Saab.toString());
         //volvoRun();
-        saabRun();
+        //saabRun();
     }
 
     public static void volvoRun(){
