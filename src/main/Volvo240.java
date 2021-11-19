@@ -1,10 +1,10 @@
 import java.awt.*;
 
-public class Volvo240 extends Vehicle {
+public class Volvo240 extends Car {
 
     private double trimFactor = 1.25;
 
-    public Volvo240(int nrDoors, double enginePower, Color col){
+    public Volvo240(int nrDoors, int enginePower, Color col){
         super(nrDoors,enginePower,col,"Volvo-240");
     }
 

@@ -1,11 +1,9 @@
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Double;
 
-public abstract class Vehicle implements IVehicle{
+public abstract class Vehicle implements Movable{
 
     //Variables. I.e fields
-    private final int nrDoors;
     private final String modelName;
     private final double enginePower;
     private final Color color;
@@ -14,8 +12,7 @@ public abstract class Vehicle implements IVehicle{
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
                                                              // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
 
-    public Vehicle(int nrDoors, double enginePower, Color col, String modelName){
-        this.nrDoors = nrDoors;
+    public Vehicle(double enginePower, Color col, String modelName){
         this.enginePower = enginePower;
         this.color = col;
         this.modelName = modelName;
@@ -29,6 +26,9 @@ public abstract class Vehicle implements IVehicle{
     protected Point2D.Double getPosition(){
         return position;
     }
+    protected String getModelName(){return modelName;}
+    protected Color getColor(){return color;}
+
 
 
     // Set method
@@ -56,7 +56,6 @@ public abstract class Vehicle implements IVehicle{
 
     // "Actions methods" for cars
 
-    @Override
     public void gas(double amount){
         // TODO is the engine running? Should it run to be able to gas?
         if(amount > 0 && amount <= 1){
@@ -66,13 +65,11 @@ public abstract class Vehicle implements IVehicle{
             System.out.println("The amount of gas exceeds allowed interval of [0,1].");
     }
 
-    @Override
     public  void incrementSpeed(double amount){
         double newSpeed = getCurrentSpeed() + speedFactor() * amount;
         setCurrentSpeed(Math.min(newSpeed,getEnginePower()));
     }
 
-    @Override
     public void brake(double amount){
         if (amount >= 0 && amount <= 1){
             decrementSpeed(amount);
@@ -82,18 +79,15 @@ public abstract class Vehicle implements IVehicle{
         }
     }
 
-    @Override
     public void decrementSpeed(double amount){
         double newSpeed = getCurrentSpeed() - speedFactor() * amount;
         setCurrentSpeed(Math.max(newSpeed,0));
     }
 
-    @Override
     public void startEngine() {
         currentSpeed = 0.1;
     }
 
-    @Override
     public void stopEngine(){
         currentSpeed = 0;
     }
@@ -141,7 +135,6 @@ public abstract class Vehicle implements IVehicle{
                 this.getClass().toString() +
                         ": {" +
                         "modelName "+ modelName +
-                        ", numberOfDoors: " + nrDoors +
                         ", enginePower: " + getEnginePower() +
                         ", Color: " + color +
                         ", Position: " + getPosition() +
