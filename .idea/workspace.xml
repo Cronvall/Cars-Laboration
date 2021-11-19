@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/testRamp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Ramp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Ramp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Ramp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Ramp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testRamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testRamp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +60,6 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager" selected="JUnit.testRamp.testRampMovement">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Cars-Laboration" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in Cars-Laboration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
@@ -82,6 +74,15 @@
       <option name="MAIN_CLASS_NAME" value="testCar" />
       <option name="METHOD_NAME" value="testGetNrOfDoors" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testRamp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cars-Laboration" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testRamp" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,10 +110,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.testRamp.testRampMovement" />
+        <item itemvalue="JUnit.testRamp" />
         <item itemvalue="JUnit.testCar.testGetNrOfDoors" />
         <item itemvalue="JUnit.testVehicle.testGetNrOfDoors" />
         <item itemvalue="JUnit.All in Cars-Laboration" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +154,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testRamp.ic" NAME="testRamp Coverage Results" MODIFIED="1637327056427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95.ic" NAME="testSaab95 Coverage Results" MODIFIED="1636711824564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testAccelerationDeceleration.ic" NAME="testCar.testAccelerationDeceleration Coverage Results" MODIFIED="1636754425788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testBreak.ic" NAME="testCar.testBreak Coverage Results" MODIFIED="1636810326616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

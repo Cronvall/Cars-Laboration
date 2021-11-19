@@ -3,10 +3,10 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class testRamp {
-    Ramp ramp = new Ramp();
 
     @Test
     void testRampMovement(){
+        Ramp ramp = new Ramp();
 
         ramp.raise(50);
         assertEquals(50, ramp.getAngle());
