@@ -4,9 +4,16 @@ public class Main {
 
     public static void main(String[] args){
 
-        volvoRun();
-        saabRun();
+        scaniaRun();
     }
+
+
+    public static void scaniaRun(){
+        Ramp rampForScania = new Ramp();
+        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania);
+        firstScania.getRamp().raise(90);
+    }
+
 
     public static void volvoRun(){
         Volvo240 v1 = new Volvo240(2, 125, Color.green);
