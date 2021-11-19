@@ -2,7 +2,7 @@ import org.junit.jupiter.api.*;
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class testCar {
+public class testVehicle {
 
 
     @Test
