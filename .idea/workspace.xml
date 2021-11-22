@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Ferry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Flatbed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/SaabExclusiveWorkShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/VolvoExclusiveWorkShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/WorkShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Flatbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Vehicle.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +121,10 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Cars-Laboration" />
         <item itemvalue="JUnit.testTruck.testSpeedFactor" />
+<<<<<<< Updated upstream
+=======
+        <item itemvalue="Application.Main" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>

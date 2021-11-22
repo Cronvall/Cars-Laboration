@@ -1,8 +1,13 @@
 public class Flatbed {
 
     private Car[] carLoad;
+<<<<<<< Updated upstream
     int currentIndex;
     private final LoadingMethod loadingMethod;
+=======
+    private int currentIndex;
+    private LoadingMethod loadingMethod;
+>>>>>>> Stashed changes
 
     public Flatbed(int loadingCapacity, LoadingMethod loadingMethod){
         if(loadingCapacity > 0)
