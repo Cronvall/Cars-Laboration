@@ -1,8 +1,8 @@
 public class Flatbed {
 
-    Car[] carLoad;
+    private Car[] carLoad;
     int currentIndex;
-    LoadingMethod loadingMethod;
+    private final LoadingMethod loadingMethod;
 
     public Flatbed(int loadingCapacity, LoadingMethod loadingMethod){
         if(loadingCapacity > 0)

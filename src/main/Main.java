@@ -1,10 +1,10 @@
 import java.awt.*;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args){
 
-        scaniaRun();
     }
 
 
@@ -50,6 +50,19 @@ public class Main {
         saab.move();
         saab.stopEngine();
         System.out.println(saab.getPosition());
+    }
+
+    public static void ferryRun(){
+        Ferry f1 = new Ferry(100);
+        System.out.println(Arrays.toString(f1.getLoad()));
+        f1.loadCar(new Saab95(2,100,Color.red));
+        System.out.println(Arrays.toString(f1.getLoad()));
+        f1.startEngine();
+        System.out.println(f1.getPosition());
+        f1.move();
+        System.out.println(f1.getPosition());
+        f1.loadOffCar();
+        System.out.println(Arrays.toString(f1.getLoad()));
     }
 
 }
