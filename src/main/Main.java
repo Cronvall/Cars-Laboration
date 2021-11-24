@@ -14,8 +14,8 @@ public class Main {
     }
 
     public static void scaniaRun(){
-        Ramp rampForScania = new Ramp();
-        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania);
+        Platform rampForScania = new Platform();
+        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
         firstScania.getRamp().raise(90);
     }
 
@@ -23,6 +23,10 @@ public class Main {
         VolvoExclusiveWorkShop volvo = new VolvoExclusiveWorkShop(new Point(10, 20), 8);
         Volvo240 vol = new Volvo240(2, 300, Color.red);
         Saab95 saab = new Saab95(2, 300, Color.green);
+
+        WorkShop w1 = new WorkShop(new Point(2, 3), 4);
+        Ferry f1 = new Ferry(4);
+        //w1.addVehicle(f1);
 
         volvo.addVehicle(vol);
         volvo.addVehicle(vol);
