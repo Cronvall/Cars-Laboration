@@ -27,15 +27,16 @@ public class Flatbed {
     }
 
     public void loadCar(Car car){
+
         if(currentIndex < carLoad.length && currentIndex >= 0){
             if(carLoad[currentIndex] == null){
                 carLoad[currentIndex] = car;
-
                 //SET NEW INDEX
-                if(currentIndex != 0 && currentIndex != carLoad.length - 1){
+                if(currentIndex != carLoad.length - 1){
                     if(loadingMethod == LoadingMethod.FirstOnFirstOff)
                         currentIndex += 1;
-                    else currentIndex -= 1;
+                    else if(currentIndex != 0)
+                        currentIndex -= 1;
                 }
             }
             else System.out.println("There is already a car in this place.");
@@ -44,6 +45,20 @@ public class Flatbed {
     }
 
     public void removeCar(){
+        if(loadingMethod == LoadingMethod.FirstOnLastOff)
+            removalFirstOnLastOff();
+        else removalFirstOnFirstOff();
+    }
+
+    private int currentLoadOffIndex = 0;
+    private void removalFirstOnFirstOff(){
+        if(carLoad[currentLoadOffIndex] != null){
+            carLoad[currentLoadOffIndex] = null;
+            if(currentLoadOffIndex < carLoad.length - 1)
+                currentLoadOffIndex++;
+        }
+    }
+    private void removalFirstOnLastOff(){
         Car[] newArray = carLoad;
         newArray[currentIndex] = null;
         carLoad = newArray;
@@ -55,6 +70,7 @@ public class Flatbed {
             else currentIndex += 1;
         }
     }
+
 
     public enum LoadingMethod{
         FirstOnFirstOff, //Ex. This would apply to ferries and a like where you can open the "flatbed" from two sides.

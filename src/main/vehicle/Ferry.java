@@ -2,13 +2,15 @@ package vehicle;
 import attributes.*;
 import java.awt.*;
 
+
 public class Ferry extends Vehicle {
 
-    Flatbed deck = new Flatbed(20, Flatbed.LoadingMethod.FirstOnFirstOff);
+    Flatbed deck;
     private double weight; //Weight in tons
 
     public Ferry(double weight){
         super(500, Color.white,"vehicle.Ferry");
+        deck = new Flatbed(20, Flatbed.LoadingMethod.FirstOnFirstOff);
         this.weight = weight;
     }
 

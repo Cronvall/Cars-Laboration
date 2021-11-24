@@ -5,55 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test/testFerry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarTransporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Ferry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Flatbed$LoadingMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Flatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Ramp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Saab95.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/SaabExclusiveWorkShop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Scania.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Truck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Vehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Volvo240.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/VolvoExclusiveWorkShop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/WorkShop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testCar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testRamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testRamp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testScania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testScania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testTruck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testTruck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testVolvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testVolvo240.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/CarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/attributes/Flatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/IWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/IWorkShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Ramp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/attributes/Ramp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Saab95.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SaabExclusiveWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/SaabExclusiveWorkShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/VolvoExclusiveWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/VolvoExclusiveWorkShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/WorkShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testRamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testRamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testSaab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testSaab95.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testScania.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testScania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testTruck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testVolvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testVolvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/attributes/Flatbed$LoadingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/attributes/Flatbed$LoadingMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/attributes/Flatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/attributes/Flatbed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/attributes/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/attributes/Flatbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,7 +69,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.testFerry.test_Ferry">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Cars-Laboration" />
@@ -127,11 +85,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testFlatbed.testFlatbedFunctionality" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testFerry.test_Ferry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testFlatbed" />
-      <option name="METHOD_NAME" value="testFlatbedFunctionality" />
+      <option name="MAIN_CLASS_NAME" value="testFerry" />
+      <option name="METHOD_NAME" value="test_Ferry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,8 +117,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.testFerry.test_Ferry" />
         <item itemvalue="JUnit.All in Cars-Laboration" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.testTruck.testSpeedFactor" />
       </list>
     </recent_temporary>
@@ -186,7 +145,7 @@
       <workItem from="1637328130142" duration="4144000" />
       <workItem from="1637594171555" duration="1990000" />
       <workItem from="1637752925289" duration="6294000" />
-      <workItem from="1637763024269" duration="1649000" />
+      <workItem from="1637763024269" duration="5448000" />
     </task>
     <servers />
   </component>
@@ -205,6 +164,17 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/testFerry.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Cars_Laboration$testRamp.ic" NAME="testRamp Coverage Results" MODIFIED="1637327056427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testSaab95.ic" NAME="testSaab95 Coverage Results" MODIFIED="1636711824564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -220,7 +190,8 @@
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testGetNrOfDoors.ic" NAME="testCar.testGetNrOfDoors Coverage Results" MODIFIED="1637324653773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testTurnLeft.ic" NAME="testCar.testTurnLeft Coverage Results" MODIFIED="1636713047086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testGas.ic" NAME="testCar.testGas Coverage Results" MODIFIED="1636810154344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$All_in_Cars_Laboration.ic" NAME="All in Cars-Laboration Coverage Results" MODIFIED="1637764479017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$testFerry_test_Ferry.ic" NAME="testFerry.test_Ferry Coverage Results" MODIFIED="1637768352745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$All_in_Cars_Laboration.ic" NAME="All in Cars-Laboration Coverage Results" MODIFIED="1637767739206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testVolvo240_testSpeedFactor.ic" NAME="testVolvo240.testSpeedFactor Coverage Results" MODIFIED="1636712550438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testMovement.ic" NAME="testCar.testMovement Coverage Results" MODIFIED="1637222288687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testSetCurrentSpeed.ic" NAME="testCar.testSetCurrentSpeed Coverage Results" MODIFIED="1636809431042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
