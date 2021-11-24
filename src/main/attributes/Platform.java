@@ -1,11 +1,11 @@
 package attributes;
 
-public class Ramp {
+public class Platform {
 
-    int angle;
-    boolean allowMotion;
+    private int angle;
+    private boolean allowMotion;
 
-    public Ramp(){
+    public Platform(){
         angle = 0;
         allowMotion = true;
     }

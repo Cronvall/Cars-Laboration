@@ -1,12 +1,11 @@
 package vehicle;
-
 import java.awt.*;
 
 public abstract class Car  extends Vehicle {
 
-    private final int nrDoors;
+    private int nrDoors;
 
-    public Car(int nrDoors, int enginePower, Color color, String modelName){
+    protected Car(int nrDoors, int enginePower, Color color, String modelName){
         super(enginePower, color, modelName);
         this.nrDoors = nrDoors;
     }

@@ -2,15 +2,14 @@ package vehicle;
 
 import java.awt.*;
 
-public abstract class Truck extends Vehicle {
+public abstract class Truck extends Car {
 
     private boolean requiresDriverLicenseC;
     private double grossWeightInTons;
-    private int nrDoors = 2;
 
     protected Truck(int enginePower, Color color, String modelName,
-                    boolean requiresDriverLicenseC, double grossWeightInTons){
-        super(enginePower, color, modelName);
+                    boolean requiresDriverLicenseC, double grossWeightInTons, int nrDoors){
+        super(nrDoors, enginePower, color, modelName);
 
         this.requiresDriverLicenseC = requiresDriverLicenseC;
         this.grossWeightInTons = grossWeightInTons;

@@ -9,5 +9,15 @@ public class testCar {
     void testGetNrOfDoors(){
         Volvo240 volvo = new Volvo240(2,100,Color.RED);
         assertEquals(2, volvo.getNrOfDoors());
+
+
     }
+
+    @Test
+    void testToString(){
+        Volvo240 volvo = new Volvo240(2,100,Color.RED);
+        String carToString = volvo.toString();
+        assertTrue(carToString instanceof String);
+    }
+
 }

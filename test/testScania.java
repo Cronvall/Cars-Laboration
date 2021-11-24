@@ -1,4 +1,4 @@
-import attributes.Ramp;
+import attributes.Platform;
 import org.junit.jupiter.api.*;
 import vehicle.Scania;
 
@@ -9,8 +9,8 @@ public class testScania {
 
     @Test
     void testGetRamp(){
-        Ramp ramp = new Ramp();
-        Scania scania = new Scania(300, Color.CYAN, 10, ramp);
-        assertEquals(ramp, scania.getRamp());
+        Platform platform = new Platform();
+        Scania scania = new Scania(300, Color.CYAN, 10, platform, 2);
+        assertEquals(platform, scania.getRamp());
     }
 }
