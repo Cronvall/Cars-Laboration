@@ -44,6 +44,10 @@ public abstract class Vehicle implements Movable {
         }
     }
 
+    protected void setPosition(Point2D.Double newPosition){
+        position = newPosition;
+    }
+
     private void changeSpeedIfOutsideInterval(double speed){
         System.out.print("Speed was not within required interval [0, 1].");
         if(speed < 0){

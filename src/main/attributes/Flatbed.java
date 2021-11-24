@@ -7,6 +7,7 @@ public class Flatbed {
     private Car[] carLoad;
     private final LoadingMethod loadingMethod;
     private int currentIndex;
+    private int currentLoadOffIndex;
 
     public Flatbed(int loadingCapacity, LoadingMethod loadingMethod){
         if(loadingCapacity > 0)
@@ -15,11 +16,11 @@ public class Flatbed {
             System.out.println("Input a valid Capacity for your attributes.Flatbed");
 
         this.loadingMethod = loadingMethod;
+        this.currentIndex = 0;
 
         if(loadingMethod == LoadingMethod.FirstOnFirstOff)
-            currentIndex = 0;
-        else if(loadingMethod == LoadingMethod.FirstOnLastOff)
-            currentIndex = loadingCapacity - 1;
+            currentLoadOffIndex = 0;
+        else currentLoadOffIndex = loadingCapacity - 1;
     }
 
     public Car[] getCarLoad(){
@@ -31,12 +32,10 @@ public class Flatbed {
         if(currentIndex < carLoad.length && currentIndex >= 0){
             if(carLoad[currentIndex] == null){
                 carLoad[currentIndex] = car;
+
                 //SET NEW INDEX
                 if(currentIndex != carLoad.length - 1){
-                    if(loadingMethod == LoadingMethod.FirstOnFirstOff)
                         currentIndex += 1;
-                    else if(currentIndex != 0)
-                        currentIndex -= 1;
                 }
             }
             else System.out.println("There is already a car in this place.");
@@ -50,7 +49,6 @@ public class Flatbed {
         else removalFirstOnFirstOff();
     }
 
-    private int currentLoadOffIndex = 0;
     private void removalFirstOnFirstOff(){
         if(carLoad[currentLoadOffIndex] != null){
             carLoad[currentLoadOffIndex] = null;
@@ -59,16 +57,8 @@ public class Flatbed {
         }
     }
     private void removalFirstOnLastOff(){
-        Car[] newArray = carLoad;
-        newArray[currentIndex] = null;
-        carLoad = newArray;
+        carLoad[currentIndex -1] = null;
 
-        //SET NEW INDEX
-        if(currentIndex != 0 && currentIndex != carLoad.length - 1){
-            if(loadingMethod == LoadingMethod.FirstOnFirstOff)
-                currentIndex -= 1;
-            else currentIndex += 1;
-        }
     }
 
 

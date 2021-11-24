@@ -16,6 +16,8 @@ public class testFerry {
 
         f.loadCar(new Saab95(2,100, Color.red));
         f.loadCar(new Volvo240(4,150, Color.red));
+        f.move();
+        assertEquals(f.getPosition(), f.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");
 
         System.out.println(Arrays.toString(f.getLoad()));
         assertNotNull(f.getLoad()[0], "Should be a SAAB here");
