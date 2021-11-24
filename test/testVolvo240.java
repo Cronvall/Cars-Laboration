@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.*;
+import vehicle.Volvo240;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.*;
 

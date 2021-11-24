@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.*;
+import vehicle.*;
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -121,26 +122,6 @@ public class testVehicle {
         desiredSpeed -= (120 * 0.01 * 0.3);
         assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after deceleration");
 
-    }
-
-    @Test
-    void testSetCurrentSpeed(){
-        Volvo240 volvo = new Volvo240(2,100,Color.blue);
-        volvo.startEngine();
-        //Speed is only allowed to be in the range of (0, 100) this since 100 equals the engine power for this sample.
-
-        for(int speed = -50; speed < 150; speed++){
-            volvo.setCurrentSpeed(speed);
-            if(speed <= 0)
-                assertEquals(0,volvo.getCurrentSpeed(), "Asserts speed defaults to 0 if it is set lower or equal to zero.");
-
-            else if(speed > 100)
-                assertEquals(100, volvo.getCurrentSpeed(), "Asserts speed defaults to enginePower if it is set higher then the engine power.");
-
-            else{
-                assertEquals(speed, volvo.getCurrentSpeed(), "Since the the new speed was in the defined range it should now be the current speed.");
-            }
-        }
     }
 
     @Test

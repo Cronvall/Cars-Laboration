@@ -1,4 +1,7 @@
+import attributes.Ramp;
 import org.junit.jupiter.api.*;
+import vehicle.Scania;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.*;
 

@@ -1,3 +1,7 @@
+import attributes.*;
+import vehicle.*;
+import workshops.*;
+
 import java.awt.*;
 import java.util.Arrays;
 
@@ -5,6 +9,8 @@ public class Main {
 
     public static void main(String[] args){
         workshop();
+        scaniaRun();
+        volvoRun();
     }
 
     public static void scaniaRun(){

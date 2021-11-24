@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.*;
-import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
+import vehicle.*;
+
+import java.awt.*;
 
 public class testCar {
     @Test

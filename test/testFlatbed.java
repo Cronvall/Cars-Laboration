@@ -1,4 +1,7 @@
+import attributes.Flatbed;
 import org.junit.jupiter.api.*;
+import vehicle.Volvo240;
+
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
