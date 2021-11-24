@@ -52,7 +52,6 @@ public class Flatbed {
         }
     }
 
-
     public enum LoadingMethod{
         FirstOnFirstOff, //Ex. This would apply to ferries and a like where you can open the "flatbed" from two sides.
         FirstOnLastOff  //Ex. This would apply to trucks since they only can unload from behind.

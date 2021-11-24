@@ -4,9 +4,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-
+        workshop();
     }
-
 
     public static void scaniaRun(){
         Ramp rampForScania = new Ramp();
@@ -14,6 +13,17 @@ public class Main {
         firstScania.getRamp().raise(90);
     }
 
+    public static void workshop(){
+        VolvoExclusiveWorkShop volvo = new VolvoExclusiveWorkShop(new Point(10, 20), 8);
+        Volvo240 vol = new Volvo240(2, 300, Color.red);
+        Saab95 saab = new Saab95(2, 300, Color.green);
+
+        volvo.addVehicle(vol);
+        volvo.addVehicle(vol);
+
+        //volvo.removeVehicle(saab);
+        volvo.changeOilFilter(vol);
+    }
 
     public static void volvoRun(){
         Volvo240 v1 = new Volvo240(2, 125, Color.green);

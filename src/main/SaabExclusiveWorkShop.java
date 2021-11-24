@@ -1,10 +1,16 @@
+import java.awt.*;
+
 public class SaabExclusiveWorkShop extends WorkShop<Saab95>{
 
-
-     public void admitCar(Saab95 car){
-        super.admitCar(car);
+    public SaabExclusiveWorkShop(Point gpsLocation, int capacity){
+        super(gpsLocation, capacity);
     }
-
-    // TODO add a method that removes a car from the workshop
-    // TODO do the same in Volvoexclusive
+     @Override
+     public void addVehicle(Saab95 car){
+        super.addVehicle(car);
+    }
+    @Override
+    public void removeVehicle(Saab95 saab95){
+         super.removeVehicle(saab95);
+    }
 }
