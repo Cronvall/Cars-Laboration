@@ -1,7 +1,4 @@
 package vehicle;
-
-import vehicle.Movable;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 
@@ -93,7 +90,8 @@ public abstract class Vehicle implements Movable {
      * @param newPosition Defines the new position the vehicle will take
      */
     protected void setPosition(Point2D.Double newPosition){
-        position = newPosition;
+
+        position = new Point2D.Double(newPosition.getX(), newPosition.getY());
     }
 
     /**

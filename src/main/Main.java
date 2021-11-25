@@ -8,18 +8,16 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-        workshop();
-        scaniaRun();
-        volvoRun();
+        ferryRun();
     }
 
-    public static void scaniaRun(){
+    private static void scaniaRun(){
         Platform rampForScania = new Platform();
         Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
         firstScania.getRamp().raise(90);
     }
 
-    public static void workshop(){
+    private static void workshop(){
         VolvoExclusiveWorkShop volvo = new VolvoExclusiveWorkShop(new Point(10, 20), 8);
         Volvo240 vol = new Volvo240(2, 300, Color.red);
         Saab95 saab = new Saab95(2, 300, Color.green);
@@ -35,7 +33,7 @@ public class Main {
         volvo.changeOilFilter(vol);
     }
 
-    public static void volvoRun(){
+    private static void volvoRun(){
         Volvo240 v1 = new Volvo240(2, 125, Color.green);
 
         System.out.println("Before running speed: " + v1.getCurrentSpeed()+ " and position: " + v1.getPosition());
@@ -59,7 +57,7 @@ public class Main {
 
     }
 
-    public static void saabRun(){
+    private static void saabRun(){
         Saab95 saab = new Saab95(2, 100, Color.red);
 
         saab.startEngine();
@@ -72,17 +70,29 @@ public class Main {
         System.out.println(saab.getPosition());
     }
 
-    public static void ferryRun(){
+    private static void ferryRun(){
         Ferry f1 = new Ferry(100);
-        System.out.println(Arrays.toString(f1.getLoad()));
-        f1.loadCar(new Saab95(2,100,Color.red));
+        Saab95 saab = new Saab95(2,100,Color.red);
+
+        f1.loadCar(saab);
+        System.out.println("-----------First-----------");
         System.out.println(Arrays.toString(f1.getLoad()));
         f1.startEngine();
-        System.out.println(f1.getPosition());
         f1.move();
-        System.out.println(f1.getPosition());
+        f1.move();
+        System.out.println(Arrays.toString(f1.getLoad()));
+
+        System.out.println("-----------Second-----------");
         f1.loadOffCar();
         System.out.println(Arrays.toString(f1.getLoad()));
+        System.out.println("ferry position: " + f1.getPosition());
+        System.out.println("saab position: "+ saab.getPosition());
+        System.out.println("saab pace: "+ saab.getCurrentSpeed());
+
+        System.out.println("-----------Third-----------");
+        f1.move();
+        System.out.println("ferry position: " + f1.getPosition());
+        System.out.println("saab position: "+ saab.getPosition());
     }
 
 }
