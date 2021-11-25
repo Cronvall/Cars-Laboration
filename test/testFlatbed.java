@@ -28,7 +28,7 @@ public class testFlatbed {
 
         fb.removeCar();
         assertEquals(2,fb.getCarLoad().length);
-        assertNull(fb.getCarLoad()[1]);
+        assertNotNull(fb.getCarLoad()[1]);
     }
 
 }

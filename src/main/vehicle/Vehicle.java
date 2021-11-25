@@ -1,7 +1,4 @@
 package vehicle;
-
-import vehicle.Movable;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 

@@ -1,5 +1,4 @@
 package vehicle;
-
 import attributes.*;
 import java.awt.geom.Point2D;
 
@@ -38,5 +37,22 @@ public class carLoader<T extends Vehicle> {
 
     public Car[] getLoad(){
         return flatbed.getCarLoad();
+    }
+
+    //Used to move the cars that are stored in the transporter
+    void moveLoad(T self){
+        for(int i  = 0; i < this.getLoad().length; i++){
+            if(this.getLoad()[i] != null)
+                this.getLoad()[i].setPosition(self.getPosition());
+        }
+    }
+
+    public boolean isEmpty(){
+        boolean result = true;
+        for(int i = 0; i < this.getLoad().length; i++){
+            if(this.getLoad()[i] != null)
+                result = false;
+        }
+        return result;
     }
 }
