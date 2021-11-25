@@ -34,14 +34,25 @@ public class Ferry extends Vehicle  {
         else System.out.printf("The platform needs to be raised before moving, current angle: %d", carLoader.getPlatform().getAngle());
     }
 
+    /**
+     * Loads a car onto the Ferry
+     * @param car the car to be loaded
+     */
     public void loadCar(Car car){
         carLoader.loadCar(car, this);
     }
 
+    /**
+     * Offloads a car from the Ferry
+     */
     public void loadOffCar(){
         carLoader.loadOffCar();
     }
 
+    /**
+     * Displays which cars are being carried
+     * @return
+     */
     public Car[] getLoad(){
         return carLoader.getLoad();
     }

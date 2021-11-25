@@ -12,12 +12,12 @@ public abstract class Truck extends Car {
 
     /**
      * Initiates a new Car of the class Truck
-     * @param enginePower Describes the engine's power and defines the speed of the vehicle
-     * @param color Describes the color of the vehicle
-     * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
+     * @param enginePower Describes the engine's power
+     * @param color Describes the color of the Truck
+     * @param modelName Displays the name of the model(Scania etc.)
      * @param requiresDriverLicenseC Describes whether the Truck requires a type C driver's license
      * @param grossWeightInTons Describes the Truck's gross weight in tons
-     * @param nrDoors Describes the car's number of door
+     * @param nrDoors Describes the Truck's number of doors
      */
     protected Truck(int enginePower, Color color, String modelName,
                     boolean requiresDriverLicenseC, double grossWeightInTons, int nrDoors){

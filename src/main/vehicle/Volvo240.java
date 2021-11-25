@@ -11,9 +11,9 @@ public class Volvo240 extends Car {
 
     /**
      * Initiates a new Car of the class Volvo240
-     * @param nrDoors
-     * @param enginePower
-     * @param col
+     * @param nrDoors Describes the Car's number of doors
+     * @param enginePower Describes the engine's power
+     * @param col Describes the color of the Car
      */
     public Volvo240(int nrDoors, int enginePower, Color col){
         super(nrDoors,enginePower,col,"Volvo-240");

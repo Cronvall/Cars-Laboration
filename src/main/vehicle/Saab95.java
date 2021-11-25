@@ -13,9 +13,9 @@ public class Saab95 extends Car {
 
     /**
      * Initiates a new Car of the class Saab95
-     * @param nrDoors
-     * @param enginePower
-     * @param col
+     * @param nrDoors Describes the Car's number of doors
+     * @param enginePower Describes the engine's power
+     * @param col Describes the color of the Car
      */
     public Saab95(int nrDoors, int enginePower, Color col){
         super(nrDoors,enginePower,col,"Saab-95");

@@ -11,8 +11,8 @@ public abstract class Car  extends Vehicle {
     /**
      * Initiates a new Vehicle of the Class Car
      * @param nrDoors Describes the car's number of doors
-     * @param enginePower Describes the engine's power and defines the speed of the vehicle
-     * @param color Describes the color of the vehicle
+     * @param enginePower Describes the engine's power
+     * @param color Describes the color of the Car
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
     protected Car(int nrDoors, int enginePower, Color color, String modelName){

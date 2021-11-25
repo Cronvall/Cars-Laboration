@@ -18,7 +18,7 @@ public abstract class Vehicle implements Movable {
 
     /**
      * Initiates a new object of the class Vehicle
-     * @param enginePower Describes the engine's power and defines the speed of the vehicle
+     * @param enginePower Describes the engine's power
      * @param col Describes the color of the vehicle
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
