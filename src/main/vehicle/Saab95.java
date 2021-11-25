@@ -4,20 +4,39 @@ import vehicle.Car;
 
 import java.awt.*;
 
+/**
+ * A Saab95 is a Car with turbo deciding its speed factor
+ */
 public class Saab95 extends Car {
 
     private boolean turboOn;
-    
+
+    /**
+     * Initiates a new Car of the class Saab95
+     * @param nrDoors
+     * @param enginePower
+     * @param col
+     */
     public Saab95(int nrDoors, int enginePower, Color col){
         super(nrDoors,enginePower,col,"Saab-95");
 	    turboOn = false;
     }
 
+    /**
+     * Returns true(Turbo is on) or false(Turbo is off)
+     * @return
+     */
     public boolean getTurbo(){ return  turboOn;}
 
+    /**
+     * Turns on Turbo
+     */
     public void setTurboOn(){
 	    turboOn = true;
     }
+    /**
+     * Turns off Turbo
+     */
     public void setTurboOff(){
 	    turboOn = false;
     }

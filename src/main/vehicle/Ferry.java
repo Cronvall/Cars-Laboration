@@ -3,11 +3,17 @@ import attributes.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
 
-
+/**
+ * A Ferry is a Vehicle that can Carry a certain amount of Cars on its flatbed
+ */
 public class Ferry extends Vehicle  {
 
     private final carLoader<Ferry> carLoader;
 
+    /**
+     * Initiates a new Vehicle of the class Ferry
+     * @param weight Describes the Ferry's weight
+     */
     public Ferry(double weight){
         super(500, Color.white,"vehicle.Ferry");
         carLoader = new carLoader<>(20, Flatbed.LoadingMethod.FirstOnFirstOff);
