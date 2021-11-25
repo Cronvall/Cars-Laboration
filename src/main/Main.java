@@ -85,11 +85,12 @@ public class Main {
         System.out.println("-----------Second-----------");
         f1.loadOffCar();
         System.out.println(Arrays.toString(f1.getLoad()));
+        System.out.println("ferry position: " + f1.getPosition());
         System.out.println("saab position: "+ saab.getPosition());
         System.out.println("saab pace: "+ saab.getCurrentSpeed());
 
         System.out.println("-----------Third-----------");
-        f1.move();          //TODO BUG - SAAB MOVES WITH THE FERRY WHEN NOT LOADED
+        f1.move();
         System.out.println("ferry position: " + f1.getPosition());
         System.out.println("saab position: "+ saab.getPosition());
     }

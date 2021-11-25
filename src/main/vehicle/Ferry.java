@@ -20,10 +20,10 @@ public class Ferry extends Vehicle  {
     @Override
     public void move(){
         if(carLoader.getPlatform().getAngle() == 0){
+            super.move();
            if(!carLoader.isEmpty()){
                carLoader.moveLoad(this);
            }
-            super.move();
         }
         else System.out.printf("The platform needs to be raised before moving, current angle: %d", carLoader.getPlatform().getAngle());
     }

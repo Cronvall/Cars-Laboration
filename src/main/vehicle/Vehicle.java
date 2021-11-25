@@ -42,7 +42,8 @@ public abstract class Vehicle implements Movable {
     }
 
     protected void setPosition(Point2D.Double newPosition){
-        position = newPosition;
+
+        position = new Point2D.Double(newPosition.getX(), newPosition.getY());
     }
 
     private void changeSpeedIfOutsideInterval(double speed){

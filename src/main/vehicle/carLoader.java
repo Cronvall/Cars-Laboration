@@ -43,15 +43,17 @@ public class carLoader<T extends Vehicle> {
     void moveLoad(T self){
         for(int i  = 0; i < this.getLoad().length; i++){
             if(this.getLoad()[i] != null)
-                this.getLoad()[i].setPosition(self.getPosition());
+                this.getLoad()[i].setPosition(self.getPosition()); //Since the ferry hasn't moved it won't give the right update of position
         }
     }
 
     public boolean isEmpty(){
         boolean result = true;
         for(int i = 0; i < this.getLoad().length; i++){
-            if(this.getLoad()[i] != null)
+            if(this.getLoad()[i] != null){
                 result = false;
+                break;
+            }
         }
         return result;
     }
