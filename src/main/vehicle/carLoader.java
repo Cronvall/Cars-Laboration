@@ -6,11 +6,11 @@ public class carLoader<T extends Vehicle> {
 
     private final Flatbed flatbed;
     private final Platform platform;
-    int slots;
+    private int slots;
 
     public carLoader(int slots, Flatbed.LoadingMethod loadingMethod){
-        platform = new Platform();
-        flatbed = new Flatbed(slots, loadingMethod);
+        this.platform = new Platform();
+        this.flatbed = new Flatbed(slots, loadingMethod);
         this.slots = slots;
     }
 
@@ -18,17 +18,31 @@ public class carLoader<T extends Vehicle> {
         return platform;
     }
 
-    //Functionality
-    public void loadCar(Car car, T self){
-        Point2D.Double carPosition = car.getPosition();
+    public void loadCar(Car carToLoad, T vehicleToLoadOn){
+        boolean allowedToLoad = isCarAllowedToLoad(carToLoad.getPosition(), vehicleToLoadOn.getPosition());
 
-        //Översikt för konstanten 10 då den eventuellt kan vara för stor / liten.
-        boolean statementX = self.getPosition().getX() - 10 < carPosition.getX() && carPosition.getX()< self.getPosition().getX() + 10;
-        boolean statementY = self.getPosition().getY() - 10 < carPosition.getY() && carPosition.getY()< self.getPosition().getY() + 10;
-        if(statementX && statementY){
-            car.setPosition(self.getPosition());
-            flatbed.loadCar(car);
+        if(allowedToLoad){
+            loadCarAndUpdateCoordinate(carToLoad, vehicleToLoadOn);
         }
+    }
+
+    private boolean isCarAllowedToLoad(Point2D.Double carPosition, Point2D.Double loadVehicle){
+        boolean withinLoadingX = controlIfInLoadingRange(carPosition.getX(), loadVehicle.getY());
+        boolean withinLoadingY = controlIfInLoadingRange(carPosition.getY(), loadVehicle.getY());
+        boolean allowedToLoad = withinLoadingY && withinLoadingX;
+        return allowedToLoad;
+    }
+
+    private boolean controlIfInLoadingRange(double carCoordinate, double loaderCoordinate){
+        double allowedLoadingDistance = 5.0;
+        boolean insideCoordinate = Math.abs(carCoordinate - loaderCoordinate) < allowedLoadingDistance;
+        return insideCoordinate;
+    }
+
+    private void loadCarAndUpdateCoordinate(Car carToLoad, T vehicleToLoadOn){
+        flatbed.loadCar(carToLoad);
+
+        carToLoad.setPosition(vehicleToLoadOn.getPosition());
     }
 
     public void loadOffCar(){
