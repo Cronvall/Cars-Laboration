@@ -1,4 +1,4 @@
-import attributes.Flatbed;
+import vehicle.helperAttributes.Flatbed;
 import org.junit.jupiter.api.*;
 import vehicle.Volvo240;
 

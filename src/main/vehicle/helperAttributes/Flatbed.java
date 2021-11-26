@@ -1,4 +1,4 @@
-package attributes;
+package vehicle.helperAttributes;
 
 import vehicle.Car;
 
@@ -21,7 +21,7 @@ public class Flatbed {
         if(loadingCapacity > 0)
             carLoad = new Car[loadingCapacity];
         else
-            System.out.println("Input a valid Capacity for your attributes.Flatbed");
+            System.out.println("Input a valid Capacity for your vehicle.helperAttributes.Flatbed");
 
         this.loadingMethod = loadingMethod;
         this.currentIndex = 0;

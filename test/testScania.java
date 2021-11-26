@@ -1,4 +1,4 @@
-import attributes.Platform;
+import vehicle.helperAttributes.Platform;
 import org.junit.jupiter.api.*;
 import vehicle.Scania;
 

@@ -90,7 +90,6 @@ public abstract class Vehicle implements Movable {
      * @param newPosition Defines the new position the vehicle will take
      */
     protected void setPosition(Point2D.Double newPosition){
-
         position = new Point2D.Double(newPosition.getX(), newPosition.getY());
     }
 

@@ -1,4 +1,4 @@
-package attributes;
+package vehicle.helperAttributes;
 
 /**
  * A Platform can be raised, lowered and change its angle to the ground

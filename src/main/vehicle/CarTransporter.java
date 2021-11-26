@@ -1,6 +1,6 @@
 package vehicle;
 
-import attributes.Flatbed;
+import vehicle.helperAttributes.Flatbed;
 
 import java.awt.*;
 

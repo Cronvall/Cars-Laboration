@@ -1,5 +1,6 @@
 package vehicle;
-import attributes.*;
+import vehicle.helperAttributes.Flatbed;
+import vehicle.helperAttributes.Platform;
 
 import java.awt.geom.Point2D;
 

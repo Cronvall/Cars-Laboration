@@ -1,6 +1,6 @@
 package vehicle;
 
-import attributes.Platform;
+import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
 

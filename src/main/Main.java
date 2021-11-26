@@ -1,5 +1,5 @@
-import attributes.*;
 import vehicle.*;
+import vehicle.helperAttributes.Platform;
 import workshops.*;
 
 import java.awt.*;
