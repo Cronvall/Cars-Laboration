@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class testWorkshops {
 
+
     @Test
     void addingVehicleToWorkshop(){
 
@@ -20,6 +21,21 @@ public class testWorkshops {
         ArrayList<Vehicle> workshop = volvoW.getVehiclesInWorkshop();
         assertEquals(volvo1, workshop.get(0));
         volvoW.removeVehicle(volvo1);
+
+    }
+
+    @Test
+    void maxCapacity(){
+        VolvoExclusiveWorkShop volvoW = new VolvoExclusiveWorkShop(new Point(2, 2), 1);
+        Volvo240 v1 = new Volvo240(2, 30, Color.green);
+        Volvo240 v2 = new Volvo240(2, 34, Color.black);
+
+        volvoW.addVehicle(v1);
+
+        assertThrows(IllegalArgumentException.class,
+                () -> volvoW.addVehicle(v2),
+                "Expected to throw too many vehicles, but it didn't");
+
     }
 
     @Test

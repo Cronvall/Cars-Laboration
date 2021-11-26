@@ -1,5 +1,6 @@
 package vehicle;
 import attributes.*;
+
 import java.awt.geom.Point2D;
 
 public class carLoader<T extends Vehicle> {
@@ -27,9 +28,9 @@ public class carLoader<T extends Vehicle> {
     }
 
     private boolean isCarAllowedToLoad(Point2D.Double carPosition, Point2D.Double loadVehicle){
-        boolean withinLoadingX = controlIfInLoadingRange(carPosition.getX(), loadVehicle.getY());
-        boolean withinLoadingY = controlIfInLoadingRange(carPosition.getY(), loadVehicle.getY());
-        boolean allowedToLoad = withinLoadingY && withinLoadingX;
+        boolean withinLoadingRangeX = controlIfInLoadingRange(carPosition.getX(), loadVehicle.getY());
+        boolean withinLoadingRangeY = controlIfInLoadingRange(carPosition.getY(), loadVehicle.getY());
+        boolean allowedToLoad = withinLoadingRangeY && withinLoadingRangeX;
         return allowedToLoad;
     }
 
@@ -41,12 +42,20 @@ public class carLoader<T extends Vehicle> {
 
     private void loadCarAndUpdateCoordinate(Car carToLoad, T vehicleToLoadOn){
         flatbed.loadCar(carToLoad);
+        updateLoadPosition(vehicleToLoadOn, carToLoad);
+    }
 
-        carToLoad.setPosition(vehicleToLoadOn.getPosition());
+    private void updateLoadPosition(T vehicleToLoadOn, Car car){
+        double loadOffX = vehicleToLoadOn.getPosition().getX();
+        double loadOffY = vehicleToLoadOn.getPosition().getY();
+        Point2D.Double newPosition = new Point2D.Double(loadOffX, loadOffY);
+
+        car.setPosition(newPosition);
     }
 
     public void loadOffCar(){
         flatbed.removeCar();
+
     }
 
     public Car[] getLoad(){

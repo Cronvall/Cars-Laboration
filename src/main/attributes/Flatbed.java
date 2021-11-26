@@ -59,8 +59,8 @@ public class Flatbed {
     private void removalFirstOnLastOff(){
         carLoad[currentIndex -1] = null;
 
-    }
 
+    }
 
     public enum LoadingMethod{
         FirstOnFirstOff, //Ex. This would apply to ferries and a like where you can open the "flatbed" from two sides.

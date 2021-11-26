@@ -9,8 +9,9 @@ import vehicle.*;
  */
 public class WorkShop<T extends Car> implements IWorkShop {
 
-    private ArrayList<Vehicle> vehiclesInWorkshop;
+    private ArrayList<Vehicle> vehiclesInWorkshop = new ArrayList<>();
     private Point gpsLocations;
+    private int workShopCapacity;
 
     /**
      * Initiates a new object of the class WorkShop
@@ -19,11 +20,11 @@ public class WorkShop<T extends Car> implements IWorkShop {
      */
     public WorkShop(Point gpsLocations, int capacity){
         this.gpsLocations = gpsLocations;
-        this.vehiclesInWorkshop = new ArrayList<>(capacity);
+        this.workShopCapacity = capacity;
     }
 
     /**
-     * Returns the list with the vehicles in the workshop
+     * Returns a list with the vehicles in the workshop
      * @return
      */
     public ArrayList<Vehicle> getVehiclesInWorkshop() {
@@ -35,16 +36,30 @@ public class WorkShop<T extends Car> implements IWorkShop {
      * @param vehicle
      */
     public void addVehicle(T vehicle){
-        controlIfInWorkShop(vehicle);
+        willCapacityExceed(vehicle);
     }
 
+
+    /**
+     * If within capacity add a vehicle otherwise throw exception
+     * @param vehicle to add
+     */
+    private void willCapacityExceed(T vehicle) {
+        boolean exceedCapacity = vehiclesInWorkshop.size() < workShopCapacity;
+        if (exceedCapacity) {
+            controlIfInWorkShop(vehicle);
+        }
+        else{
+            throw new IllegalArgumentException("Too many vehicles in the workshop");
+        }
+    }
     /**
      * Asserts that the vehicle is not already in the workshop
      * @param vehicle
      */
     private void controlIfInWorkShop(T vehicle){
-        if (!vehicleInWorkShop(vehicle)){
-            System.out.println("vehicle.Vehicle is already admitted");
+        if (vehicleInWorkShop(vehicle)){
+            System.out.println("Vehicle is already admitted");
         }
         else {
             vehiclesInWorkshop.add(vehicle);
@@ -58,9 +73,9 @@ public class WorkShop<T extends Car> implements IWorkShop {
      */
     private boolean vehicleInWorkShop(T vehicle){
         if (vehiclesInWorkshop.contains(vehicle)){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
