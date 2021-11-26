@@ -2,6 +2,9 @@ package attributes;
 
 import vehicle.Car;
 
+/**
+ * A Flatbed is what carLoaders carry cars on top of
+ */
 public class Flatbed {
 
     private Car[] carLoad;
@@ -9,6 +12,11 @@ public class Flatbed {
     private int currentIndex;
     private int currentLoadOffIndex;
 
+    /**
+     * Initiates a new object of the class Flatbed
+     * @param loadingCapacity Describes how many cars can be carried
+     * @param loadingMethod Describes by which order the flatbed loads off cars
+     */
     public Flatbed(int loadingCapacity, LoadingMethod loadingMethod){
         if(loadingCapacity > 0)
             carLoad = new Car[loadingCapacity];
@@ -23,10 +31,18 @@ public class Flatbed {
         else currentLoadOffIndex = loadingCapacity - 1;
     }
 
+    /**
+     * Returns an array displaying what cars are being carried
+     * @return
+     */
     public Car[] getCarLoad(){
         return carLoad;
     }
 
+    /**
+     * Laods a car onto the flatbed
+     * @param car Refers to the car being loaded
+     */
     public void loadCar(Car car){
 
         if(currentIndex < carLoad.length && currentIndex >= 0){
@@ -43,12 +59,18 @@ public class Flatbed {
         else System.out.println("The flatbed is already full, you'll need to load off a car first to fit another one.");
     }
 
+    /**
+     * Removes a car from the flatbed
+     */
     public void removeCar(){
         if(loadingMethod == LoadingMethod.FirstOnLastOff)
             removalFirstOnLastOff();
         else removalFirstOnFirstOff();
     }
 
+    /**
+     * Tells the Flatbed which car to offload next when loadingMethod = FirstOnFirstOff
+     */
     private void removalFirstOnFirstOff(){
         if(carLoad[currentLoadOffIndex] != null){
             carLoad[currentLoadOffIndex] = null;
@@ -56,6 +78,10 @@ public class Flatbed {
                 currentLoadOffIndex++;
         }
     }
+
+    /**
+     * Tells the Flatbed which car to offload next when loadingMethod = FirstOnLastOff
+     */
     private void removalFirstOnLastOff(){
         carLoad[currentIndex -1] = null;
 
