@@ -25,6 +25,14 @@ public class Platform {
     }
 
     /**
+     * Returns if vehicles is allowed to move
+     * @return returns the boolean if allowed
+     */
+    public boolean getAllowMotion(){
+        return allowMotion;
+    }
+
+    /**
      * Changes the platform's angle to the ground
      * @param newAngle The desired angle
      */
@@ -59,14 +67,14 @@ public class Platform {
 
     /**
      * Raises the Platform by a given amount of degrees
-     * @param RaiseAngle The amount of degrees the Platform will be raised
+     * @param raiseAngle The amount of degrees the Platform will be raised
      */
-    public void raise(int RaiseAngle){
-        if(RaiseAngle < 0){
+    public void raise(int raiseAngle){
+        if(raiseAngle < 0){
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle + RaiseAngle;
+            int newAngle = angle + raiseAngle;
             setAngle(Math.min(newAngle, 70));
         }
     }

@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class CarTransporter extends Truck {
 
-    private final carLoader<CarTransporter> carLoader;
+    private final LoaderHelper<CarTransporter> LoaderHelper;
 
     /**
      * Initiates a new Truck of the class CarTransporter
@@ -19,14 +19,14 @@ public class CarTransporter extends Truck {
         super(300, Color.CYAN, "DAF",
                 true, 20, 2);
 
-        carLoader = new carLoader<>(slots, Flatbed.LoadingMethod.FirstOnLastOff);
+        LoaderHelper = new LoaderHelper<>(slots, Flatbed.LoadingMethod.FirstOnLastOff);
     }
 
     @Override
     public void move(){
-        if(carLoader.getPlatform().getAngle() == 0)
+        if(LoaderHelper.getPlatform().getAngle() == 0)
             super.move();
-        else System.out.printf("The platform needs to be raised before moving, current angle: %d", carLoader.getPlatform().getAngle());
+        else System.out.printf("The platform needs to be raised before moving, current angle: %d", LoaderHelper.getPlatform().getAngle());
     }
 
     /**
@@ -34,14 +34,14 @@ public class CarTransporter extends Truck {
      * @param car the Car to be carried
      */
     public void loadCar(Car car){
-        carLoader.loadCar(car, this);
+        LoaderHelper.loadCar(car, this);
     }
 
     /**
      * Loads off the car that was last loaded onto the flatbed
      */
     public void loadOffCar(){
-        carLoader.loadOffCar();
+        LoaderHelper.loadOffCar();
     }
 
     /**
@@ -49,6 +49,6 @@ public class CarTransporter extends Truck {
      * @return
      */
     public Car[] getLoad(){
-        return carLoader.getLoad();
+        return LoaderHelper.getLoad();
     }
 }

@@ -53,6 +53,7 @@ public class WorkShop<T extends Car> implements IWorkShop {
             throw new IllegalArgumentException("Too many vehicles in the workshop");
         }
     }
+
     /**
      * Asserts that the vehicle is not already in the workshop
      * @param vehicle

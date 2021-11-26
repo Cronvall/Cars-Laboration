@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-        volvoRun();
+        ferryRun();
     }
 
     private static void scaniaRun(){

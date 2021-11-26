@@ -7,7 +7,7 @@ import java.awt.*;
  */
 public class Ferry extends Vehicle  {
 
-    private final carLoader<Ferry> carLoader;
+    private final LoaderHelper<Ferry> LoaderHelper;
 
     /**
      * Initiates a new Vehicle of the class Ferry
@@ -15,7 +15,7 @@ public class Ferry extends Vehicle  {
      */
     public Ferry(double weight){
         super(500, Color.white,"vehicle.Ferry");
-        carLoader = new carLoader<>(20, Flatbed.LoadingMethod.FirstOnFirstOff);
+        LoaderHelper = new LoaderHelper<>(20, Flatbed.LoadingMethod.FirstOnFirstOff);
     }
 
     @Override
@@ -25,13 +25,13 @@ public class Ferry extends Vehicle  {
 
     @Override
     public void move(){
-        if(carLoader.getPlatform().getAngle() == 0){
+        if(LoaderHelper.getPlatform().getAngle() == 0){
             super.move();
-           if(!carLoader.isEmpty()){
-               carLoader.moveLoad(this);
+           if(!LoaderHelper.isEmpty()){
+               LoaderHelper.moveLoad(this);
            }
         }
-        else System.out.printf("The platform needs to be raised before moving, current angle: %d", carLoader.getPlatform().getAngle());
+        else System.out.printf("The platform needs to be raised before moving, current angle: %d", LoaderHelper.getPlatform().getAngle());
     }
 
     /**
@@ -39,14 +39,14 @@ public class Ferry extends Vehicle  {
      * @param car the car to be loaded
      */
     public void loadCar(Car car){
-        carLoader.loadCar(car, this);
+        LoaderHelper.loadCar(car, this);
     }
 
     /**
      * Offloads a car from the Ferry
      */
     public void loadOffCar(){
-        carLoader.loadOffCar();
+        LoaderHelper.loadOffCar();
     }
 
     /**
@@ -54,6 +54,6 @@ public class Ferry extends Vehicle  {
      * @return
      */
     public Car[] getLoad(){
-        return carLoader.getLoad();
+        return LoaderHelper.getLoad();
     }
 }

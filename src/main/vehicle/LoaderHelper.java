@@ -4,21 +4,21 @@ import attributes.*;
 import java.awt.geom.Point2D;
 
 /**
- * A carLoader refers to a Vehicle that carries cars on a flatbed
+ * A LoaderHelper refers to a Vehicle that carries cars on a flatbed
  * @param <T>
  */
-public class carLoader<T extends Vehicle> {
+public class LoaderHelper<T extends Vehicle> {
 
     private final Flatbed flatbed;
     private final Platform platform;
     private int slots;
 
     /**
-     * Initiates a new Vehicle of the class carLoader
-     * @param slots Describes the amount of cars the carLoader can carry
-     * @param loadingMethod Describes what order the carLoader offloads cars
+     * Initiates a new Vehicle of the class LoaderHelper
+     * @param slots Describes the amount of cars the LoaderHelper can carry
+     * @param loadingMethod Describes what order the LoaderHelper offloads cars
      */
-    public carLoader(int slots, Flatbed.LoadingMethod loadingMethod){
+    public LoaderHelper(int slots, Flatbed.LoadingMethod loadingMethod){
         this.platform = new Platform();
         this.flatbed = new Flatbed(slots, loadingMethod);
         this.slots = slots;
@@ -29,17 +29,17 @@ public class carLoader<T extends Vehicle> {
     }
 
     /**
-     * Loads a car onto the carLoader
-     * @param car Describes the car to be loaded
-     * @param self Refers to the carLoader
+     * Loads a car onto the LoaderHelper
+     * @param carToLoad Describes the car to be loaded
+     * @param vehicleToLoadOn Refers to the LoaderHelper
      */
-    public void loadCar(Car carToLoad, T vehicleToLoadOn){
+    public void loadCar(Car carToLoad, T vehicleToLoadOn) {
         boolean allowedToLoad = isCarAllowedToLoad(carToLoad.getPosition(), vehicleToLoadOn.getPosition());
 
-        if (allowedToLoad){
-            loadCarAndUpdateCoordinate(carToLoad, vehicleToLoadOn)
+        if (allowedToLoad) {
+            loadCarAndUpdateCoordinate(carToLoad, vehicleToLoadOn);
         }
-    
+    }
 
     private boolean isCarAllowedToLoad(Point2D.Double carPosition, Point2D.Double loadVehicle){
         boolean withinLoadingRangeX = controlIfInLoadingRange(carPosition.getX(), loadVehicle.getY());
@@ -68,7 +68,7 @@ public class carLoader<T extends Vehicle> {
     }
 
     /**
-     * Offloads a car from the carLoader
+     * Offloads a car from the LoaderHelper
      */
     public void loadOffCar(){
         flatbed.removeCar();
@@ -76,7 +76,7 @@ public class carLoader<T extends Vehicle> {
     }
 
     /**
-     * Returns an array displaying what cars are on the carLoader
+     * Returns an array displaying what cars are on the LoaderHelper
      * @return
      */
     public Car[] getLoad(){
