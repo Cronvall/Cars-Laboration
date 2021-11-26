@@ -23,11 +23,14 @@ public class Main {
         Saab95 saab = new Saab95(2, 300, Color.green);
 
         WorkShop w1 = new WorkShop(new Point(2, 3), 4);
-        Ferry f1 = new Ferry(4);
+        Ferry f1 = new Ferry(100, 10);
         //w1.addVehicle(f1);
 
         volvo.addVehicle(vol);
         volvo.addVehicle(vol);
+
+        WorkShop work = new WorkShop(new Point(2, 3), 2);
+        Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
 
         //volvo.removeVehicle(saab);
         volvo.changeOilFilter(vol);
@@ -71,7 +74,7 @@ public class Main {
     }
 
     private static void ferryRun(){
-        Ferry f1 = new Ferry(100);
+        Ferry f1 = new Ferry(100, 20);
         Saab95 saab = new Saab95(2,100,Color.red);
 
         f1.loadCar(saab);

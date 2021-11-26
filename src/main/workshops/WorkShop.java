@@ -7,7 +7,7 @@ import vehicle.*;
  * Workshop holds vehicles and have methods to maintain them
  * @param <T>
  */
-public class WorkShop<T extends Car> implements IWorkShop {
+public class WorkShop<T extends Vehicle> implements IWorkShop {
 
     private ArrayList<Vehicle> vehiclesInWorkshop = new ArrayList<>();
     private Point gpsLocations;

@@ -1,6 +1,8 @@
 package vehicle;
 
+import vehicle.helperAttributes.EasyPlatform;
 import vehicle.helperAttributes.Flatbed;
+import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
 
@@ -9,8 +11,9 @@ import java.awt.*;
  */
 public class CarTransporter extends Truck {
 
-    private final LoaderHelper<CarTransporter> LoaderHelper;
-
+    private final LoaderHelper loaderHelper;
+    private final Flatbed flatbed;
+    private EasyPlatform platform = new EasyPlatform();
     /**
      * Initiates a new Truck of the class CarTransporter
      * @param slots Describes how many cars the CarTransporter can carry
@@ -18,15 +21,15 @@ public class CarTransporter extends Truck {
     public CarTransporter(int slots){
         super(300, Color.CYAN, "DAF",
                 true, 20, 2);
-
-        LoaderHelper = new LoaderHelper<>(slots, Flatbed.LoadingMethod.FirstOnLastOff);
+        this.flatbed = new Flatbed(slots, Flatbed.LoadingMethod.FirstOnLastOff);
+        this.loaderHelper = new LoaderHelper(flatbed);
     }
 
     @Override
     public void move(){
-        if(LoaderHelper.getPlatform().getAngle() == 0)
+        if(platform.motionAllowed())
             super.move();
-        else System.out.printf("The platform needs to be raised before moving, current angle: %d", LoaderHelper.getPlatform().getAngle());
+        else System.out.println("The platform needs to be raised before moving!");
     }
 
     /**
@@ -34,14 +37,14 @@ public class CarTransporter extends Truck {
      * @param car the Car to be carried
      */
     public void loadCar(Car car){
-        LoaderHelper.loadCar(car, this);
+        loaderHelper.loadCar(car, this);
     }
 
     /**
      * Loads off the car that was last loaded onto the flatbed
      */
     public void loadOffCar(){
-        LoaderHelper.loadOffCar();
+        loaderHelper.loadOffCar();
     }
 
     /**
@@ -49,6 +52,6 @@ public class CarTransporter extends Truck {
      * @return
      */
     public Car[] getLoad(){
-        return LoaderHelper.getLoad();
+        return loaderHelper.getLoad();
     }
 }

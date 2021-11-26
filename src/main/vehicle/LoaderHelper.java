@@ -1,6 +1,5 @@
 package vehicle;
 import vehicle.helperAttributes.Flatbed;
-import vehicle.helperAttributes.Platform;
 
 import java.awt.geom.Point2D;
 
@@ -10,23 +9,14 @@ import java.awt.geom.Point2D;
  */
 public class LoaderHelper<T extends Vehicle> {
 
-    private final Flatbed flatbed;
-    private final Platform platform;
-    private int slots;
-
+    private Flatbed ownerFlatbed;
     /**
      * Initiates a new Vehicle of the class LoaderHelper
-     * @param slots Describes the amount of cars the LoaderHelper can carry
-     * @param loadingMethod Describes what order the LoaderHelper offloads cars
+     * @param ownerFlatbed the flatbed to load on
      */
-    public LoaderHelper(int slots, Flatbed.LoadingMethod loadingMethod){
-        this.platform = new Platform();
-        this.flatbed = new Flatbed(slots, loadingMethod);
-        this.slots = slots;
-    }
+    public LoaderHelper(Flatbed ownerFlatbed){
+        this.ownerFlatbed = ownerFlatbed;
 
-    public Platform getPlatform(){
-        return platform;
     }
 
     /**
@@ -35,10 +25,14 @@ public class LoaderHelper<T extends Vehicle> {
      * @param vehicleToLoadOn Refers to the LoaderHelper
      */
     public void loadCar(Car carToLoad, T vehicleToLoadOn) {
-        boolean allowedToLoad = isCarAllowedToLoad(carToLoad.getPosition(), vehicleToLoadOn.getPosition());
-
-        if (allowedToLoad) {
-            loadCarAndUpdateCoordinate(carToLoad, vehicleToLoadOn);
+        if (carToLoad == vehicleToLoadOn){
+            throw new IllegalArgumentException("Can't load the vehicle on itself!");
+        }
+        else{
+            boolean allowedToLoad = isCarAllowedToLoad(carToLoad.getPosition(), vehicleToLoadOn.getPosition());
+            if (allowedToLoad) {
+                loadCarAndUpdateCoordinate(carToLoad, vehicleToLoadOn);
+            }
         }
     }
 
@@ -49,6 +43,7 @@ public class LoaderHelper<T extends Vehicle> {
         return allowedToLoad;
     }
 
+
     private boolean controlIfInLoadingRange(double carCoordinate, double loaderCoordinate){
         double allowedLoadingDistance = 5.0;
         boolean insideCoordinate = Math.abs(carCoordinate - loaderCoordinate) < allowedLoadingDistance;
@@ -56,7 +51,7 @@ public class LoaderHelper<T extends Vehicle> {
     }
 
     private void loadCarAndUpdateCoordinate(Car carToLoad, T vehicleToLoadOn){
-        flatbed.loadCar(carToLoad);
+        ownerFlatbed.loadCar(carToLoad);
         updateLoadPosition(vehicleToLoadOn, carToLoad);
     }
 
@@ -72,7 +67,7 @@ public class LoaderHelper<T extends Vehicle> {
      * Offloads a car from the LoaderHelper
      */
     public void loadOffCar(){
-        flatbed.removeCar();
+        ownerFlatbed.removeCar();
 
     }
 
@@ -81,7 +76,7 @@ public class LoaderHelper<T extends Vehicle> {
      * @return
      */
     public Car[] getLoad(){
-        return flatbed.getCarLoad();
+        return ownerFlatbed.getCarLoad();
     }
 
     //Used to move the cars that are stored in the transporter

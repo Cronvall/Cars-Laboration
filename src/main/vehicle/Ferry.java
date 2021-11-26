@@ -1,5 +1,6 @@
 package vehicle;
 import vehicle.helperAttributes.Flatbed;
+import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
 
@@ -8,15 +9,17 @@ import java.awt.*;
  */
 public class Ferry extends Vehicle  {
 
-    private final LoaderHelper<Ferry> LoaderHelper;
-
+    private LoaderHelper loaderHelper;
+    private Flatbed loadOn;
+    private Platform platform = new Platform();
     /**
      * Initiates a new Vehicle of the class Ferry
      * @param weight Describes the Ferry's weight
      */
-    public Ferry(double weight){
+    public Ferry(double weight, int capacity){
         super(500, Color.white,"vehicle.Ferry");
-        LoaderHelper = new LoaderHelper<>(20, Flatbed.LoadingMethod.FirstOnFirstOff);
+        this.loadOn = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
+        this.loaderHelper = new LoaderHelper(loadOn);
     }
 
     @Override
@@ -26,13 +29,13 @@ public class Ferry extends Vehicle  {
 
     @Override
     public void move(){
-        if(LoaderHelper.getPlatform().getAngle() == 0){
+        if(platform.getAngle() == 0){
             super.move();
-           if(!LoaderHelper.isEmpty()){
-               LoaderHelper.moveLoad(this);
+           if(!loaderHelper.isEmpty()){
+               loaderHelper.moveLoad(this);
            }
         }
-        else System.out.printf("The platform needs to be raised before moving, current angle: %d", LoaderHelper.getPlatform().getAngle());
+        else System.out.printf("The platform needs to be raised before moving!");
     }
 
     /**
@@ -40,14 +43,14 @@ public class Ferry extends Vehicle  {
      * @param car the car to be loaded
      */
     public void loadCar(Car car){
-        LoaderHelper.loadCar(car, this);
+        loaderHelper.loadCar(car, this);
     }
 
     /**
      * Offloads a car from the Ferry
      */
     public void loadOffCar(){
-        LoaderHelper.loadOffCar();
+        loaderHelper.loadOffCar();
     }
 
     /**
@@ -55,6 +58,6 @@ public class Ferry extends Vehicle  {
      * @return
      */
     public Car[] getLoad(){
-        return LoaderHelper.getLoad();
+        return loaderHelper.getLoad();
     }
 }

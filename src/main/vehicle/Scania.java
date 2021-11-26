@@ -21,11 +21,9 @@ public class Scania extends Truck {
      */
     public Scania(int enginePower, Color color, double grossWeightInTons,
                   Platform platform, int nrDoors) {
-
         super(enginePower, color, "vehicle.Scania",
                 true, grossWeightInTons, nrDoors);
-
-        this.platform = platform;
+        this.platform =  platform;
     }
 
  //   /**
@@ -34,5 +32,32 @@ public class Scania extends Truck {
  //    */
     public Platform getRamp() {
         return platform;
+    }
+
+
+    /**
+     * Raises platform
+     * @param angle decides how much to raise the platform
+     */
+    public void raisePlatform(int angle){
+        platform.raise(angle);
+    }
+
+    /**
+     * Lowers platform
+     * @param angle decides how much to lower the platform
+     */
+    public void lowerPlatform(int angle){
+        platform.lower(angle);
+    }
+
+    @Override
+    public void move(){
+        if (platform.getAllowMotion()){
+            super.move();
+        }
+        else{
+            System.out.println("Platform is down");
+        }
     }
 }
