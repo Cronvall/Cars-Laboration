@@ -35,6 +35,10 @@ public class Platform {
         setAllowMotion(angle == 0);
     }
 
+    /**
+     * Allows the Truck to move if the Platform''s angle to the ground is 0
+     * @param AllowMotion True(the angle is 0) or False(the angle is not 0)
+     */
     private void setAllowMotion(boolean AllowMotion){
         allowMotion = AllowMotion;
     }
