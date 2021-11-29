@@ -1,5 +1,5 @@
 import vehicle.*;
-import vehicle.helperAttributes.Platform;
+import vehicle.helperAttributes.ComplexPlatform;
 import workshops.*;
 
 import java.awt.*;
@@ -12,7 +12,7 @@ public class Main {
     }
 
     private static void scaniaRun(){
-        Platform rampForScania = new Platform();
+        ComplexPlatform rampForScania = new ComplexPlatform();
         Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
         firstScania.getRamp().raise(90);
     }
@@ -30,7 +30,7 @@ public class Main {
         volvo.addVehicle(vol);
 
         WorkShop work = new WorkShop(new Point(2, 3), 2);
-        Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
+        Scania scan = new Scania(320, Color.RED, 4,new ComplexPlatform(), 2);
 
         //volvo.removeVehicle(saab);
         volvo.changeOilFilter(vol);

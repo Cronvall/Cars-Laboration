@@ -7,9 +7,9 @@ import vehicle.*;
  * Workshop holds vehicles and have methods to maintain them
  * @param <T>
  */
-public class WorkShop<T extends Vehicle> implements IWorkShop {
+public class WorkShop<T extends MotorVehicle> implements IWorkShop {
 
-    private ArrayList<Vehicle> vehiclesInWorkshop = new ArrayList<>();
+    private ArrayList<MotorVehicle> vehiclesInWorkshop = new ArrayList<>();
     private Point gpsLocations;
     private int workShopCapacity;
 
@@ -27,7 +27,7 @@ public class WorkShop<T extends Vehicle> implements IWorkShop {
      * Returns a list with the vehicles in the workshop
      * @return
      */
-    public ArrayList<Vehicle> getVehiclesInWorkshop() {
+    public ArrayList<MotorVehicle> getVehiclesInWorkshop() {
         return vehiclesInWorkshop;
     }
 
@@ -60,7 +60,7 @@ public class WorkShop<T extends Vehicle> implements IWorkShop {
      */
     private void controlIfInWorkShop(T vehicle){
         if (vehicleInWorkShop(vehicle)){
-            System.out.println("Vehicle is already admitted");
+            System.out.println("MotorVehicle is already admitted");
         }
         else {
             vehiclesInWorkshop.add(vehicle);
@@ -88,23 +88,19 @@ public class WorkShop<T extends Vehicle> implements IWorkShop {
     }
 
     @Override
-    public void changeTires(Vehicle vehicle) {
+    public void changeTires(MotorVehicle motorVehicle) {
         System.out.println("Tires changed!");
     }
 
     @Override
-    public void changeOilFilter(Vehicle vehicle) {
+    public void changeOilFilter(MotorVehicle motorVehicle) {
         System.out.println("Oil filter changed!");
     }
 
     @Override
-    public void repairWindShield(Vehicle vehicle) {
+    public void repairWindShield(MotorVehicle motorVehicle) {
         System.out.println("Windshield repaired!");
 
     }
 
-    @Override
-    public void loosenBolts(Vehicle vehicle) {
-        System.out.println("I'm in danger");
-    }
 }

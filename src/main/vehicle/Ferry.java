@@ -1,19 +1,18 @@
 package vehicle;
+import vehicle.helperAttributes.ComplexPlatform;
 import vehicle.helperAttributes.Flatbed;
-import vehicle.helperAttributes.Platform;
-
 import java.awt.*;
 
 /**
- * A Ferry is a Vehicle that can Carry a certain amount of Cars on its flatbed
+ * A Ferry is a MotorVehicle that can Carry a certain amount of Cars on its flatbed
  */
-public class Ferry extends Vehicle  {
+public class Ferry extends MotorVehicle implements ILoadCar {
 
     private LoaderHelper<Ferry> loaderHelper;
     private Flatbed loadOn;
-    private Platform platform = new Platform();
+    private ComplexPlatform complexPlatform = new ComplexPlatform();
     /**
-     * Initiates a new Vehicle of the class Ferry
+     * Initiates a new MotorVehicle of the class Ferry
      * @param weight Describes the Ferry's weight
      */
     public Ferry(double weight, int capacity){
@@ -29,30 +28,27 @@ public class Ferry extends Vehicle  {
 
     @Override
     public void move(){
-        if(platform.getAllowMotion()){
+
+        if(complexPlatform.getAllowMotion()){
+
             super.move();
            if(!loaderHelper.isEmpty()){
                loaderHelper.moveLoad(this);
            }
         }
-        else System.out.printf("The platform needs to be raised before moving!");
+        else System.out.printf("The complexPlatform needs to be raised before moving!");
     }
 
-    /**
-     * Loads a car onto the Ferry
-     * @param car the car to be loaded
-     */
+    @Override
     public void loadCar(Car car){
-        if(platform.getAllowLoading())
+        if(complexPlatform.getAllowMotion())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to be able to load a car.");
     }
 
-    /**
-     * Offloads a car from the Ferry
-     */
+    @Override
     public void loadOffCar(){
-        if(platform.getAllowLoading())
+        if(complexPlatform.getAllowLoading())
         loaderHelper.loadOffCar();
         else System.out.println("You need to lower the platform to be able to unload a car");
     }
@@ -61,7 +57,7 @@ public class Ferry extends Vehicle  {
      * Displays which vehicles are being carried
      * @return
      */
-    public Vehicle[] getLoad(){
+    public MotorVehicle[] getLoad(){
         return loaderHelper.getLoad();
     }
 
@@ -69,7 +65,7 @@ public class Ferry extends Vehicle  {
         return loaderHelper;
     }
 
-    public Platform getPlatform(){
-        return platform;
+    public ComplexPlatform getPlatform(){
+        return complexPlatform;
     }
 }
