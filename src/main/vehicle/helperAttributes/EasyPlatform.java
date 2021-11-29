@@ -1,6 +1,6 @@
 package vehicle.helperAttributes;
 
-public class EasyPlatform {
+public class EasyPlatform{
 
     boolean platformUp;
 
@@ -11,12 +11,13 @@ public class EasyPlatform {
     public boolean motionAllowed(){
         return platformUp;
     }
+    public boolean loadingAllowed(){return !platformUp;}
 
-    public void rampDown(){
+    public void lower(){
         platformUp = false;
     }
 
-    public void rampUp(){
+    public void raise(){
         platformUp = true;
     }
 }

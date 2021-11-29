@@ -2,7 +2,6 @@ package vehicle;
 
 import vehicle.helperAttributes.EasyPlatform;
 import vehicle.helperAttributes.Flatbed;
-import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
 
@@ -11,7 +10,7 @@ import java.awt.*;
  */
 public class CarTransporter extends Truck {
 
-    private final LoaderHelper loaderHelper;
+    private final LoaderHelper<CarTransporter> loaderHelper;
     private final Flatbed flatbed;
     private EasyPlatform platform = new EasyPlatform();
     /**
@@ -27,8 +26,12 @@ public class CarTransporter extends Truck {
 
     @Override
     public void move(){
-        if(platform.motionAllowed())
+        if(platform.motionAllowed()){
             super.move();
+            if(!loaderHelper.isEmpty()){
+                loaderHelper.moveLoad(this);
+            }
+        }
         else System.out.println("The platform needs to be raised before moving!");
     }
 
@@ -37,21 +40,28 @@ public class CarTransporter extends Truck {
      * @param car the Car to be carried
      */
     public void loadCar(Car car){
+        if(platform.loadingAllowed())
         loaderHelper.loadCar(car, this);
+        else System.out.println("You need to lower the ramp to load a car");
     }
-
     /**
      * Loads off the car that was last loaded onto the flatbed
      */
     public void loadOffCar(){
+        if(platform.loadingAllowed())
         loaderHelper.loadOffCar();
+        else System.out.println("You need to lower them to unload a car");
     }
 
     /**
      * Returns an array displaying the vehicles being carried
-     * @return
+     * @return the load that is loaded upon the flatbed
      */
     public Vehicle[] getLoad(){
         return loaderHelper.getLoad();
+    }
+
+    public EasyPlatform getPlatform(){
+        return platform;
     }
 }

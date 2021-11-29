@@ -3,10 +3,11 @@ package vehicle.helperAttributes;
 /**
  * A Platform can be raised, lowered and change its angle to the ground
  */
-public class Platform {
+public class Platform{
 
     private int angle;
     private boolean allowMotion;
+    private boolean allowLoading;
 
     /**
      * Initiates a new object of the class Platform
@@ -14,6 +15,7 @@ public class Platform {
     public Platform(){
         angle = 0;
         allowMotion = true;
+        allowLoading = false;
     }
 
     /**
@@ -33,6 +35,12 @@ public class Platform {
     }
 
     /**
+     * Returns if you are allowed to (un)load a car
+     * @return returns the boolean with above condition
+     */
+    public boolean getAllowLoading(){return allowLoading;}
+
+    /**
      * Changes the platform's angle to the ground
      * @param newAngle The desired angle
      */
@@ -41,6 +49,7 @@ public class Platform {
             angle = newAngle;
 
         setAllowMotion(angle == 0);
+        setAllowLoading(angle == 70);
     }
 
     /**
@@ -52,6 +61,12 @@ public class Platform {
     }
 
     /**
+     * Allows the Truck to (un)load if the Platform''s angle to the ground is 70
+     * @param AllowLoading True(the angle is 70) or False(the angle is not 70)
+     */
+    private void setAllowLoading(boolean AllowLoading){allowLoading = AllowLoading;}
+
+    /**
      * Lowers the Platform by a given amount of degrees
      * @param LoweringAngle The amount of degrees the Platform will be lowered
      */
@@ -60,8 +75,8 @@ public class Platform {
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle - LoweringAngle;
-            setAngle(Math.max(newAngle, 0));
+            int newAngle = angle + LoweringAngle;
+            setAngle(Math.min(newAngle, 70));
         }
     }
 
@@ -74,8 +89,8 @@ public class Platform {
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle + raiseAngle;
-            setAngle(Math.min(newAngle, 70));
+            int newAngle = angle - raiseAngle;
+            setAngle(Math.max(newAngle, 0));
         }
     }
 }

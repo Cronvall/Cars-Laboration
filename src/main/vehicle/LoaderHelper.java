@@ -17,7 +17,6 @@ public class LoaderHelper<T extends Vehicle> {
      */
     public LoaderHelper(Flatbed ownerFlatbed){
         this.ownerFlatbed = ownerFlatbed;
-
     }
 
     /**
@@ -89,7 +88,6 @@ public class LoaderHelper<T extends Vehicle> {
      */
     public void loadOffCar(){
         ownerFlatbed.removeCar();
-
     }
 
     /**
@@ -104,7 +102,7 @@ public class LoaderHelper<T extends Vehicle> {
 
     /**
      * Changes the position of the cars being carried
-     * @param self
+     * @param self is the owner object  used with syntax "this"
      */
     public void moveLoad(T self){
         for(int i  = 0; i < this.getLoad().length; i++){

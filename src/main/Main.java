@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-        ferryRun();
+        carTransportRun();
     }
 
     private static void scaniaRun(){
@@ -77,7 +77,9 @@ public class Main {
         Ferry f1 = new Ferry(100, 20);
         Saab95 saab = new Saab95(2,100,Color.red);
 
+        f1.getPlatform().lower(70);
         f1.loadCar(saab);
+        f1.getPlatform().raise(70);
         System.out.println("-----------First-----------");
         System.out.println(Arrays.toString(f1.getLoad()));
         f1.startEngine();
@@ -96,6 +98,20 @@ public class Main {
         f1.move();
         System.out.println("ferry position: " + f1.getPosition());
         System.out.println("saab position: "+ saab.getPosition());
+    }
+
+    private static void carTransportRun(){
+        CarTransporter transporter = new CarTransporter(2);
+        Volvo240 volvo240 = new Volvo240(2,100,Color.black);
+
+        transporter.getPlatform().lower();
+        transporter.loadCar(volvo240);
+        transporter.getPlatform().raise();
+        transporter.startEngine();
+        transporter.move();
+        System.out.println(transporter.getPosition());
+        System.out.println(Arrays.toString(transporter.getLoad()));
+        System.out.println(volvo240.getPosition());
     }
 
 }

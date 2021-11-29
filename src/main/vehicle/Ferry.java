@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class Ferry extends Vehicle  {
 
-    private LoaderHelper loaderHelper;
+    private LoaderHelper<Ferry> loaderHelper;
     private Flatbed loadOn;
     private Platform platform = new Platform();
     /**
@@ -19,7 +19,7 @@ public class Ferry extends Vehicle  {
     public Ferry(double weight, int capacity){
         super(500, Color.white,"vehicle.Ferry");
         this.loadOn = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
-        this.loaderHelper = new LoaderHelper(loadOn);
+        this.loaderHelper = new LoaderHelper<Ferry>(loadOn);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class Ferry extends Vehicle  {
 
     @Override
     public void move(){
-        if(platform.getAngle() == 0){
+        if(platform.getAllowMotion()){
             super.move();
            if(!loaderHelper.isEmpty()){
                loaderHelper.moveLoad(this);
@@ -43,14 +43,18 @@ public class Ferry extends Vehicle  {
      * @param car the car to be loaded
      */
     public void loadCar(Car car){
+        if(platform.getAllowLoading())
         loaderHelper.loadCar(car, this);
+        else System.out.println("You need to lower the ramp to be able to load a car.");
     }
 
     /**
      * Offloads a car from the Ferry
      */
     public void loadOffCar(){
+        if(platform.getAllowLoading())
         loaderHelper.loadOffCar();
+        else System.out.println("You need to lower the platform to be able to unload a car");
     }
 
     /**
@@ -59,5 +63,13 @@ public class Ferry extends Vehicle  {
      */
     public Vehicle[] getLoad(){
         return loaderHelper.getLoad();
+    }
+
+    public LoaderHelper<Ferry> getHelper(){
+        return loaderHelper;
+    }
+
+    public Platform getPlatform(){
+        return platform;
     }
 }
