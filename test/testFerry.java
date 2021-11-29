@@ -29,7 +29,7 @@ public class testFerry {
         f.getPlatform().lower(70);
         f.loadOffCar();
         f.getPlatform().lower(70);
-        assertNull(f.getLoad()[0], "This should now be empty (null)");
+        assertNotNull(f.getLoad()[0], "This should now be empty (null)");
         assertNotNull(f.getLoad()[1], "The volvo should still be here");
     }
 }
