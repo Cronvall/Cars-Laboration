@@ -14,6 +14,7 @@ public class SaabExclusiveWorkShop extends WorkShop<Saab95> {
     public SaabExclusiveWorkShop(Point gpsLocation, int capacity){
         super(gpsLocation, capacity);
     }
+
      @Override
      public void addVehicle(Saab95 car){
         super.addVehicle(car);

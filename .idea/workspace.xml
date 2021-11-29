@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/vehicle/ILoadCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/CarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/CarTransporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/LoaderHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/LoaderHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/EasyPlatform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/EasyPlatform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Flatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Flatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/SaabExclusiveWorkShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/SaabExclusiveWorkShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/VolvoExclusiveWorkShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/VolvoExclusiveWorkShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/WorkShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/WorkShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testCarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testCarTransporter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testFerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testFerry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/CarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/ComplexPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/ComplexPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/EasyPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/EasyPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testCarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testCarTransporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/testFerry.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testFerry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/workshops/SaabExclusiveWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/SaabExclusiveWorkShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/workshops/WorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/WorkShop.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

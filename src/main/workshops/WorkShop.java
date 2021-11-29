@@ -25,7 +25,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
 
     /**
      * Returns a list with the vehicles in the workshop
-     * @return
+     * @return returns a list of the current vehicles in the workshop
      */
     public ArrayList<MotorVehicle> getVehiclesInWorkshop() {
         return vehiclesInWorkshop;
@@ -33,7 +33,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
 
     /**
      * Inserts a vehicle to the end of the list
-     * @param vehicle
+     * @param vehicle to be added to the workshop
      */
     public void addVehicle(T vehicle){
         willCapacityExceed(vehicle);
@@ -56,7 +56,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
 
     /**
      * Asserts that the vehicle is not already in the workshop
-     * @param vehicle
+     * @param vehicle controls if the vehicle already is inside the workshop
      */
     private void controlIfInWorkShop(T vehicle){
         if (vehicleInWorkShop(vehicle)){
@@ -69,19 +69,16 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
 
     /**
      * Returns true if the vehicle is in the workshop
-     * @param vehicle
-     * @return
+     * @param vehicle vehicle to control if inside workshop
+     * @return boolean if vehicle is inside vehicle
      */
     private boolean vehicleInWorkShop(T vehicle){
-        if (vehiclesInWorkshop.contains(vehicle)){
-            return true;
-        }
-        return false;
+        return vehiclesInWorkshop.contains(vehicle);
     }
 
     /**
      * Removes the specified element from the workshop
-     * @param vehicle
+     * @param vehicle to be removed from the workshop
      */
     public void removeVehicle(T vehicle){
         vehiclesInWorkshop.remove(vehicle);
