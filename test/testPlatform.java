@@ -9,10 +9,10 @@ public class testPlatform {
     void testRampMovement(){
         Platform platform = new Platform();
 
-        platform.raise(50);
+        platform.lower(50);
         assertEquals(50, platform.getAngle());
 
-        platform.lower(30);
+        platform.raise(30);
         assertEquals(20, platform.getAngle());
 
         //Since the input is invalid the angle shouldn't change
@@ -23,10 +23,10 @@ public class testPlatform {
 
         //Since the new angle exceeds the desired interval [0,70] it should base to 70
         platform.raise(70);
-        assertEquals(70, platform.getAngle());
+        assertEquals(0, platform.getAngle());
 
         //Since the new angle exceeds the desired interval [0,70] it should base to 0
         platform.lower(80);
-        assertEquals(0, platform.getAngle());
+        assertEquals(70, platform.getAngle());
     }
 }
