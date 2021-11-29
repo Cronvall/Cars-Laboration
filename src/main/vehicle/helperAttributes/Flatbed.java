@@ -1,13 +1,14 @@
 package vehicle.helperAttributes;
 
 import vehicle.Car;
+import vehicle.Vehicle;
 
 /**
  * A Flatbed is what carLoaders carry cars on top of
  */
 public class Flatbed {
 
-    private Car[] carLoad;
+    private Vehicle[] carLoad;
     private final LoadingMethod loadingMethod;
     private int currentIndex;
     private int currentLoadOffIndex;
@@ -35,7 +36,7 @@ public class Flatbed {
      * Returns an array displaying what cars are being carried
      * @return
      */
-    public Car[] getCarLoad(){
+    public Vehicle[] getCarLoad(){
         return carLoad;
     }
 
@@ -43,7 +44,7 @@ public class Flatbed {
      * Laods a car onto the flatbed
      * @param car Refers to the car being loaded
      */
-    public void loadCar(Car car){
+    public void loadCar(Vehicle car){
 
         if(currentIndex < carLoad.length && currentIndex >= 0){
             if(carLoad[currentIndex] == null){

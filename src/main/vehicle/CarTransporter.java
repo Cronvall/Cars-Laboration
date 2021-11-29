@@ -48,10 +48,10 @@ public class CarTransporter extends Truck {
     }
 
     /**
-     * Returns an array displaying the cars being carried
+     * Returns an array displaying the vehicles being carried
      * @return
      */
-    public Car[] getLoad(){
+    public Vehicle[] getLoad(){
         return loaderHelper.getLoad();
     }
 }

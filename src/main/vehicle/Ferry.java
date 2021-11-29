@@ -54,10 +54,10 @@ public class Ferry extends Vehicle  {
     }
 
     /**
-     * Displays which cars are being carried
+     * Displays which vehicles are being carried
      * @return
      */
-    public Car[] getLoad(){
+    public Vehicle[] getLoad(){
         return loaderHelper.getLoad();
     }
 }
