@@ -1,8 +1,8 @@
 package workshops;
 
-import vehicle.Vehicle;
+import vehicle.MotorVehicle;
 
-public interface IWorkShop<T extends Vehicle> {
+public interface IWorkShop<T extends MotorVehicle> {
 
     /**
      * Changes the tires of the vehicle
@@ -22,9 +22,5 @@ public interface IWorkShop<T extends Vehicle> {
      */
     void repairWindShield(T vehicle);
 
-    /**
-     * Loosens the tires bolts
-     * @param vehicle
-     */
-    void loosenBolts(T vehicle);
+
 }

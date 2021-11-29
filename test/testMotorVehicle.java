@@ -3,7 +3,7 @@ import vehicle.*;
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class testVehicle {
+public class testMotorVehicle {
 
 
     @Test

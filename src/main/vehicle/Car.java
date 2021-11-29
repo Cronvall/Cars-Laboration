@@ -4,12 +4,12 @@ import java.awt.*;
 /**
  * A Car is a vehicle with a certain amount of doors
  */
-public abstract class Car  extends Vehicle {
+public abstract class Car  extends MotorVehicle {
 
     private int nrDoors;
 
     /**
-     * Initiates a new Vehicle of the Class Car
+     * Initiates a new MotorVehicle of the Class Car
      * @param nrDoors Describes the car's number of doors
      * @param enginePower Describes the engine's power
      * @param color Describes the color of the Car

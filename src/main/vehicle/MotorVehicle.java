@@ -3,9 +3,9 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
- * A movable Vehicle with methods for movement
+ * A movable MotorVehicle with methods for movement
  */
-public abstract class Vehicle implements Movable {
+public abstract class MotorVehicle implements Movable {
 
     //Variables. I.e fields
     private final String modelName;
@@ -17,12 +17,12 @@ public abstract class Vehicle implements Movable {
                                                              // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
 
     /**
-     * Initiates a new object of the class Vehicle
+     * Initiates a new object of the class MotorVehicle
      * @param enginePower Describes the engine's power
      * @param col Describes the color of the vehicle
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
-    public Vehicle(double enginePower, Color col, String modelName){
+    public MotorVehicle(double enginePower, Color col, String modelName){
         this.enginePower = enginePower;
         this.color = col;
         this.modelName = modelName;

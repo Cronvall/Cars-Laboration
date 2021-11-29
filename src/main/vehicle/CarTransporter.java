@@ -1,5 +1,4 @@
 package vehicle;
-
 import vehicle.helperAttributes.EasyPlatform;
 import vehicle.helperAttributes.Flatbed;
 
@@ -8,7 +7,7 @@ import java.awt.*;
 /**
  * A CarTransporter is a Truck that can carry a certain number of cars on a flatbed
  */
-public class CarTransporter extends Truck {
+public class CarTransporter extends Truck implements ILoadCar {
 
     private final LoaderHelper<CarTransporter> loaderHelper;
     private final Flatbed flatbed;
@@ -35,18 +34,20 @@ public class CarTransporter extends Truck {
         else System.out.println("The platform needs to be raised before moving!");
     }
 
-    /**
-     * Starts carrying a car
-     * @param car the Car to be carried
-     */
+    @Override
     public void loadCar(Car car){
         if(platform.loadingAllowed())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
+<<<<<<< Updated upstream
     /**
      * Loads off the car that was last loaded onto the flatbed
      */
+=======
+
+    @Override
+>>>>>>> Stashed changes
     public void loadOffCar(){
         if(platform.loadingAllowed())
         loaderHelper.loadOffCar();
@@ -57,7 +58,7 @@ public class CarTransporter extends Truck {
      * Returns an array displaying the vehicles being carried
      * @return the load that is loaded upon the flatbed
      */
-    public Vehicle[] getLoad(){
+    public MotorVehicle[] getLoad(){
         return loaderHelper.getLoad();
     }
 
