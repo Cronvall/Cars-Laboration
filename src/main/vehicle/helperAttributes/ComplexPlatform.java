@@ -3,18 +3,17 @@ package vehicle.helperAttributes;
 /**
  * A ComplexPlatform can be raised, lowered and change its angle to the ground
  */
-public class ComplexPlatform {
+public class ComplexPlatform extends Platform{
 
     private int angle;
-    private boolean allowMotion;
     private boolean allowLoading;
 
     /**
      * Initiates a new object of the class ComplexPlatform
      */
     public ComplexPlatform(){
+        super();
         this.angle = 0;
-        this.allowMotion = true;
         this.allowLoading = false;
     }
 
@@ -27,13 +26,9 @@ public class ComplexPlatform {
     }
 
     /**
-     * Returns if vehicles is allowed to move
-     * @return returns the boolean if allowed
+     * if vehicles is allowed to load
+     * @return the boolean that decides if allowed to laod
      */
-    public boolean getAllowMotion(){
-        return allowMotion;
-    }
-
     public boolean getAllowLoading(){
         return allowLoading;
     }
@@ -47,15 +42,6 @@ public class ComplexPlatform {
             angle = newAngle;
         setAllowLoading(angle == 70);
         setAllowMotion(angle == 0);
-    }
-
-
-    /**
-     * Allows the Truck to move if the ComplexPlatform''s angle to the ground is 0
-     * @param AllowMotion True(the angle is 0) or False(the angle is not 0)
-     */
-    private void setAllowMotion(boolean AllowMotion){
-        allowMotion = AllowMotion;
     }
 
     private void setAllowLoading(boolean allowLoading){ this.allowLoading = allowLoading;}
@@ -86,5 +72,6 @@ public class ComplexPlatform {
             int newAngle = angle + raiseAngle;
             setAngle(Math.min(newAngle, 70));
         }
+
     }
 }

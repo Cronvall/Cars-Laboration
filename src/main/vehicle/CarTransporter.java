@@ -25,7 +25,7 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     @Override
     public void move(){
-        if(platform.motionAllowed()){
+        if(platform.getAllowMotion()){
             super.move();
             if(!loaderHelper.isEmpty()){
                 loaderHelper.moveLoad(this);
@@ -36,7 +36,7 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     @Override
     public void loadCar(Car car){
-        if(platform.loadingAllowed())
+        if(platform.getAllowLoading())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
@@ -44,7 +44,7 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     @Override
     public void loadOffCar(){
-        if(platform.loadingAllowed())
+        if(platform.getAllowLoading())
         loaderHelper.loadOffCar();
         else System.out.println("You need to lower them to unload a car");
     }

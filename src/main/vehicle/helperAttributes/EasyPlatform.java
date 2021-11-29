@@ -3,37 +3,20 @@ package vehicle.helperAttributes;
 /**
  * A platform that can be up or down
  */
-public class EasyPlatform {
+public class EasyPlatform extends Platform{
 
-    private boolean platformUp;
 
-    /**
-     * The platform starts up
-     */
     public EasyPlatform(){
-        this.platformUp = true;
+        super();
     }
 
-    /**
-     * If platform is up the vehicle may move, otherwise it can not move
-     * @return boolean to decide if vehicle platform mounted on can move
-     */
-    public boolean motionAllowed(){
-        return platformUp;
-    }
-    public boolean loadingAllowed(){return !platformUp;}
-
-    /**
-     * Lowers the platform
-     */
+    @Override
     public void lower(){
-        platformUp = false;
+        super.lower();
     }
 
-    /**
-     * Raises the platform
-     */
+    @Override
     public void raise(){
-        platformUp = true;
+        super.raise();
     }
 }
