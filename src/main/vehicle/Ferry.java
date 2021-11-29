@@ -1,7 +1,6 @@
 package vehicle;
 import vehicle.helperAttributes.ComplexPlatform;
 import vehicle.helperAttributes.Flatbed;
-
 import java.awt.*;
 
 /**
@@ -29,11 +28,9 @@ public class Ferry extends MotorVehicle implements ILoadCar {
 
     @Override
     public void move(){
-<<<<<<< Updated upstream
-        if(platform.getAllowMotion()){
-=======
-        if(complexPlatform.getAngle() == 0){
->>>>>>> Stashed changes
+
+        if(complexPlatform.getAllowMotion()){
+
             super.move();
            if(!loaderHelper.isEmpty()){
                loaderHelper.moveLoad(this);
@@ -44,14 +41,14 @@ public class Ferry extends MotorVehicle implements ILoadCar {
 
     @Override
     public void loadCar(Car car){
-        if(platform.getAllowLoading())
+        if(complexPlatform.getAllowMotion())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to be able to load a car.");
     }
 
     @Override
     public void loadOffCar(){
-        if(platform.getAllowLoading())
+        if(complexPlatform.getAllowLoading())
         loaderHelper.loadOffCar();
         else System.out.println("You need to lower the platform to be able to unload a car");
     }
@@ -68,7 +65,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
         return loaderHelper;
     }
 
-    public Platform getPlatform(){
-        return platform;
+    public ComplexPlatform getPlatform(){
+        return complexPlatform;
     }
 }

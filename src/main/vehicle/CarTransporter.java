@@ -40,14 +40,9 @@ public class CarTransporter extends Truck implements ILoadCar {
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
-<<<<<<< Updated upstream
-    /**
-     * Loads off the car that was last loaded onto the flatbed
-     */
-=======
+
 
     @Override
->>>>>>> Stashed changes
     public void loadOffCar(){
         if(platform.loadingAllowed())
         loaderHelper.loadOffCar();

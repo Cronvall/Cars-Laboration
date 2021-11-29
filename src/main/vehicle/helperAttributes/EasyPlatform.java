@@ -1,15 +1,11 @@
 package vehicle.helperAttributes;
 
-<<<<<<< Updated upstream
-public class EasyPlatform{
-=======
 /**
  * A platform that can be up or down
  */
 public class EasyPlatform {
->>>>>>> Stashed changes
 
-    boolean platformUp;
+    private boolean platformUp;
 
     /**
      * The platform starts up
@@ -27,25 +23,17 @@ public class EasyPlatform {
     }
     public boolean loadingAllowed(){return !platformUp;}
 
-<<<<<<< Updated upstream
-    public void lower(){
-        platformUp = false;
-    }
-
-    public void raise(){
-=======
     /**
      * Lowers the platform
      */
-    public void platformDown(){
+    public void lower(){
         platformUp = false;
     }
 
     /**
      * Raises the platform
      */
-    public void platformUp(){
->>>>>>> Stashed changes
+    public void raise(){
         platformUp = true;
     }
 }
