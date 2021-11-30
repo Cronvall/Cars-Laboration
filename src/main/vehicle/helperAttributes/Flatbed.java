@@ -4,7 +4,7 @@ import vehicle.Car;
 import vehicle.MotorVehicle;
 
 /**
- * A Flatbed is what carLoaders carry cars on top of
+ * A Flatbed is what vehicles that transport cars use to carry cars on top of
  */
 public class Flatbed {
 
@@ -89,6 +89,9 @@ public class Flatbed {
 
     }
 
+    /**
+     * Enum that describes the two sorts of loading-methods that can be used
+     */
     public enum LoadingMethod{
         FirstOnFirstOff, //Ex. This would apply to ferries and a like where you can open the "flatbed" from two sides.
         FirstOnLastOff  //Ex. This would apply to trucks since they only can unload from behind.

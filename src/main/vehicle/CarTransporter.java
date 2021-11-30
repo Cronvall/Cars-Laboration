@@ -1,7 +1,6 @@
 package vehicle;
-import vehicle.helperAttributes.EasyPlatform;
+import vehicle.helperAttributes.Ramp;
 import vehicle.helperAttributes.Flatbed;
-
 import java.awt.*;
 
 /**
@@ -11,7 +10,8 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     private final LoaderHelper<CarTransporter> loaderHelper;
     private final Flatbed flatbed;
-    private EasyPlatform platform = new EasyPlatform();
+    private Ramp ramp = new Ramp();
+
     /**
      * Initiates a new Truck of the class CarTransporter
      * @param slots Describes how many cars the CarTransporter can carry
@@ -25,18 +25,19 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     @Override
     public void move(){
-        if(platform.getAllowMotion()){
+        if(ramp.getAllowMotion()){
             super.move();
             if(!loaderHelper.isEmpty()){
                 loaderHelper.moveLoad(this);
             }
         }
-        else System.out.println("The platform needs to be raised before moving!");
+        else System.out.println("The ramp needs to be raised before moving!");
     }
+
 
     @Override
     public void loadCar(Car car){
-        if(platform.getAllowLoading())
+        if(ramp.getAllowLoading())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
@@ -44,7 +45,7 @@ public class CarTransporter extends Truck implements ILoadCar {
 
     @Override
     public void loadOffCar(){
-        if(platform.getAllowLoading())
+        if(ramp.getAllowLoading())
         loaderHelper.loadOffCar();
         else System.out.println("You need to lower them to unload a car");
     }
@@ -57,7 +58,11 @@ public class CarTransporter extends Truck implements ILoadCar {
         return loaderHelper.getLoad();
     }
 
-    public EasyPlatform getPlatform(){
-        return platform;
+    /**
+     * Returns the car-transporters mounted Ramp
+     * @return an object of class ramp
+     */
+    public Ramp getRamp(){
+        return ramp;
     }
 }

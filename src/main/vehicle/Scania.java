@@ -1,6 +1,6 @@
 package vehicle;
 
-import vehicle.helperAttributes.ComplexPlatform;
+import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
 
@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class Scania extends Truck {
 
-    private ComplexPlatform complexPlatform;
+    private Platform complexPlatform;
 
     /**
      * Initiates a new Truck of the class Scania
@@ -20,17 +20,17 @@ public class Scania extends Truck {
      * @param nrDoors Describes the Truck's number of doors
      */
     public Scania(int enginePower, Color color, double grossWeightInTons,
-                  ComplexPlatform complexPlatform, int nrDoors) {
+                  Platform complexPlatform, int nrDoors) {
         super(enginePower, color, "vehicle.Scania",
                 true, grossWeightInTons, nrDoors);
         this.complexPlatform = complexPlatform;
     }
 
- //   /**
- //    * OSÄKER: Defines our complexPlatform as an object of the class ComplexPlatform
- //    * @return
- //    */
-    public ComplexPlatform getRamp() {
+    /**
+     * gets the platform that scania has mounted
+     * @return the object platform mounted on scania
+     */
+    public Platform getRamp() {
         return complexPlatform;
     }
 

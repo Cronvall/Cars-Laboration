@@ -11,6 +11,7 @@ public class LoaderHelper<T extends MotorVehicle> {
     private Flatbed ownerFlatbed;
     private Car currentVehicle;
     private MotorVehicle motorVehicleLoadingOn;
+
     /**
      * Initiates a new MotorVehicle of the class LoaderHelper
      * @param ownerFlatbed the flatbed to load on
@@ -24,7 +25,7 @@ public class LoaderHelper<T extends MotorVehicle> {
      * @param vehicleLoading Describes the vehicle to be loaded
      * @param vehicleToLoadOn Refers to the LoaderHelper
      */
-    public void loadCar(Car vehicleLoading, T vehicleToLoadOn) {
+     void loadCar(Car vehicleLoading, T vehicleToLoadOn) {
         this.currentVehicle = vehicleLoading;
         this.motorVehicleLoadingOn = vehicleToLoadOn;
 
@@ -36,10 +37,10 @@ public class LoaderHelper<T extends MotorVehicle> {
      * If vehicle tries to load itself, throws an exception
      */
     private void validateIfSameVehicle(){
-        if (motorVehicleLoadingOn == currentVehicle){
+        if (motorVehicleLoadingOn == currentVehicle)
             throw new IllegalArgumentException("Can't load the vehicle on itself!");
-        }
-        else{if (vehicleWithinLoadingRange()) {loadCarAndUpdateCoordinate();}}
+        else
+            if (vehicleWithinLoadingRange()) {loadCarAndUpdateCoordinate();}
     }
 
     /**
@@ -97,8 +98,6 @@ public class LoaderHelper<T extends MotorVehicle> {
     public MotorVehicle[] getLoad(){
         return ownerFlatbed.getCarLoad();
     }
-
-    //Used to move the cars that are stored in the transporter
 
     /**
      * Changes the position of the cars being carried

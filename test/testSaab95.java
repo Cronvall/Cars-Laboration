@@ -7,27 +7,33 @@ import java.awt.*;
 public class testSaab95 {
 
     @Test
-    void testSpeedFactor(){
+    void testSpeedFactorWithTurboOff(){
         Saab95 saab = new Saab95(4,150, Color.black);
         saab.setTurboOff();
         double desiredVal = 150 * 0.01;
-        assertEquals(desiredVal,saab.speedFactor(), "Test without turbo.");
-        saab.setTurboOn();
-        desiredVal = 150 * 0.01 * 1.3;
-        assertEquals(desiredVal,saab.speedFactor(), "Test with turbo");
+        assertEquals(desiredVal,saab.speedFactor(), "Test without turbo");
     }
 
     @Test
-    void testTurbo(){
-        Saab95 saab = new Saab95(4, 150, Color.red);
-        double speedFactor = saab.getEnginePower() * 0.01 * 1.3;  //Calculate what speed factor is with turbo on
-        assertNotEquals(speedFactor, saab.speedFactor());  //Shouldn't be equal because turbo is not active
-
+    void testSpeedFactorWithTurboOn(){
+        Saab95 saab = new Saab95(4,150, Color.black);
         saab.setTurboOn();
-        assertEquals(speedFactor, saab.speedFactor());  //Should be equal now since turbo is on
+        double desiredVal = 150 * 0.01 * 1.3;
+        assertEquals(desiredVal,saab.speedFactor(), "Test with turbo.");
 
-        assertTrue(saab.getTurbo());
+    }
+
+    @Test
+    void turboOff(){
+        Saab95 saab = new Saab95(4, 150, Color.red);
         saab.setTurboOff();
-        assertEquals(false, saab.getTurbo());
+        assertFalse(saab.getTurbo());
+    }
+
+    @Test
+    void turboOn(){
+        Saab95 saab = new Saab95(4, 150, Color.red);
+        saab.setTurboOn();
+        assertTrue(saab.getTurbo());
     }
 }

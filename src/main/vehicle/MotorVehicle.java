@@ -7,7 +7,6 @@ import java.awt.geom.Point2D;
  */
 public abstract class MotorVehicle implements Movable {
 
-    //Variables. I.e fields
     private final String modelName;
     private final double enginePower;
     private final Color color;
@@ -33,25 +32,25 @@ public abstract class MotorVehicle implements Movable {
 
     /**
      * Returns the engine's power as a double
-     * @return
+     * @return the engineer of the motorbike
      */
     public double getEnginePower(){return enginePower;}
 
     /**
      * Returns the vehicle's current speed as a double
-     * @return
+     * @return the motor-vehicles current speed
      */
     public double getCurrentSpeed(){return currentSpeed;}
 
     /**
      * Returns the vehicle's current direction as an int between 1-4
-     * @return
+     * @return the current direction of the vehicle
      */
     public double getDirection(){return currentDirectionInteger;}
 
     /**
      * Returns the vehicle's current position as a double in a 2D environment
-     * @return
+     * @return the current position of the vehicle
      */
     public Point2D.Double getPosition(){
         return position;
@@ -59,13 +58,13 @@ public abstract class MotorVehicle implements Movable {
 
     /**
      * Returns the vehicle's model name as a String
-     * @return
+     * @return the name of the model
      */
     public String getModelName(){return modelName;}
 
     /**
      * Returns the vehicle's color, type Color
-     * @return
+     * @return the color of the vehicle
      */
     public Color getColor(){return color;}
 
@@ -112,7 +111,7 @@ public abstract class MotorVehicle implements Movable {
 
     /**
      * Returns the factor that will alter any increment or decrement to the vehicle's speed depending on its model
-     * @return
+     * @return the speed-factor of the vehicle
      */
     public abstract double speedFactor();
 

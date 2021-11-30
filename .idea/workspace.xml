@@ -5,11 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/SaabExclusiveWorkShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/SaabExclusiveWorkShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/WorkShop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/workshops/WorkShop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/ComplexPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/ComplexPlatform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/EasyPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/EasyPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/CarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/CarTransporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Ferry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/LoaderHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/LoaderHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/ComplexPlatform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/EasyPlatform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Flatbed$LoadingMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Flatbed$LoadingMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/helperAttributes/Platform.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testCarTransporter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testCarTransporter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testComplexPlatform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testFerry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testFerry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testPlatform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testPlatform.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testSaab95.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testScania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testScania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testTruck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testTruck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Cars-Laboration/testWorkshops.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Cars-Laboration/testWorkshops.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/CarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/CarTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Ferry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/LoaderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/LoaderHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/ComplexPlatform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/EasyPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Ramp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Flatbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/workshops/IWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/workshops/IWorkShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testCarTransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testCarTransporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testComplexPlatform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testSaab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testSaab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testScania.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testScania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testTruck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testWorkshops.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testWorkshops.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,35 +118,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testWorkshops" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testScania" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testWorkshops" />
+      <option name="MAIN_CLASS_NAME" value="testScania" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testWorkshops.maxCapacity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testScania.moveWhenPlatformIsDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="testWorkshops" />
-      <option name="METHOD_NAME" value="maxCapacity" />
+      <option name="MAIN_CLASS_NAME" value="testScania" />
+      <option name="METHOD_NAME" value="moveWhenPlatformIsDown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="workshops in Cars-Laboration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testScania.raisePlatform" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Cars-Laboration" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="workshops.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="workshops" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="testScania" />
+      <option name="METHOD_NAME" value="raisePlatform" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,6 +151,9 @@
       <list>
         <item itemvalue="JUnit.All in Cars-Laboration" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.testScania.moveWhenPlatformIsDown" />
+        <item itemvalue="JUnit.testScania.raisePlatform" />
+        <item itemvalue="JUnit.testScania" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +182,9 @@
       <workItem from="1638092426485" duration="3000" />
       <workItem from="1638176886244" duration="1348000" />
       <workItem from="1638185620627" duration="4982000" />
+      <workItem from="1638195018732" duration="30000" />
+      <workItem from="1638254233470" duration="7513000" />
+      <workItem from="1638297061070" duration="44000" />
     </task>
     <servers />
   </component>
@@ -191,7 +227,7 @@
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testGetNrOfDoors.ic" NAME="testCar.testGetNrOfDoors Coverage Results" MODIFIED="1637324653773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testAccelerationDeceleration.ic" NAME="testCar.testAccelerationDeceleration Coverage Results" MODIFIED="1636754425788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testWorkshops.ic" NAME="testWorkshops Coverage Results" MODIFIED="1637852374989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Cars_Laboration$All_in_Cars_Laboration.ic" NAME="All in Cars-Laboration Coverage Results" MODIFIED="1638192527157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Cars_Laboration$All_in_Cars_Laboration.ic" NAME="All in Cars-Laboration Coverage Results" MODIFIED="1638297095004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar.ic" NAME="testCar Coverage Results" MODIFIED="1636967355938" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCar_testTurnLeft.ic" NAME="testCar.testTurnLeft Coverage Results" MODIFIED="1636713047086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Cars_Laboration$testCarTransporter_test_transport.ic" NAME="testCarTransporter.test_transport Coverage Results" MODIFIED="1637790805422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

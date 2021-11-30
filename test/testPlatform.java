@@ -1,4 +1,4 @@
-import vehicle.helperAttributes.ComplexPlatform;
+import vehicle.helperAttributes.Platform;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +7,7 @@ public class testPlatform {
 
     @Test
     void testRampMovement(){
-        ComplexPlatform platform = new ComplexPlatform();
+        Platform platform = new Platform();
 
         platform.raise(50);
         assertEquals(50, platform.getAngle());

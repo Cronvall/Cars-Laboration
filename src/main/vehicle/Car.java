@@ -22,10 +22,15 @@ public abstract class Car  extends MotorVehicle {
 
     /**
      * Returns the car's number of doors
-     * @return
+     * @return an integer of the amount of doors
      */
     public int getNrOfDoors(){return this.nrDoors;}
 
+
+    /**
+     * Describes the specified characteristics of a car with a string
+     * @return a string with the cars characteristics
+     */
     @Override
     public String toString(){
         return(

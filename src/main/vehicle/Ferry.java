@@ -1,5 +1,5 @@
 package vehicle;
-import vehicle.helperAttributes.ComplexPlatform;
+import vehicle.helperAttributes.Platform;
 import vehicle.helperAttributes.Flatbed;
 import java.awt.*;
 
@@ -8,9 +8,10 @@ import java.awt.*;
  */
 public class Ferry extends MotorVehicle implements ILoadCar {
 
+    // TODO what is the reason for this LoaderHelper being parametrized?
     private LoaderHelper<Ferry> loaderHelper;
     private Flatbed loadOn;
-    private ComplexPlatform complexPlatform = new ComplexPlatform();
+    private Platform complexPlatform = new Platform();
     /**
      * Initiates a new MotorVehicle of the class Ferry
      * @param weight Describes the Ferry's weight
@@ -36,7 +37,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
                loaderHelper.moveLoad(this);
            }
         }
-        else System.out.printf("The complexPlatform needs to be raised before moving!");
+        else System.out.print("The complexPlatform needs to be raised before moving!");
     }
 
     @Override
@@ -55,17 +56,17 @@ public class Ferry extends MotorVehicle implements ILoadCar {
 
     /**
      * Displays which vehicles are being carried
-     * @return
+     * @return an array of motor-vehicles gets returned
      */
     public MotorVehicle[] getLoad(){
         return loaderHelper.getLoad();
     }
 
-    public LoaderHelper<Ferry> getHelper(){
-        return loaderHelper;
-    }
-
-    public ComplexPlatform getPlatform(){
+    /**
+     * Gets the platform that's mounted on the ferry
+     * @return an object of class Platform gets returned
+     */
+    public Platform getPlatform(){
         return complexPlatform;
     }
 }

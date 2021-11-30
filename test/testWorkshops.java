@@ -1,11 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import vehicle.MotorVehicle;
 import vehicle.Saab95;
 import vehicle.Volvo240;
 import workshops.*;
-
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -14,12 +12,12 @@ public class testWorkshops {
 
     @Test
     void addingVehicleToWorkshop(){
-
         VolvoExclusiveWorkShop volvoW = new VolvoExclusiveWorkShop(new Point(2,4), 5);
         Volvo240 volvo1 = new Volvo240(2, 120, Color.red);
 
         volvoW.addVehicle(volvo1);
         ArrayList<MotorVehicle> workshop = volvoW.getVehiclesInWorkshop();
+
         assertEquals(volvo1, workshop.get(0));
         volvoW.removeVehicle(volvo1);
 
@@ -47,8 +45,6 @@ public class testWorkshops {
         saabWorkS.addVehicle(saab1);
         ArrayList<MotorVehicle> workshop = saabWorkS.getVehiclesInWorkshop();
         assertEquals(1, workshop.size());
-        saabWorkS.removeVehicle(saab1);
-        assertEquals(0, workshop.size());
     }
 
     @Test
