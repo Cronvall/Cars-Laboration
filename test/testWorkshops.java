@@ -49,14 +49,12 @@ public class testWorkshops {
 
     @Test
     void methodsInGeneral(){
-        VolvoExclusiveWorkShop v = new VolvoExclusiveWorkShop(new Point(1,2), 4);
-        Volvo240 volv = new Volvo240(2, 30, Color.green);
+        VolvoExclusiveWorkShop workshop = new VolvoExclusiveWorkShop(new Point(1,2), 4);
+        Volvo240 volvo = new Volvo240(2, 30, Color.green);
 
-        v.changeOilFilter(volv);
-        v.changeTires(volv);
-        v.repairWindShield(volv);
+        workshop.changeOilFilter(volvo);
+        workshop.changeTires(volvo);
+        workshop.repairWindShield(volvo);
 
-        v.addVehicle(volv);
-        v.addVehicle(volv);
     }
 }

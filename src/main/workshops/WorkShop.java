@@ -47,7 +47,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
     private void willCapacityExceed(T vehicle) {
         boolean exceedCapacity = vehiclesInWorkshop.size() < workShopCapacity;
         if (exceedCapacity) {
-            controlIfInWorkShop(vehicle);
+            addVehicleIfNotInWorkshop(vehicle);
         }
         else{
             throw new IllegalArgumentException("Too many vehicles in the workshop");
@@ -58,9 +58,9 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
      * Asserts that the vehicle is not already in the workshop
      * @param vehicle controls if the vehicle already is inside the workshop
      */
-    private void controlIfInWorkShop(T vehicle){
+    private void addVehicleIfNotInWorkshop(T vehicle){
         if (vehicleInWorkShop(vehicle)){
-            System.out.println("MotorVehicle is already admitted");
+            throw new IllegalArgumentException("MotorVehicle is already admitted");
         }
         else {
             vehiclesInWorkshop.add(vehicle);

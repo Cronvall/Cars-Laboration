@@ -3,7 +3,7 @@ package vehicle.helperAttributes;
 /**
  * A ramp that can be either up or down
  */
-public class Ramp {
+public class Ramp implements IRamp {
 
     private boolean rampUp;
 
@@ -14,10 +14,8 @@ public class Ramp {
         this.rampUp = true;
     }
 
-    /**
-     * Decides if the vehicle the ramp is mounted on can move
-     * @return a boolean that describes if it's allowed to move
-     */
+
+    @Override
     public boolean getAllowMotion(){
         return rampUp;
     }
@@ -30,16 +28,14 @@ public class Ramp {
         return !rampUp;
     }
 
-    /**
-     * Raises the ramp
-     */
+
+    @Override
     public void raise(){
         this.rampUp = true;
     }
 
-    /**
-     * Lowers the ramp
-     */
+
+    @Override
     public void lower(){
         this.rampUp = false;
     }

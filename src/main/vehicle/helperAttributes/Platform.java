@@ -3,8 +3,11 @@ package vehicle.helperAttributes;
 /**
  * A platform can be raised, lowered and change its angle to the ground
  */
-public class Platform {
+public class Platform implements IPlatform{
 
+    /**
+     * The angle of the platform
+     */
     private int angle;
     private boolean allowLoading;
     private boolean allowMotion;
@@ -35,13 +38,8 @@ public class Platform {
         return allowLoading;
     }
 
-    /**
-     * Returns if vehicles is allowed to move
-     * @return returns the boolean if allowed
-     */
+    @Override
     public boolean getAllowMotion(){return allowMotion;}
-
-
 
     /**
      * Allows the Truck to move if the ComplexPlatform''s angle to the ground is 0
@@ -65,31 +63,29 @@ public class Platform {
 
     private void setAllowLoading(boolean allowLoading){ this.allowLoading = allowLoading;}
 
-    /**
-     * Lowers the ComplexPlatform by a given amount of degrees
-     * @param loweringAngle The amount of degrees the ComplexPlatform will be lowered
-     */
+    @Override
     public void lower(int loweringAngle){
         if(loweringAngle < 0){
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle - loweringAngle;
+            int newAngle = angle + loweringAngle;
             setAngle(Math.max(newAngle, 0));
+
         }
     }
 
-    /**
-     * Raises the ComplexPlatform by a given amount of degrees
-     * @param raiseAngle The amount of degrees the ComplexPlatform will be raised
-     */
+    @Override
     public void raise(int raiseAngle){
         if(raiseAngle < 0){
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle + raiseAngle;
+            int newAngle = angle - raiseAngle;
             setAngle(Math.min(newAngle, 70));
+
         }
     }
+
+
 }
