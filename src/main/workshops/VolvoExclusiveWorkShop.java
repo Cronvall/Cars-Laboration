@@ -17,10 +17,20 @@ public class VolvoExclusiveWorkShop extends WorkShop<Volvo240> {
     public VolvoExclusiveWorkShop(Point gpsLocation, int capacity){
         super(gpsLocation, capacity);
     }
+
+    /**
+     * Inserts a vehicle to the end of the list
+     * @param car to be added to the workshop
+     */
     @Override
     public void addVehicle(Volvo240 car){
         super.addVehicle(car);
     }
+
+    /**
+     * Removes the specified element from the workshop
+     * @param car to be removed from the workshop
+     */
     @Override
     public void removeVehicle(Volvo240 car){
         super.removeVehicle(car);

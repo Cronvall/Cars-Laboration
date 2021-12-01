@@ -15,11 +15,20 @@ public class SaabExclusiveWorkShop extends WorkShop<Saab95> {
         super(gpsLocation, capacity);
     }
 
+    /**
+     * Inserts a vehicle to the end of the list
+     * @param car to be added to the workshop
+     */
      @Override
      public void addVehicle(Saab95 car){
         super.addVehicle(car);
     }
 
+
+    /**
+     * Removes the specified element from the workshop
+     * @param saab95 to be removed from the workshop
+     */
     @Override
     public void removeVehicle(Saab95 saab95){
          super.removeVehicle(saab95);

@@ -51,6 +51,9 @@ public class Scania extends Truck {
         complexPlatform.lower(angle);
     }
 
+    /**
+     * Moves the vehicle one of four directions in a 2d plane
+     */
     @Override
     public void move(){
         if (complexPlatform.getAllowMotion()){

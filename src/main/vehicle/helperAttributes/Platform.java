@@ -38,6 +38,10 @@ public class Platform implements IPlatform{
         return allowLoading;
     }
 
+    /**
+     * Returns if vehicles is allowed to move
+     * @return returns the boolean if allowed
+     */
     @Override
     public boolean getAllowMotion(){return allowMotion;}
 
@@ -61,8 +65,16 @@ public class Platform implements IPlatform{
         setAllowMotion(angle == 0);
     }
 
+    /**
+     * Decides if the vehicle is able to load
+     * @param allowLoading boolean that is either true or false
+     */
     private void setAllowLoading(boolean allowLoading){ this.allowLoading = allowLoading;}
 
+    /**
+     * Lowers the ComplexPlatform by a given amount of degrees
+     * @param loweringAngle The amount of degrees the ComplexPlatform will be lowered
+     */
     @Override
     public void lower(int loweringAngle){
         if(loweringAngle < 0){
@@ -74,6 +86,10 @@ public class Platform implements IPlatform{
         }
     }
 
+    /**
+     * Raises the ComplexPlatform by a given amount of degrees
+     * @param raiseAngle The amount of degrees the ComplexPlatform will be raised
+     */
     @Override
     public void raise(int raiseAngle){
         if(raiseAngle < 0){

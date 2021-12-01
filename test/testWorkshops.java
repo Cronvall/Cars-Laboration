@@ -57,4 +57,14 @@ public class testWorkshops {
         workshop.repairWindShield(volvo);
 
     }
+
+    @Test
+    void removeSaabFromWorkshop(){
+        Saab95 saab = new Saab95(2, 320, Color.RED);
+        WorkShop<MotorVehicle> workshop = new WorkShop<MotorVehicle>(new Point(2, 2), 3);
+        workshop.addVehicle(saab);
+        workshop.removeVehicle(saab);
+
+        assertEquals(0, workshop.getVehiclesInWorkshop().size());
+    }
 }

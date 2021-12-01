@@ -40,6 +40,10 @@ public class Ferry extends MotorVehicle implements ILoadCar {
         else System.out.print("The complexPlatform needs to be raised before moving!");
     }
 
+    /**
+     * Loads a car on a vehicle
+     * @param car that will be loaded on vehicle
+     */
     @Override
     public void loadCar(Car car){
         if(complexPlatform.getAllowLoading())
@@ -47,6 +51,9 @@ public class Ferry extends MotorVehicle implements ILoadCar {
         else System.out.println("You need to lower the ramp to be able to load a car.");
     }
 
+    /**
+     * Removes a car from a vehicle
+     */
     @Override
     public void loadOffCar(){
         if(complexPlatform.getAllowLoading())

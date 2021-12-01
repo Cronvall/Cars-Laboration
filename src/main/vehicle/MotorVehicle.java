@@ -191,6 +191,9 @@ public abstract class MotorVehicle implements Movable {
             currentDirectionInteger++;
     }
 
+    /**
+     * Moves the vehicle one of four directions in a 2d plane
+     */
     @Override
     public void move(){
         switch (currentDirectionInteger) {

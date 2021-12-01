@@ -23,6 +23,10 @@ public class CarTransporter extends Truck implements ILoadCar {
         this.loaderHelper = new LoaderHelper(flatbed);
     }
 
+
+    /**
+     * Moves the vehicle one of four directions in a 2d plane
+     */
     @Override
     public void move(){
         if(ramp.getAllowMotion()){
@@ -34,7 +38,10 @@ public class CarTransporter extends Truck implements ILoadCar {
         else System.out.println("The ramp needs to be raised before moving!");
     }
 
-
+    /**
+     * Loads a car on a vehicle
+     * @param car that will be loaded on vehicle
+     */
     @Override
     public void loadCar(Car car){
         if(ramp.getAllowLoading())
@@ -42,7 +49,9 @@ public class CarTransporter extends Truck implements ILoadCar {
         else System.out.println("You need to lower the ramp to load a car");
     }
 
-
+    /**
+     * Removes a car from a vehicle
+     */
     @Override
     public void loadOffCar(){
         if(ramp.getAllowLoading())

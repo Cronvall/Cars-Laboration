@@ -32,13 +32,12 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
     }
 
     /**
-     * Inserts a vehicle to the end of the list
+     * Inserts a vehicle to the workshop
      * @param vehicle to be added to the workshop
      */
     public void addVehicle(T vehicle){
         willCapacityExceed(vehicle);
     }
-
 
     /**
      * If within capacity add a vehicle otherwise throw exception
@@ -84,20 +83,32 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
         vehiclesInWorkshop.remove(vehicle);
     }
 
+
+    /**
+     * Changes the tires of the vehicle
+     * @param motorVehicle vehicle to change tires of
+     */
     @Override
     public void changeTires(MotorVehicle motorVehicle) {
         System.out.println("Tires changed!");
     }
 
+    /**
+     * Changes the oil-filter of the vehicle
+     * @param motorVehicle to change oil-filter of
+     */
     @Override
     public void changeOilFilter(MotorVehicle motorVehicle) {
         System.out.println("Oil filter changed!");
     }
 
+    /**
+     * Repairs the windshield of the vehicle
+     * @param motorVehicle to repair windshield
+     */
     @Override
     public void repairWindShield(MotorVehicle motorVehicle) {
         System.out.println("Windshield repaired!");
-
     }
 
 }
