@@ -7,7 +7,7 @@ import workshops.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class testWorkshops {
+public class testWorkshop {
 
 
     @Test
@@ -61,10 +61,26 @@ public class testWorkshops {
     @Test
     void removeSaabFromWorkshop(){
         Saab95 saab = new Saab95(2, 320, Color.RED);
+        Saab95 saabOtherOne = new Saab95(2, 320, Color.RED);
         WorkShop<MotorVehicle> workshop = new WorkShop<MotorVehicle>(new Point(2, 2), 3);
         workshop.addVehicle(saab);
+        workshop.addVehicle(saabOtherOne);
+
         workshop.removeVehicle(saab);
 
-        assertEquals(0, workshop.getVehiclesInWorkshop().size());
+        assertEquals(1, workshop.getVehiclesInWorkshop().size());
+    }
+
+    @Test
+    void vehicleAlreadyInWorkShop(){
+        SaabExclusiveWorkShop saabW = new SaabExclusiveWorkShop(new Point(2,3), 3);
+        Saab95 saab = new Saab95(2, 320, Color.red);
+        saabW.addVehicle(saab);
+
+        assertThrows(IllegalArgumentException.class,
+                () -> saabW.addVehicle(saab),
+                "Vehicle is already in the workshop");
+
+
     }
 }

@@ -8,7 +8,6 @@ import java.awt.*;
  */
 public class Ferry extends MotorVehicle implements ILoadCar {
 
-    // TODO what is the reason for this LoaderHelper being parametrized?
     private LoaderHelper<Ferry> loaderHelper;
     private Flatbed loadOn;
     private Platform complexPlatform = new Platform();
@@ -29,7 +28,6 @@ public class Ferry extends MotorVehicle implements ILoadCar {
 
     @Override
     public void move(){
-
         if(complexPlatform.getAllowMotion()){
 
             super.move();

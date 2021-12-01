@@ -1,5 +1,4 @@
 package vehicle.helperAttributes;
-
 import vehicle.Car;
 import vehicle.MotorVehicle;
 

@@ -9,6 +9,12 @@ public class Main {
 
     public static void main(String[] args){
         carTransportRun();
+        scaniaRun();
+        ferryRun();
+        workshop();
+        volvoRun();
+        saabRun();
+
     }
 
     private static void scaniaRun(){
@@ -24,7 +30,6 @@ public class Main {
 
         WorkShop w1 = new WorkShop(new Point(2, 3), 4);
         Ferry f1 = new Ferry(100, 10);
-        //w1.addVehicle(f1);
 
         volvo.addVehicle(vol);
         volvo.addVehicle(vol);
@@ -32,7 +37,6 @@ public class Main {
         WorkShop work = new WorkShop(new Point(2, 3), 2);
         Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
 
-        //volvo.removeVehicle(saab);
         volvo.changeOilFilter(vol);
     }
 
