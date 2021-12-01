@@ -50,9 +50,10 @@ public class testScania {
     void moveWhenPlatformIsDown(){
         Scania scan = new Scania(420, Color.RED, 4, new Platform(), 5);
         scan.lowerPlatform(90);
+        System.out.println("Current angle: " + scan.getRamp().getAngle());
         scan.startEngine();
         scan.move();
         Point2D.Double startPosition = new Point2D.Double(0,0);
-        assertEquals(startPosition, scan.getPosition());
+        assertEquals(startPosition, scan.getPosition(), "Has the truck moved");
     }
 }

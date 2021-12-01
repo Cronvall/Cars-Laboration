@@ -74,8 +74,8 @@ public class Platform {
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle - loweringAngle;
-            setAngle(Math.max(newAngle, 0));
+            int newAngle = angle + loweringAngle;
+            setAngle(Math.min(newAngle, 70));
         }
     }
 
@@ -88,8 +88,8 @@ public class Platform {
             System.out.println("Only positive integers are valid!!");
         }
         else{
-            int newAngle = angle + raiseAngle;
-            setAngle(Math.min(newAngle, 70));
+            int newAngle = angle - raiseAngle;
+            setAngle(Math.max(newAngle, 0));
         }
     }
 }
