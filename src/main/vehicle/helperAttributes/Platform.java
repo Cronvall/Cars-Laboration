@@ -70,8 +70,7 @@ public class Platform implements IPlatform{
         }
         else{
             int newAngle = angle + loweringAngle;
-            setAngle(Math.max(newAngle, 0));
-
+            setAngle(Math.min(newAngle, 70));
         }
     }
 
@@ -82,8 +81,7 @@ public class Platform implements IPlatform{
         }
         else{
             int newAngle = angle - raiseAngle;
-            setAngle(Math.min(newAngle, 70));
-
+            setAngle(Math.max(newAngle, 0));
         }
     }
 

@@ -21,7 +21,6 @@ public class testFerry {
         f.move();
         assertEquals(f.getPosition(), f.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");
 
-        System.out.println(Arrays.toString(f.getLoad()));
         assertNotNull(f.getLoad()[0], "Should be a SAAB here");
         assertNotNull(f.getLoad()[1], "Should be a volvo here");
         assertNull(f.getLoad()[2], "This slot should be empty");
@@ -29,7 +28,7 @@ public class testFerry {
         f.getPlatform().lower(70);
         f.loadOffCar();
         f.getPlatform().lower(70);
-        assertNotNull(f.getLoad()[0], "This should now be empty (null)");
+        assertNull(f.getLoad()[0], "This should now be empty (null)");
         assertNotNull(f.getLoad()[1], "The volvo should still be here");
     }
 }

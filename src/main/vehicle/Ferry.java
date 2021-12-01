@@ -42,7 +42,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
 
     @Override
     public void loadCar(Car car){
-        if(complexPlatform.getAllowMotion())
+        if(complexPlatform.getAllowLoading())
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to be able to load a car.");
     }
