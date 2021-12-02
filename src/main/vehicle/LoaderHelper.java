@@ -25,7 +25,7 @@ public class LoaderHelper<T extends MotorVehicle> {
      * @param vehicleLoading Describes the vehicle to be loaded
      * @param vehicleToLoadOn Refers to the LoaderHelper
      */
-     void loadCar(Car vehicleLoading, T vehicleToLoadOn) {
+     public void loadCar(Car vehicleLoading, T vehicleToLoadOn) {
         this.currentVehicle = vehicleLoading;
         this.motorVehicleLoadingOn = vehicleToLoadOn;
 
@@ -40,7 +40,16 @@ public class LoaderHelper<T extends MotorVehicle> {
         if (motorVehicleLoadingOn == currentVehicle)
             throw new IllegalArgumentException("Can't load the vehicle on itself!");
         else
-            if (vehicleWithinLoadingRange()) {loadCarAndUpdateCoordinate();}
+            if (vehicleWithinLoadingRange() && !vehicleLoadedOnTransporter()) {
+                loadCarAndUpdateCoordinate();}
+    }
+
+    /**
+     * Controls if the vehicle is already loaded on a flatbed
+     * @return boolean
+     */
+    private boolean vehicleLoadedOnTransporter(){
+       return currentVehicle.getLoadedOnTransporter();
     }
 
     /**
@@ -70,6 +79,7 @@ public class LoaderHelper<T extends MotorVehicle> {
      */
     private void loadCarAndUpdateCoordinate(){
         ownerFlatbed.loadCar(currentVehicle);
+        currentVehicle.setLoadedOnTransporter(true);
         updateLoadPosition();
     }
 
@@ -109,6 +119,8 @@ public class LoaderHelper<T extends MotorVehicle> {
                 this.getLoad()[i].setPosition(self.getPosition()); //Since the ferry hasn't moved it won't give the right update of position
         }
     }
+
+
 
     /**
      * Checks whether any cars are currently being carried

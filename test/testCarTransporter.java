@@ -29,4 +29,6 @@ public class testCarTransporter {
         assertNull(transporter.getLoad()[1], "This should now be empty (null)");
         assertNotNull(transporter.getLoad()[0], "The SAAB should still be here");
     }
+
+
 }

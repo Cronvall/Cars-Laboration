@@ -73,6 +73,7 @@ public class Flatbed {
      */
     private void removalFirstOnFirstOff(){
         if(carLoad[currentLoadOffIndex] != null){
+            carLoad[currentLoadOffIndex].setLoadedOnTransporter(false);
             carLoad[currentLoadOffIndex] = null;
             if(currentLoadOffIndex < carLoad.length - 1)
                 currentLoadOffIndex++;
@@ -83,9 +84,8 @@ public class Flatbed {
      * Tells the Flatbed which car to offload next when loadingMethod = FirstOnLastOff
      */
     private void removalFirstOnLastOff(){
+        carLoad[currentIndex -1].setLoadedOnTransporter(false);
         carLoad[currentIndex -1] = null;
-
-
     }
 
     /**

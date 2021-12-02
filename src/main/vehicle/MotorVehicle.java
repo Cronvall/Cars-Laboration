@@ -7,6 +7,7 @@ import java.awt.geom.Point2D;
  */
 public abstract class MotorVehicle implements Movable {
 
+
     private final String modelName;
     private final double enginePower;
     private final Color color;
@@ -14,6 +15,7 @@ public abstract class MotorVehicle implements Movable {
     private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
                                                              // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
+    private boolean loadedOnTransporter;
 
     /**
      * Initiates a new object of the class MotorVehicle
@@ -24,11 +26,19 @@ public abstract class MotorVehicle implements Movable {
     public MotorVehicle(double enginePower, Color col, String modelName){
         this.enginePower = enginePower;
         this.color = col;
+        this.loadedOnTransporter = false;
         this.modelName = modelName;
         stopEngine();
     }
 
     //Get methods
+
+    /**
+     * Returns a boolean if vehicle is allowed to load
+     */
+    public boolean getLoadedOnTransporter(){
+        return loadedOnTransporter;
+    }
 
     /**
      * Returns the engine's power as a double
@@ -68,10 +78,7 @@ public abstract class MotorVehicle implements Movable {
      */
     public Color getColor(){return color;}
 
-
-
-    // Set method
-
+    // Set methods
     /**
      * Changes the vehicle's speed if given newSpeed is within the accepted interval
      * @param newSpeed Defines the speed the vehicle will have after the method
@@ -90,6 +97,11 @@ public abstract class MotorVehicle implements Movable {
      */
     protected void setPosition(Point2D.Double newPosition){
         position = new Point2D.Double(newPosition.getX(), newPosition.getY());
+    }
+
+    public void setLoadedOnTransporter(boolean loadedOnTransporter)
+    {
+        this.loadedOnTransporter = loadedOnTransporter;
     }
 
     /**
@@ -122,8 +134,9 @@ public abstract class MotorVehicle implements Movable {
      * @param amount Describes by how much (approx. 1-100%) the speed should increase
      */
     public void gas(double amount){
-        // TODO is the engine running? Should it run to be able to gas?
-        if(amount > 0 && amount <= 1){
+        boolean withinSpeed = amount > 0 && amount <= 1;
+
+        if(withinSpeed && !loadedOnTransporter ){
             incrementSpeed(amount);
         }
         else
@@ -144,7 +157,8 @@ public abstract class MotorVehicle implements Movable {
      * @param amount Describes by how much (approx. 1-100%) the speed should decrease
      */
     public void brake(double amount){
-        if (amount >= 0 && amount <= 1){
+        boolean withInSpeed = amount >= 0 && amount <= 1;
+        if (withInSpeed && !loadedOnTransporter){
             decrementSpeed(amount);
         }
         else{

@@ -1,7 +1,6 @@
 import vehicle.*;
 import vehicle.helperAttributes.Platform;
 import workshops.*;
-
 import java.awt.*;
 import java.util.Arrays;
 
@@ -11,33 +10,14 @@ public class Main {
         carTransportRun();
         scaniaRun();
         ferryRun();
-        workshop();
         volvoRun();
         saabRun();
-
     }
 
     private static void scaniaRun(){
         Platform rampForScania = new Platform();
         Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
         firstScania.getRamp().raise(90);
-    }
-
-    private static void workshop(){
-        VolvoExclusiveWorkShop volvo = new VolvoExclusiveWorkShop(new Point(10, 20), 8);
-        Volvo240 vol = new Volvo240(2, 300, Color.red);
-        Saab95 saab = new Saab95(2, 300, Color.green);
-
-        WorkShop w1 = new WorkShop(new Point(2, 3), 4);
-        Ferry f1 = new Ferry(100, 10);
-
-        volvo.addVehicle(vol);
-        volvo.addVehicle(vol);
-
-        WorkShop work = new WorkShop(new Point(2, 3), 2);
-        Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
-
-        volvo.changeOilFilter(vol);
     }
 
     private static void volvoRun(){
@@ -116,6 +96,23 @@ public class Main {
         System.out.println(transporter.getPosition());
         System.out.println(Arrays.toString(transporter.getLoad()));
         System.out.println(volvo240.getPosition());
+    }
+
+    private static void workshop(){
+        VolvoExclusiveWorkShop volvo = new VolvoExclusiveWorkShop(new Point(10, 20), 8);
+        Volvo240 vol = new Volvo240(2, 300, Color.red);
+        Saab95 saab = new Saab95(2, 300, Color.green);
+
+        WorkShop w1 = new WorkShop(new Point(2, 3), 4);
+        Ferry f1 = new Ferry(100, 10);
+
+        volvo.addVehicle(vol);
+        volvo.addVehicle(vol);
+
+        WorkShop work = new WorkShop(new Point(2, 3), 2);
+        Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
+
+        volvo.changeOilFilter(vol);
     }
 
 }
