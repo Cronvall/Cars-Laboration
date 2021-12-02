@@ -136,7 +136,7 @@ public abstract class MotorVehicle implements Movable {
     public void gas(double amount){
         boolean withinSpeed = amount > 0 && amount <= 1;
 
-        if(withinSpeed && !loadedOnTransporter ){
+        if(withinSpeed && !loadedOnTransporter){
             incrementSpeed(amount);
         }
         else

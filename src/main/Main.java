@@ -8,13 +8,6 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
-<<<<<<< Updated upstream
-        carTransportRun();
-        scaniaRun();
-        ferryRun();
-        volvoRun();
-        saabRun();
-=======
 
         CarController controller = new CarController();
         controller.cars.add(new Volvo240(2,150,Color.red));
@@ -22,7 +15,6 @@ public class Main {
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();
->>>>>>> Stashed changes
     }
 
     private static void scaniaRun(){
