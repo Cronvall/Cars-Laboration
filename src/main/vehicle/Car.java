@@ -1,4 +1,6 @@
 package vehicle;
+import vehicle.helperAttributes.Engine;
+
 import java.awt.*;
 
 /**
@@ -11,12 +13,12 @@ public abstract class Car  extends MotorVehicle {
     /**
      * Initiates a new MotorVehicle of the Class Car
      * @param nrDoors Describes the car's number of doors
-     * @param enginePower Describes the engine's power
+     * @param engine Describes the engine
      * @param color Describes the color of the Car
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
-    protected Car(int nrDoors, int enginePower, Color color, String modelName){
-        super(enginePower, color, modelName);
+    protected Car(int nrDoors, Engine engine, Color color, String modelName){
+        super(engine, color, modelName);
         this.nrDoors = nrDoors;
     }
 
@@ -25,7 +27,6 @@ public abstract class Car  extends MotorVehicle {
      * @return an integer of the amount of doors
      */
     public int getNrOfDoors(){return this.nrDoors;}
-
 
     /**
      * Describes the specified characteristics of a car with a string

@@ -1,3 +1,4 @@
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +11,7 @@ public class testTruck {
     @Test
     void testSpeedFactor(){
         double grossWeight = 8.5;
-        Scania scania = new Scania(400, Color.green,grossWeight, new Platform(), 2);
+        Scania scania = new Scania(new Engine(420), Color.green,grossWeight, new Platform(), 2);
         double assumedSpeedFactor = scania.getCurrentSpeed() - (0.01 * scania.getGrossWeightInTons());
 
         assertEquals(assumedSpeedFactor, scania.speedFactor());

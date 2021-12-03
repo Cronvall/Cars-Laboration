@@ -1,3 +1,4 @@
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 import org.junit.jupiter.api.*;
 import vehicle.Scania;
@@ -10,15 +11,15 @@ public class testScania {
     @Test
     void testGetRamp(){
         Platform complexPlatform = new Platform();
-        Scania scania = new Scania(300, Color.CYAN, 10, complexPlatform, 2);
+        Scania scania = new Scania(new Engine(300), Color.CYAN, 10, complexPlatform, 2);
         assertEquals(complexPlatform, scania.getRamp());
     }
 
     @Test
     void scaniaMove(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform(), 5);
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform(), 5);
         scan.startEngine();
-        scan.gas(10);
+        scan.gas(0.6);
         scan.move();
 
         Point2D.Double startPosition = new Point2D.Double(0, 0);
@@ -27,7 +28,7 @@ public class testScania {
 
     @Test
     void raisePlatform(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform(), 5);
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform(), 5);
         scan.raisePlatform(10);
         Platform platform = new Platform();
         platform.raise(10);
@@ -37,7 +38,7 @@ public class testScania {
 
     @Test
     void lowerPlatform(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform(), 5);
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform(), 5);
         scan.lowerPlatform(10);
         Platform platform = new Platform();
         platform.lower(10);
@@ -47,7 +48,7 @@ public class testScania {
 
     @Test
     void moveWhenPlatformIsDown(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform(), 5);
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform(), 5);
         scan.lowerPlatform(90);
         System.out.println("Current angle: " + scan.getRamp().getAngle());
         scan.startEngine();

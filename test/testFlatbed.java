@@ -1,3 +1,4 @@
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Flatbed;
 import org.junit.jupiter.api.*;
 import vehicle.Volvo240;
@@ -11,9 +12,9 @@ public class testFlatbed {
     void testFlatbedFunctionality(){
         Flatbed fb = new Flatbed(2, Flatbed.LoadingMethod.FirstOnFirstOff);
 
-        fb.loadCar(new Volvo240(2,100,Color.red));
-        fb.loadCar(new Volvo240(2,110,Color.red));
-        fb.loadCar(new Volvo240(2,120,Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(110),Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(110),Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(120),Color.red));
         assertEquals(2,fb.getCarLoad().length);
 
         fb.removeCar();
@@ -21,9 +22,9 @@ public class testFlatbed {
         assertNull(fb.getCarLoad()[0]);
 
         fb = new Flatbed(2, Flatbed.LoadingMethod.FirstOnLastOff);
-        fb.loadCar(new Volvo240(2,100,Color.red));
-        fb.loadCar(new Volvo240(2,110,Color.red));
-        fb.loadCar(new Volvo240(2,120,Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(110),Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(110),Color.red));
+        fb.loadCar(new Volvo240(2,new Engine(120),Color.red));
         assertEquals(2,fb.getCarLoad().length);
 
         fb.removeCar();

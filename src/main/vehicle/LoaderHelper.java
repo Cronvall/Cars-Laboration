@@ -41,7 +41,7 @@ public class LoaderHelper<T extends MotorVehicle> {
             throw new IllegalArgumentException("Can't load the vehicle on itself!");
         else
             if (vehicleWithinLoadingRange() && !vehicleLoadedOnTransporter()) {
-                loadCarAndUpdateCoordinate();}
+                updateVehicleStatus();}
     }
 
     /**
@@ -77,16 +77,16 @@ public class LoaderHelper<T extends MotorVehicle> {
     /**
      * Car gets added to flatbeds array of cargo
      */
-    private void loadCarAndUpdateCoordinate(){
+    private void updateVehicleStatus(){
         ownerFlatbed.loadCar(currentVehicle);
         currentVehicle.setLoadedOnTransporter(true);
-        updateLoadPosition();
+        newLoadPosition();
     }
 
     /**
      * Updates the position of the current vehicle to be the same as the vehicle loaded on top on
      */
-    private void updateLoadPosition(){
+    private void newLoadPosition(){
         double loadOffX = motorVehicleLoadingOn.getPosition().getX();
         double loadOffY = motorVehicleLoadingOn.getPosition().getY();
         Point2D.Double newPosition = new Point2D.Double(loadOffX, loadOffY);
@@ -105,7 +105,7 @@ public class LoaderHelper<T extends MotorVehicle> {
      * Returns an array displaying what cars are on the LoaderHelper
      * @return array of cars
      */
-    public MotorVehicle[] getLoad(){
+    public Car[] getLoad(){
         return ownerFlatbed.getCarLoad();
     }
 

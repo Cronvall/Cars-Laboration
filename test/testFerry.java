@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import vehicle.*;
+import vehicle.helperAttributes.Engine;
+import vehicle.helperAttributes.TurboEngine;
+
 import java.awt.*;
 import java.util.Arrays;
 
@@ -11,12 +14,12 @@ public class testFerry {
     void test_Ferry(){
         Ferry f = new Ferry(500, 20);
 
-        double desiredSpeedFactor = 500 * (0.1 / 500);
+        double desiredSpeedFactor = 200 * (0.1 / 500);
         assertEquals(desiredSpeedFactor,f.speedFactor(), "Test of the speedfactor");
 
         f.getPlatform().lower(70);
-        f.loadCar(new Saab95(2,100, Color.red));
-        f.loadCar(new Volvo240(4,150, Color.red));
+        f.loadCar(new Saab95(2,new TurboEngine(200), Color.red));
+        f.loadCar(new Volvo240(4,new Engine(200), Color.red));
         f.getPlatform().raise(70);
         f.move();
         assertEquals(f.getPosition(), f.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");

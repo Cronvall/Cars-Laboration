@@ -1,38 +1,39 @@
 package vehicle;
+import vehicle.helperAttributes.Engine;
+import vehicle.helperAttributes.IEngine;
+import vehicle.helperAttributes.TurboEngine;
+
 import java.awt.*;
 import java.awt.geom.Point2D;
 
 /**
- * A movable MotorVehicle with methods for movement
+ * A vehicle that has an engine
  */
 public abstract class MotorVehicle implements Movable {
 
-
-    private final String modelName;
-    private final double enginePower;
-    private final Color color;
-    private Point2D.Double position = new Point2D.Double();
-    private double currentSpeed;
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
-                                                             // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
+                                            // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
+    private Point2D.Double position = new Point2D.Double();
     private boolean loadedOnTransporter;
+    private final String modelName;
+    private final Engine engine;
+    private double currentSpeed;
+    private final Color color;
 
     /**
      * Initiates a new object of the class MotorVehicle
-     * @param enginePower Describes the engine's power
+     * @param engine Describes the engine
      * @param col Describes the color of the vehicle
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
-    public MotorVehicle(double enginePower, Color col, String modelName){
-        this.enginePower = enginePower;
+    public MotorVehicle(Engine engine, Color col, String modelName){
+        this.engine = engine;
         this.color = col;
         this.loadedOnTransporter = false;
         this.modelName = modelName;
-        stopEngine();
     }
 
     //Get methods
-
     /**
      * Returns a boolean if vehicle is allowed to load
      */
@@ -41,10 +42,18 @@ public abstract class MotorVehicle implements Movable {
     }
 
     /**
+     * Returns the engine of the vehicle mounted on
+     * @return object of class Engine
+     */
+    protected Engine getEngine(){
+        return this.engine;
+    }
+
+    /**
      * Returns the engine's power as a double
      * @return the engineer of the motorbike
      */
-    public double getEnginePower(){return enginePower;}
+    public double getEnginePower(){return engine.getEnginePower();}
 
     /**
      * Returns the vehicle's current speed as a double
@@ -70,13 +79,13 @@ public abstract class MotorVehicle implements Movable {
      * Returns the vehicle's model name as a String
      * @return the name of the model
      */
-    public String getModelName(){return modelName;}
+    protected String getModelName(){return modelName;}
 
     /**
      * Returns the vehicle's color, type Color
      * @return the color of the vehicle
      */
-    public Color getColor(){return color;}
+    protected Color getColor(){return color;}
 
     // Set methods
     /**
@@ -127,27 +136,32 @@ public abstract class MotorVehicle implements Movable {
      */
     public abstract double speedFactor();
 
-    // "Actions methods" for cars
-
     /**
      * Will increase the vehicle's speed if the amount is within the accepted interval
      * @param amount Describes by how much (approx. 1-100%) the speed should increase
      */
     public void gas(double amount){
-        boolean withinSpeed = amount > 0 && amount <= 1;
-
-        if(withinSpeed && !loadedOnTransporter ){
+        if(gasAmountAllowed(amount) && movementAllowed())
             incrementSpeed(amount);
-        }
         else
             System.out.println("The amount of gas exceeds allowed interval of [0,1].");
+    }
+
+    /**
+     * Calculates if the amount of gas is within accepted intervals
+     * @param amount how much gas is applied
+     * @return true if gas is within interval and false if outside interval
+     */
+    private boolean gasAmountAllowed(double amount ){
+        boolean withinGasInterval = amount > 0 && amount <= 1;
+        return withinGasInterval;
     }
 
     /**
      * Increases the vehicle's current speed
      * @param amount Describes by how much (approx. 1-100%) the speed will increase
      */
-    public  void incrementSpeed(double amount){
+    public void incrementSpeed(double amount){
         double newSpeed = getCurrentSpeed() + speedFactor() * amount;
         setCurrentSpeed(Math.min(newSpeed,getEnginePower()));
     }
@@ -157,14 +171,41 @@ public abstract class MotorVehicle implements Movable {
      * @param amount Describes by how much (approx. 1-100%) the speed should decrease
      */
     public void brake(double amount){
-        boolean withInSpeed = amount >= 0 && amount <= 1;
-        if (withInSpeed && !loadedOnTransporter){
+        if (movementAllowed() && brakeAmountAllowed(amount))
             decrementSpeed(amount);
-        }
-        else{
-            System.out.println("The amount of braking is not within the allowed interval [0, 1].");
-        }
+        else {
+            System.out.println("Braking can't be achieved");}
     }
+
+    private boolean movementAllowed(){
+        boolean movement = !onTransporter() && engineStarted();
+        return movement;
+    }
+
+    private boolean onTransporter(){
+        if (!loadedOnTransporter)
+            return false;
+        else
+            throw new IllegalArgumentException("Vehicle is already on a flatbed");
+    }
+
+    private boolean engineStarted(){
+        if(engine.getEngineRunning())
+            return engine.getEngineRunning();
+        else
+            throw new IllegalArgumentException("Engine is not started");
+    }
+
+     private boolean brakeAmountAllowed(double amount){
+        boolean brakeAllowed = amount >= 0 && amount <= 1;
+        if (brakeAllowed)
+            return true;
+        else {
+            System.out.println("Braking not within interval");
+            return false;
+        }
+
+     }
 
     /**
      * Decreases the vehicle's current speed
@@ -179,6 +220,7 @@ public abstract class MotorVehicle implements Movable {
      * Starts the engine, setting a low speed
      */
     public void startEngine() {
+        this.engine.startEngine();
         currentSpeed = 0.1;
     }
 
@@ -186,6 +228,7 @@ public abstract class MotorVehicle implements Movable {
      * Stops the engine, and the vehicle
      */
     public void stopEngine(){
+        this.engine.stopEngine();
         currentSpeed = 0;
     }
 

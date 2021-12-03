@@ -1,5 +1,7 @@
 package vehicle;
 
+import vehicle.helperAttributes.Engine;
+
 import java.awt.*;
 
 /**
@@ -7,20 +9,19 @@ import java.awt.*;
  */
 public class Volvo240 extends Car {
 
-    private double trimFactor = 1.25;
-
     /**
      * Initiates a new Car of the class Volvo240
      * @param nrDoors Describes the Car's number of doors
-     * @param enginePower Describes the engine's power
+     * @param engine Describes the engine
      * @param col Describes the color of the Car
      */
-    public Volvo240(int nrDoors, int enginePower, Color col){
-        super(nrDoors,enginePower,col,"Volvo-240");
+    public Volvo240(int nrDoors, Engine engine, Color col){
+        super(nrDoors,engine,col,"Volvo-240");
     }
 
     @Override
     public double speedFactor(){
-        return getEnginePower() * 0.01 * trimFactor;
+        double trimFactor = this.getEngine().getTrimFactor();
+        return this.getEnginePower() * 0.01 * trimFactor;
     }
 }
