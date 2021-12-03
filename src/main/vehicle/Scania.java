@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class Scania extends Truck {
 
-    private Platform complexPlatform;
+    private final Platform complexPlatform;
 
     /**
      * Initiates a new Truck of the class Scania

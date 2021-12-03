@@ -20,12 +20,12 @@ public class Main {
 
     private static void scaniaRun(){
         Platform rampForScania = new Platform();
-        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
+        Scania firstScania = new Scania(new Engine(420), Color.RED, 6.0, rampForScania, 2);
         firstScania.getRamp().raise(90);
     }
 
     private static void volvoRun(){
-        Volvo240 v1 = new Volvo240(2, 125, Color.green);
+        Volvo240 v1 = new Volvo240(2, new Engine(125), Color.green);
 
         System.out.println("Before running speed: " + v1.getCurrentSpeed()+ " and position: " + v1.getPosition());
 
@@ -49,7 +49,7 @@ public class Main {
     }
 
     private static void saabRun(){
-        Saab95 saab = new Saab95(2, 100, Color.red);
+        Saab95 saab = new Saab95(2, new TurboEngine(125), Color.red);
 
         saab.startEngine();
 
