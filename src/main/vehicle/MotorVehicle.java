@@ -141,7 +141,9 @@ public abstract class MotorVehicle implements Movable {
      * @param amount Describes by how much (approx. 1-100%) the speed should increase
      */
     public void gas(double amount){
-        if(gasAmountAllowed(amount) && movementAllowed())
+        boolean withinSpeed = amount > 0 && amount <= 1;
+
+        if(withinSpeed && !loadedOnTransporter){
             incrementSpeed(amount);
         else
             System.out.println("The amount of gas exceeds allowed interval of [0,1].");
