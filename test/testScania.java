@@ -11,13 +11,13 @@ public class testScania {
     @Test
     void testGetRamp(){
         Platform complexPlatform = new Platform();
-        Scania scania = new Scania(300, Color.CYAN, 10, complexPlatform);
+        Scania scania = new Scania(new Engine(300), Color.CYAN, 10, complexPlatform);
         assertEquals(complexPlatform, scania.getRamp());
     }
 
     @Test
     void scaniaMove(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform());
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform());
         scan.startEngine();
         scan.gas(0.6);
         scan.move();
@@ -28,7 +28,7 @@ public class testScania {
 
     @Test
     void raisePlatform(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform());
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform());
         scan.raisePlatform(10);
         Platform platform = new Platform();
         platform.raise(10);
@@ -38,7 +38,7 @@ public class testScania {
 
     @Test
     void lowerPlatform(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform());
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform());
         scan.lowerPlatform(10);
         Platform platform = new Platform();
         platform.lower(10);
@@ -48,7 +48,7 @@ public class testScania {
 
     @Test
     void moveWhenPlatformIsDown(){
-        Scania scan = new Scania(420, Color.RED, 4, new Platform());
+        Scania scan = new Scania(new Engine(420), Color.RED, 4, new Platform());
         scan.lowerPlatform(90);
         System.out.println("Current angle: " + scan.getRamp().getAngle());
         scan.startEngine();

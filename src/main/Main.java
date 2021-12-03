@@ -11,9 +11,9 @@ public class Main {
 
     public static void main(String[] args){
         CarController controller = new CarController();
-        controller.cars.add(new Volvo240(2,150,Color.red));
-        controller.cars.add(new Saab95(2,150,Color.red));
-        controller.cars.add(new Scania(400,Color.red,4,new Platform()));
+        controller.cars.add(new Volvo240(2, new Engine(150),Color.red));
+        controller.cars.add(new Saab95(2,new TurboEngine(250),Color.red));
+        controller.cars.add(new Scania(new Engine(400),Color.red,4,new Platform()));
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();
@@ -21,7 +21,7 @@ public class Main {
 
     private static void scaniaRun(){
         Platform rampForScania = new Platform();
-        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania);
+        Scania firstScania = new Scania(new Engine(420), Color.RED, 6.0, rampForScania);
         firstScania.getRamp().raise(90);
     }
 

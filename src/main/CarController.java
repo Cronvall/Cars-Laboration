@@ -61,14 +61,14 @@ public class CarController {
     void turboOn(){
         for(Car car: cars){
             if (car.getClass() == Saab95.class){
-                ((Saab95) car).setTurboOn();
+                ((Saab95) car).turboOn();
             }
         }
     }
     void turboOff(){
         for(Car car: cars){
             if (car.getClass() == Saab95.class){
-                ((Saab95) car).setTurboOff();
+                ((Saab95) car).turboOff();
             }
         }
     }
