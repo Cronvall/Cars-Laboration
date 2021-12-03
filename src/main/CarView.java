@@ -117,12 +117,7 @@ public class CarView extends JFrame{
             }
         });
 
-        brakeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                carC.brake(brakeAmount);
-            }
-        });
+
 
         //Turbo management
         turboOnButton.addActionListener(new ActionListener() {

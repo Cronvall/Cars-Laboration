@@ -20,20 +20,20 @@ public class VolvoExclusiveWorkShop extends WorkShop<Volvo240> {
 
     /**
      * Inserts a vehicle to the end of the list
-     * @param car to be added to the workshop
+     * @param volvo to be added to the workshop
      */
     @Override
-    public void addVehicle(Volvo240 car){
-        super.addVehicle(car);
+    public void addVehicle(Volvo240 volvo){
+        super.addVehicle(volvo);
     }
 
     /**
      * Removes the specified element from the workshop
-     * @param car to be removed from the workshop
+     * @param volvo to be removed from the workshop
      */
     @Override
-    public void removeVehicle(Volvo240 car){
-        super.removeVehicle(car);
+    public void removeVehicle(Volvo240 volvo){
+        super.removeVehicle(volvo);
     }
 
 }

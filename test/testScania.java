@@ -1,3 +1,4 @@
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 import org.junit.jupiter.api.*;
 import vehicle.Scania;
@@ -18,7 +19,7 @@ public class testScania {
     void scaniaMove(){
         Scania scan = new Scania(420, Color.RED, 4, new Platform());
         scan.startEngine();
-        scan.gas(10);
+        scan.gas(0.6);
         scan.move();
 
         Point2D.Double startPosition = new Point2D.Double(0, 0);

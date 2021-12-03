@@ -1,5 +1,5 @@
 package vehicle;
-
+import vehicle.helperAttributes.Engine;
 import java.awt.*;
 
 /**
@@ -12,24 +12,23 @@ public abstract class Truck extends Car {
 
     /**
      * Initiates a new Car of the class Truck
-     * @param enginePower Describes the engine's power
+     * @param engine Describes the engine
      * @param color Describes the color of the Truck
      * @param modelName Displays the name of the model(Scania etc.)
      * @param requiresDriverLicenseC Describes whether the Truck requires a type C driver's license
      * @param grossWeightInTons Describes the Truck's gross weight in tons
      * @param nrDoors Describes the Truck's number of doors
      */
-    protected Truck(int enginePower, Color color, String modelName,
+    protected Truck(Engine engine, Color color, String modelName,
                     boolean requiresDriverLicenseC, double grossWeightInTons, int nrDoors){
-        super(nrDoors, enginePower, color, modelName);
-
+        super(nrDoors, engine, color, modelName);
         this.requiresDriverLicenseC = requiresDriverLicenseC;
         this.grossWeightInTons = grossWeightInTons;
     }
 
     /**
      * Returns the Truck's gross weight in tons
-     * @return
+     * @return weight in tons
      */
     public double getGrossWeightInTons() {
         return grossWeightInTons;
@@ -41,8 +40,4 @@ public abstract class Truck extends Car {
         double newSpeedFactor = getCurrentSpeed() - weightFactor;
         return newSpeedFactor;
     }
-
-
-
-
 }

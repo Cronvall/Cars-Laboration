@@ -49,7 +49,7 @@ public class Platform implements IPlatform{
      * Allows the Truck to move if the ComplexPlatform''s angle to the ground is 0
      * @param allowMotion True(the angle is 0) or False(the angle is not 0)
      */
-    protected void setAllowMotion(boolean allowMotion){
+    private void setAllowMotion(boolean allowMotion){
         this.allowMotion = allowMotion;
     }
 

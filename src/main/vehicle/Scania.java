@@ -1,5 +1,5 @@
 package vehicle;
-
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 
 import java.awt.*;
@@ -9,11 +9,11 @@ import java.awt.*;
  */
 public class Scania extends Truck {
 
-    private Platform complexPlatform;
+    private final Platform complexPlatform;
 
     /**
      * Initiates a new Truck of the class Scania
-     * @param enginePower Describes the engine's power
+     * @param engine Describes the engine
      * @param color Describes the color of the Truck
      * @param grossWeightInTons Describes the Truck's gross weight in tons
      * @param complexPlatform Describes the object of the Truck's complexPlatform

@@ -5,9 +5,9 @@ import vehicle.MotorVehicle;
 /**
  * A Flatbed is what vehicles that transport cars use to carry cars on top of
  */
-public class Flatbed {
+public class Flatbed{
 
-    private MotorVehicle[] carLoad;
+    private Car[] carLoad;
     private final LoadingMethod loadingMethod;
     private int currentIndex;
     private int currentLoadOffIndex;
@@ -35,7 +35,7 @@ public class Flatbed {
      * Returns an array displaying what cars are being carried
      * @return
      */
-    public MotorVehicle[] getCarLoad(){
+    public Car[] getCarLoad(){
         return carLoad;
     }
 
@@ -43,7 +43,7 @@ public class Flatbed {
      * Laods a car onto the flatbed
      * @param car Refers to the car being loaded
      */
-    public void loadCar(MotorVehicle car){
+    public void loadCar(Car car){
 
         if(currentIndex < carLoad.length && currentIndex >= 0){
             if(carLoad[currentIndex] == null){

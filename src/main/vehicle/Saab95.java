@@ -1,7 +1,5 @@
 package vehicle;
-
-import vehicle.Car;
-
+import vehicle.helperAttributes.TurboEngine;
 import java.awt.*;
 
 /**
@@ -9,47 +7,39 @@ import java.awt.*;
  */
 public class Saab95 extends Car {
 
-    private boolean turboOn;
+    private final TurboEngine engine;
 
     /**
      * Initiates a new Car of the class Saab95
      * @param nrDoors Describes the Car's number of doors
-     * @param enginePower Describes the engine's power
      * @param col Describes the color of the Car
      */
-    public Saab95(int nrDoors, int enginePower, Color col){
-        super(nrDoors,enginePower,col,"Saab-95");
-	    turboOn = false;
-    }
-
-    /**
-     * Returns true(Turbo is on) or false(Turbo is off)
-     * @return
-     */
-    public boolean getTurbo(){ return  turboOn;}
-
-    /**
-     * Turns on Turbo
-     */
-    public void setTurboOn(){
-	    turboOn = true;
-    }
-    /**
-     * Turns off Turbo
-     */
-    public void setTurboOff(){
-	    turboOn = false;
+    public Saab95(int nrDoors, TurboEngine engine, Color col){
+        super(nrDoors,engine,col,"Saab-95");
+        this.engine = engine;
     }
 
      @Override
      public double speedFactor(){
         double turbo = 1;
-        if(turboOn) {turbo = 1.3;}
+        if(this.engine.getTurboOn()) {turbo = 1.3;}
         return getEnginePower() * 0.01 * turbo;
     }
     @Override
     public void stopEngine(){
         setCurrentSpeed(0);
-        setTurboOff();
+        this.getEngine().stopEngine();;
+    }
+
+    public void turboOff(){
+        this.engine.turboOff();
+    }
+
+    public void turboOn(){
+        this.engine.turboOn();
+    }
+
+    public boolean getTurbo(){
+        return this.engine.getTurboOn();
     }
 }

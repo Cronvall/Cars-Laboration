@@ -1,4 +1,5 @@
 package vehicle;
+import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 import vehicle.helperAttributes.Flatbed;
 import java.awt.*;
@@ -16,14 +17,14 @@ public class Ferry extends MotorVehicle implements ILoadCar {
      * @param weight Describes the Ferry's weight
      */
     public Ferry(double weight, int capacity){
-        super(500, Color.white,"vehicle.Ferry");
+        super(new Engine(200), Color.white,"vehicle.Ferry");
         this.loadOn = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
         this.loaderHelper = new LoaderHelper<Ferry>(loadOn);
     }
 
     @Override
     public double speedFactor(){
-        return getEnginePower() * (0.1 / 500);
+        return this.getEnginePower() * (0.1 / 500);
     }
 
     @Override

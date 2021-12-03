@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.*;
 import vehicle.*;
+import vehicle.helperAttributes.Engine;
+import vehicle.helperAttributes.TurboEngine;
+
 import java.awt.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,11 +11,11 @@ public class testMotorVehicle {
 
     @Test
     void test_getters(){
-        int saab_horse_p = 100;
+        int saab_horse_p = 200;
         int saab_doors = 2;
         Color saab_color = Color.green;
 
-        Saab95 saab = new Saab95(saab_doors, saab_horse_p, saab_color);
+        Saab95 saab = new Saab95(saab_doors, new TurboEngine(200), saab_color);
 
         Point initial_position = new Point(0, 0);
 
@@ -41,7 +44,7 @@ public class testMotorVehicle {
 
     @Test
     void testTurnLeft(){
-        Volvo240 volvo = new Volvo240(2,420,Color.red);
+        Volvo240 volvo = new Volvo240(2,new Engine(200),Color.red);
 
         assertEquals(1, volvo.getDirection(), "Assert start direction is forward (1)");
         volvo.turnLeft();
@@ -52,7 +55,7 @@ public class testMotorVehicle {
 
     @Test
     void testTurnRight(){
-        Saab95 saab = new Saab95(2,16,Color.CYAN);
+        Saab95 saab = new Saab95(2,new TurboEngine(16),Color.CYAN);
         assertEquals(1, saab.getDirection(), "Asserts start direction is forward (1)");
         saab.turnRight();
         assertEquals(2, saab.getDirection(), "Asserts that turn right turns right");
@@ -64,7 +67,7 @@ public class testMotorVehicle {
 
     @Test
     void testMovement(){
-        Volvo240 volvo = new Volvo240(4,100,Color.red);
+        Volvo240 volvo = new Volvo240(4,new Engine(100, 1.25),Color.red);
         volvo.startEngine();
 
         volvo.incrementSpeed(1);
@@ -103,7 +106,7 @@ public class testMotorVehicle {
 
     @Test
     void testAccelerationDeceleration(){
-        Saab95 saab = new Saab95(2,120,Color.black);
+        Saab95 saab = new Saab95(2,new TurboEngine(120),Color.black);
         saab.startEngine();
 
         saab.incrementSpeed(1);
@@ -126,7 +129,8 @@ public class testMotorVehicle {
 
     @Test
     void testGas(){
-        Saab95 saab = new Saab95(2,100,Color.blue);
+        Saab95 saab = new Saab95(2,new TurboEngine(200),Color.blue);
+        saab.startEngine();
 
         for(int i = -50; i < 150; i++){
             double factor = i * 0.01;
@@ -152,7 +156,8 @@ public class testMotorVehicle {
 
     @Test
     void testBreak(){
-        Saab95 saab = new Saab95(2,100,Color.blue);
+        Saab95 saab = new Saab95(2,new TurboEngine(200),Color.blue);
+        saab.startEngine();
 
         for(int i = -50; i < 150; i++){
             double factor = i * 0.01;
@@ -170,8 +175,10 @@ public class testMotorVehicle {
                     assertTrue(newSpeedGreater);
                 }
                 //If the oldSpeed is 0 then the new one should also be 0 since be aren't considering negative values.
-                else
+                else {
                     assertEquals(oldSpeed, saab.getCurrentSpeed());
+                }
+
             }
         }
 

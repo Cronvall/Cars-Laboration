@@ -17,11 +17,11 @@ public class SaabExclusiveWorkShop extends WorkShop<Saab95> {
 
     /**
      * Inserts a vehicle to the end of the list
-     * @param car to be added to the workshop
+     * @param saab95 to be added to the workshop
      */
      @Override
-     public void addVehicle(Saab95 car){
-        super.addVehicle(car);
+     public void addVehicle(Saab95 saab95){
+        super.addVehicle(saab95);
     }
 
 
