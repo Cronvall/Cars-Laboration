@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args){
         CarController controller = new CarController();
-        controller.cars.add(new Volvo240(2, new Engine(150),Color.red));
+        controller.cars.add(new Volvo240(2, new Engine(150, 1.5),Color.red));
         controller.cars.add(new Saab95(2,new TurboEngine(250),Color.red));
         controller.cars.add(new Scania(new Engine(400),Color.red,4,new Platform()));
 
