@@ -14,7 +14,7 @@ import vehicle.*;
 public class CarController {
     // member fields:
 
-    // The delay (ms) corresponds to 20 updates a sec (hz)
+    // The delay (ms) corresponds to (20 hz)
     private final int delay = 50;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
@@ -49,10 +49,53 @@ public class CarController {
         }
     }
 
+    //Calls the brake method for each car once
     void brake(int amount){
         double brake = ((double) amount) / 100;
         for(Car car: cars){
             car.brake(brake);
+        }
+    }
+
+    //Turbo management for SAAB
+    void turboOn(){
+        for(Car car: cars){
+            if (car.getClass() == Saab95.class){
+                ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+    void turboOff(){
+        for(Car car: cars){
+            if (car.getClass() == Saab95.class){
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
+
+    void liftRamp(){
+        for(Car car: cars){
+            if(car.getClass() == Scania.class){
+                ((Scania)car).raisePlatform(70);
+            }
+        }
+    }
+    void lowerRamp(){
+        for(Car car: cars){
+            if(car.getClass() == Scania.class){
+                ((Scania)car).lowerPlatform(70);
+            }
+        }
+    }
+
+    void startEngines(){
+        for(Car car : cars){
+            car.startEngine();
+        }
+    }
+    void stopEngines(){
+        for(Car car : cars){
+            car.stopEngine();
         }
     }
 

@@ -17,12 +17,11 @@ public class Scania extends Truck {
      * @param color Describes the color of the Truck
      * @param grossWeightInTons Describes the Truck's gross weight in tons
      * @param complexPlatform Describes the object of the Truck's complexPlatform
-     * @param nrDoors Describes the Truck's number of doors
      */
     public Scania(int enginePower, Color color, double grossWeightInTons,
-                  Platform complexPlatform, int nrDoors) {
+                  Platform complexPlatform) {
         super(enginePower, color, "vehicle.Scania",
-                true, grossWeightInTons, nrDoors);
+                true, grossWeightInTons, 2);
         this.complexPlatform = complexPlatform;
     }
 

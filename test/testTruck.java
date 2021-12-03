@@ -10,7 +10,7 @@ public class testTruck {
     @Test
     void testSpeedFactor(){
         double grossWeight = 8.5;
-        Scania scania = new Scania(400, Color.green,grossWeight, new Platform(), 2);
+        Scania scania = new Scania(400, Color.green,grossWeight, new Platform());
         double assumedSpeedFactor = scania.getCurrentSpeed() - (0.01 * scania.getGrossWeightInTons());
 
         assertEquals(assumedSpeedFactor, scania.speedFactor());

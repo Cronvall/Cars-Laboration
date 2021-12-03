@@ -6,19 +6,37 @@
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testScania.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testScania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/testTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/testTruck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="RunManager">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21jn1WkSoOU938JGEkcfjWHA80z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="JUnit.All in Cars-Laboration">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Cars-Laboration" />
@@ -26,14 +44,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in Cars-Laboration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cars-Laboration" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Cars-Laboration" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5ada72f-ef73-4df1-932e-30e150c91ba9" name="Changes" comment="" />
+      <created>1638463153458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638463153458</updated>
+      <workItem from="1638463153459" duration="40000" />
+      <workItem from="1638470384898" duration="5755000" />
+      <workItem from="1638518065594" duration="829000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />

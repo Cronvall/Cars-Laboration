@@ -12,6 +12,7 @@ public class Main {
         CarController controller = new CarController();
         controller.cars.add(new Volvo240(2,150,Color.red));
         controller.cars.add(new Saab95(2,150,Color.red));
+        controller.cars.add(new Scania(400,Color.red,4,new Platform()));
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();
@@ -19,7 +20,7 @@ public class Main {
 
     private static void scaniaRun(){
         Platform rampForScania = new Platform();
-        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania, 2);
+        Scania firstScania = new Scania(420, Color.RED, 6.0, rampForScania);
         firstScania.getRamp().raise(90);
     }
 
@@ -113,7 +114,7 @@ public class Main {
         volvo.addVehicle(vol);
 
         WorkShop work = new WorkShop(new Point(2, 3), 2);
-        Scania scan = new Scania(320, Color.RED, 4,new Platform(), 2);
+        Scania scan = new Scania(320, Color.RED, 4,new Platform());
 
         volvo.changeOilFilter(vol);
     }
