@@ -1,12 +1,13 @@
 package workshops;
-
 import vehicle.Car;
 import vehicle.MotorVehicle;
 
 public interface IWorkShop<T extends MotorVehicle> {
 
-    // TODO fix that if can have this method
-    //void addVehicle(Car vehicle);
+
+    void addVehicle(T vehicle);
+
+    void removeVehicle(T vehicle);
 
     /**
      * Changes the tires of the vehicle

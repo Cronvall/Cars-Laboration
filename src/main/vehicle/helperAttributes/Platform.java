@@ -42,7 +42,6 @@ public class Platform implements IPlatform{
      * Returns if vehicles is allowed to move
      * @return returns the boolean if allowed
      */
-    @Override
     public boolean getAllowMotion(){return allowMotion;}
 
     /**

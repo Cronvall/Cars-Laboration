@@ -34,9 +34,16 @@ public class CarController {
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
-                frame.drawPanel.moveit(x, y);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
+
+                if (x < 200) {
+                    frame.drawPanel.moveit(x, y);
+                    // repaint() calls the paintComponent method of the panel
+                    frame.drawPanel.repaint();
+                }
+                else{
+                    System.out.println("Outside");
+                }
+
             }
         }
     }

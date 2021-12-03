@@ -3,7 +3,7 @@ package vehicle.helperAttributes;
 /**
  * A platform can be raised or lowered with an amount of degrees
  */
-public interface IPlatform extends ILoadingDock {
+public interface IPlatform {
 
     /**
      * Lowers the ComplexPlatform by a given amount of degrees
@@ -21,14 +21,13 @@ public interface IPlatform extends ILoadingDock {
      * Returns if vehicles is allowed to move
      * @return returns the boolean if allowed
      */
-    @Override
+
     boolean getAllowMotion();
 
     /**
      * Returns if vehicles is allowed to load
      * @return returns the boolean if allowed loading
      */
-    @Override
     boolean getAllowLoading();
 
 }

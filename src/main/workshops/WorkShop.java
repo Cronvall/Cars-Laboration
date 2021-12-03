@@ -7,7 +7,7 @@ import vehicle.*;
  * Workshop holds vehicles and have methods to maintain them
  * @param <T>
  */
-public class WorkShop<T extends MotorVehicle> implements IWorkShop {
+public class WorkShop<T extends MotorVehicle> implements IWorkShop<T> {
 
     private ArrayList<MotorVehicle> vehiclesInWorkshop = new ArrayList<>();
     private Point gpsLocations;
@@ -35,20 +35,19 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
      * Inserts a vehicle to the workshop
      * @param vehicle to be added to the workshop
      */
+    @Override
     public void addVehicle(T vehicle){
-        willCapacityExceed(vehicle);
+        checkCapacityExceed(vehicle);
+        addVehicleIfNotInWorkshop(vehicle);
     }
 
     /**
      * If within capacity add a vehicle otherwise throw exception
      * @param vehicle to add
      */
-    private void willCapacityExceed(T vehicle) {
+    private void checkCapacityExceed(T vehicle) {
         boolean exceedCapacity = vehiclesInWorkshop.size() < workShopCapacity;
-        if (exceedCapacity) {
-            addVehicleIfNotInWorkshop(vehicle);
-        }
-        else{
+        if (! exceedCapacity) {
             throw new IllegalArgumentException("Too many vehicles in the workshop");
         }
     }
@@ -79,17 +78,17 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
      * Removes the specified element from the workshop
      * @param vehicle to be removed from the workshop
      */
+    @Override
     public void removeVehicle(T vehicle){
         vehiclesInWorkshop.remove(vehicle);
     }
-
 
     /**
      * Changes the tires of the vehicle
      * @param motorVehicle vehicle to change tires of
      */
     @Override
-    public void changeTires(MotorVehicle motorVehicle) {
+    public void changeTires(T motorVehicle) {
         System.out.println("Tires changed!");
     }
 
@@ -98,7 +97,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
      * @param motorVehicle to change oil-filter of
      */
     @Override
-    public void changeOilFilter(MotorVehicle motorVehicle) {
+    public void changeOilFilter(T motorVehicle) {
         System.out.println("Oil filter changed!");
     }
 
@@ -107,7 +106,7 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop {
      * @param motorVehicle to repair windshield
      */
     @Override
-    public void repairWindShield(MotorVehicle motorVehicle) {
+    public void repairWindShield(T motorVehicle) {
         System.out.println("Windshield repaired!");
     }
 

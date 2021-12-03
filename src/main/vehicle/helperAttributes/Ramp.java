@@ -18,14 +18,12 @@ public class Ramp implements IRamp {
      * Returns if vehicles is allowed to load
      * @return returns the boolean if allowed loading
      */
-    @Override
     public boolean getAllowLoading(){ return !rampUp;}
 
     /**
      * Returns if vehicles is allowed to move
      * @return  the boolean if moving is allowed
      */
-    @Override
     public boolean getAllowMotion(){
         return rampUp;
     }
