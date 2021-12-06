@@ -30,8 +30,10 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            int direction = 1;
             for (Car car : cars) {
                 car.move();
+                System.out.println("Current position Y-axis: " + Math.round(car.getPosition().getY()));
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
 
@@ -44,6 +46,18 @@ public class CarController {
                     System.out.println("Outside");
                 }
 
+                frame.drawPanel.moveit(x, y * direction);
+                if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0){
+                    car.turnLeft();
+                    car.turnLeft();
+                }
+                if(car.getDirection() == 1)
+                    direction = 1;
+                else if(car.getDirection() == 4)
+                    direction = -1;
+                // repaint() calls the paintComponent method of the panel
+                frame.drawPanel.repaint();
+                frame.drawPanel.drawCars(frame.getGraphics(), cars);
             }
         }
     }
@@ -109,5 +123,9 @@ public class CarController {
     //Getters
     public Timer getTimer(){
         return timer;
+    }
+
+    public ArrayList<Car> getCars(){
+        return cars;
     }
 }

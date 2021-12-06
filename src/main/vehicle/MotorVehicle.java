@@ -5,6 +5,7 @@ import vehicle.helperAttributes.TurboEngine;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 
 /**
  * A vehicle that has an engine
@@ -13,6 +14,7 @@ public abstract class MotorVehicle implements Movable {
 
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
     // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
+    private BufferedImage image;
     private Point2D.Double position = new Point2D.Double();
     private boolean loadedOnTransporter;
     private final String modelName;
@@ -35,6 +37,13 @@ public abstract class MotorVehicle implements Movable {
     }
 
     //Get methods
+
+    /**
+     * Returns the image of a motor vehicle
+     */
+    public BufferedImage getImage(){
+        return image;
+    }
     /**
      * Returns a boolean if vehicle is allowed to load
      */
@@ -246,6 +255,7 @@ public abstract class MotorVehicle implements Movable {
          */
         public void startEngine () {
             this.engine.startEngine();
+            if(0.1 > currentSpeed)
             currentSpeed = 0.1;
         }
 

@@ -1,6 +1,11 @@
 package vehicle;
 import vehicle.helperAttributes.TurboEngine;
+
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * A Saab95 is a Car with turbo deciding its speed factor
@@ -8,7 +13,7 @@ import java.awt.*;
 public class Saab95 extends Car {
 
     private final TurboEngine engine;
-
+    private BufferedImage image;
     /**
      * Initiates a new Car of the class Saab95
      * @param nrDoors Describes the Car's number of doors
@@ -17,6 +22,12 @@ public class Saab95 extends Car {
     public Saab95(int nrDoors, TurboEngine engine, Color col){
         super(nrDoors,engine,col,"Saab-95");
         this.engine = engine;
+        try{
+            image = ImageIO.read(new File("src/main/vehicle.pics/Saab95.jpg"));
+        }
+        catch (IOException e){
+            System.out.println("Faulty read of image in Saab!");
+        }
     }
 
      @Override

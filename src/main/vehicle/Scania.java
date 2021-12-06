@@ -2,15 +2,19 @@ package vehicle;
 import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * A Scania is a Truck with a platform
  */
 public class Scania extends Truck {
 
-    private final Platform platform;
-
+    private final Platform complexPlatform;
+    private  static BufferedImage image;
     /**
      * Initiates a new Truck of the class Scania
      * @param engine Describes the engine
@@ -22,7 +26,13 @@ public class Scania extends Truck {
                   Platform platform) {
         super(engine, color, "vehicle.Scania",
                 true, grossWeightInTons, 2);
-        this.platform = platform;
+        this.complexPlatform = complexPlatform;
+        try{
+            image = ImageIO.read(new File("src/main/vehicle.pics/scania.jpg"));
+        }
+        catch (IOException e){
+            System.out.println("Faulty read of image in Scania!");
+        }
     }
 
     /**
@@ -47,7 +57,9 @@ public class Scania extends Truck {
      * @param angle decides how much to lower the platform
      */
     public void lowerPlatform(int angle){
-        platform.lower(angle);
+        if(getCurrentSpeed() == 0)
+        complexPlatform.lower(angle);
+        else System.out.println("You need to stop before lowering platform");
     }
 
     /**
@@ -58,6 +70,8 @@ public class Scania extends Truck {
         if (platform.getAllowMotion()){
             super.move();}
         else{
-            throw new IllegalArgumentException("platform is down!");}
+            System.out.println("ComplexPlatform is down");
+            stopEngine();
+        }
     }
 }
