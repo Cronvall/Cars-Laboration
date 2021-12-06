@@ -175,8 +175,9 @@ public abstract class MotorVehicle implements Movable {
          * @param amount how much gas is applied
          * @return true if gas is within interval and false if outside interval
          */
-        private boolean gasAmountAllowed ( double amount ){
+        private boolean gasAmountAllowed ( double amount){
             boolean withinGasInterval = amount > 0 && amount <= 1;
+            if(!withinGasInterval){System.out.println("Not within gas interval");}
             return withinGasInterval;
         }
 
@@ -184,7 +185,7 @@ public abstract class MotorVehicle implements Movable {
          * Increases the vehicle's current speed
          * @param amount Describes by how much (approx. 1-100%) the speed will increase
          */
-        public void incrementSpeed ( double amount){
+        private void incrementSpeed ( double amount){
             double newSpeed = getCurrentSpeed() + speedFactor() * amount;
             setCurrentSpeed(Math.min(newSpeed, getEnginePower()));
         }
@@ -210,7 +211,7 @@ public abstract class MotorVehicle implements Movable {
             if (!loadedOnTransporter)
                 return false;
             else
-                throw new IllegalArgumentException("Vehicle is already on a flatbed");
+                throw new IllegalArgumentException("Vehicle is on a flatbed, may not gas");
         }
 
         private boolean engineStarted () {
@@ -235,7 +236,7 @@ public abstract class MotorVehicle implements Movable {
          * Decreases the vehicle's current speed
          * @param amount Describes by how much (approx. 1-100%) the speed will decrease
          */
-        public void decrementSpeed ( double amount){
+        private void decrementSpeed ( double amount){
             double newSpeed = getCurrentSpeed() - speedFactor() * amount;
             setCurrentSpeed(Math.max(newSpeed, 0));
         }
@@ -296,7 +297,6 @@ public abstract class MotorVehicle implements Movable {
             }
         }
 
-        @Override
         public String toString () {
             return (
                     this.getClass().toString() +

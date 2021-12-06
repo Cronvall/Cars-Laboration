@@ -10,16 +10,15 @@ import java.awt.*;
 public class Ferry extends MotorVehicle implements ILoadCar {
 
     private LoaderHelper<Ferry> loaderHelper;
-    private Flatbed loadOn;
+    private Flatbed flatbed;
     private Platform complexPlatform = new Platform();
     /**
      * Initiates a new MotorVehicle of the class Ferry
-     * @param weight Describes the Ferry's weight
      */
-    public Ferry(double weight, int capacity){
+    public Ferry( int capacity){
         super(new Engine(200), Color.white,"vehicle.Ferry");
-        this.loadOn = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
-        this.loaderHelper = new LoaderHelper<Ferry>(loadOn);
+        this.flatbed = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
+        this.loaderHelper = new LoaderHelper<>(flatbed);
     }
 
     @Override

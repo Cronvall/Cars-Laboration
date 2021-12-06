@@ -9,9 +9,9 @@ import vehicle.*;
  */
 public class WorkShop<T extends MotorVehicle> implements IWorkShop<T> {
 
-    private ArrayList<MotorVehicle> vehiclesInWorkshop = new ArrayList<>();
-    private Point gpsLocations;
-    private int workShopCapacity;
+    private final ArrayList<MotorVehicle> vehiclesInWorkshop = new ArrayList<>();
+    private final Point gpsLocations;
+    private final int workShopCapacity;
 
     /**
      * Initiates a new object of the class WorkShop
@@ -37,15 +37,14 @@ public class WorkShop<T extends MotorVehicle> implements IWorkShop<T> {
      */
     @Override
     public void addVehicle(T vehicle){
-        checkCapacityExceed(vehicle);
+        checkCapacityExceed();
         addVehicleIfNotInWorkshop(vehicle);
     }
 
     /**
-     * If within capacity add a vehicle otherwise throw exception
-     * @param vehicle to add
+     * Control if workshop is within capacity, otherwise throw exception
      */
-    private void checkCapacityExceed(T vehicle) {
+    private void checkCapacityExceed() {
         boolean exceedCapacity = vehiclesInWorkshop.size() < workShopCapacity;
         if (! exceedCapacity) {
             throw new IllegalArgumentException("Too many vehicles in the workshop");

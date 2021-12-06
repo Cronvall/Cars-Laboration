@@ -12,7 +12,7 @@ public class testFerry {
 
     @Test
     void test_Ferry(){
-        Ferry f = new Ferry(500, 20);
+        Ferry f = new Ferry(20);
 
         double desiredSpeedFactor = 200 * (0.1 / 500);
         assertEquals(desiredSpeedFactor,f.speedFactor(), "Test of the speedfactor");

@@ -52,8 +52,6 @@ public class testScania {
         scan.lowerPlatform(90);
         System.out.println("Current angle: " + scan.getRamp().getAngle());
         scan.startEngine();
-        scan.move();
-        Point2D.Double startPosition = new Point2D.Double(0,0);
-        assertEquals(startPosition, scan.getPosition(), "Has the truck moved");
+        assertThrows(IllegalArgumentException.class, () -> scan.move(), "Platform is down!");
     }
 }

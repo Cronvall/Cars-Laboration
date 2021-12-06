@@ -48,7 +48,6 @@ public class CarTransporter extends Truck implements ILoadCar {
         loaderHelper.loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
-
     /**
      * Removes a car from a vehicle
      */

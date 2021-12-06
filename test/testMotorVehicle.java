@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.*;
 import vehicle.*;
 import vehicle.helperAttributes.Engine;
+import vehicle.helperAttributes.Platform;
+import vehicle.helperAttributes.Ramp;
 import vehicle.helperAttributes.TurboEngine;
 
 import java.awt.*;
@@ -70,7 +72,7 @@ public class testMotorVehicle {
         Volvo240 volvo = new Volvo240(4,new Engine(100, 1.25),Color.red);
         volvo.startEngine();
 
-        volvo.incrementSpeed(1);
+        volvo.gas(1);
         double desiredSpeed = 0.1 + 1.25;
         assertEquals(desiredSpeed,volvo.getCurrentSpeed(), "Asserts the correct speed is set.");
 
@@ -109,22 +111,51 @@ public class testMotorVehicle {
         Saab95 saab = new Saab95(2,new TurboEngine(120),Color.black);
         saab.startEngine();
 
-        saab.incrementSpeed(1);
+        saab.gas(1);
         double desiredSpeed = 0.1 + (120 * 0.01);
         assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after acceleration");
 
-        saab.incrementSpeed(0.5);
+        saab.gas(0.5);
         desiredSpeed += (120 * 0.01 * 0.5);
         assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after acceleration");
 
-        saab.decrementSpeed(0.5);
+        saab.brake(0.5);
         desiredSpeed -= (120 * 0.01 * 0.5);
         assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after deceleration");
 
-        saab.decrementSpeed(0.3);
+        saab.brake(0.3);
         desiredSpeed -= (120 * 0.01 * 0.3);
         assertEquals(desiredSpeed, saab.getCurrentSpeed(), "Asserts we have the wanted speed after deceleration");
 
+    }
+
+    @Test
+    void shutEngineOff(){
+        Scania scania = new Scania(new Engine(200), Color.red, 20, new Platform());
+        scania.startEngine();
+        scania.move();
+        scania.brake(1);
+        scania.stopEngine();
+
+        assertEquals(scania.getCurrentSpeed(), 0);
+    }
+
+    @Test
+    void engineStarted(){
+        Saab95 saab95 = new Saab95(2, new TurboEngine(200), Color.green);
+
+        assertThrows(IllegalArgumentException.class, () -> saab95.gas(0.54));
+    }
+
+    @Test
+    void loadedOnTransporter(){
+        CarTransporter truck = new CarTransporter(3);
+        Volvo240 volvo240 = new Volvo240(2, new Engine(200), Color.green);
+
+        truck.getRamp().lower();
+        truck.loadCar(volvo240);
+
+        assertThrows(IllegalArgumentException.class, () -> volvo240.gas(0.95));
     }
 
     @Test
@@ -154,6 +185,13 @@ public class testMotorVehicle {
         }
     }
 
+    @Test
+    void toTheString(){ // For 100% testing... but it didn't work!
+        Scania smolTruck = new Scania(new Engine(100), Color.RED, 20, new Platform());
+        String truckText = smolTruck.toString();
+        assertTrue(truckText instanceof String);
+
+    }
     @Test
     void testBreak(){
         Saab95 saab = new Saab95(2,new TurboEngine(200),Color.blue);

@@ -1,6 +1,7 @@
 package vehicle;
 import vehicle.helperAttributes.Flatbed;
 import java.awt.geom.Point2D;
+import java.lang.reflect.Array;
 
 /**
  * A LoaderHelper refers to a MotorVehicle that carries cars on a flatbed
@@ -9,8 +10,6 @@ import java.awt.geom.Point2D;
 public class LoaderHelper<T extends MotorVehicle> {
 
     private Flatbed ownerFlatbed;
-    private Car currentVehicle;
-    private MotorVehicle motorVehicleLoadingOn;
 
     /**
      * Initiates a new MotorVehicle of the class LoaderHelper
@@ -22,43 +21,39 @@ public class LoaderHelper<T extends MotorVehicle> {
 
     /**
      * Loads a car onto the LoaderHelper
-     * @param vehicleLoading Describes the vehicle to be loaded
-     * @param vehicleToLoadOn Refers to the LoaderHelper
+     * @param car Describes the vehicle to be loaded
+     * @param carTransporter Refers to the LoaderHelper
      */
-     public void loadCar(Car vehicleLoading, T vehicleToLoadOn) {
-        this.currentVehicle = vehicleLoading;
-        this.motorVehicleLoadingOn = vehicleToLoadOn;
+     public void loadCar(Car car, T carTransporter) {
+        validateIfSameVehicle(car, carTransporter);
 
-        validateIfSameVehicle();
-
+        if (vehiclesWithinLoadingRange(car, carTransporter) && !vehicleLoadedOnTransporter(car)) {
+            updateVehicleStatus(car, carTransporter);}
     }
 
     /**
      * If vehicle tries to load itself, throws an exception
      */
-    private void validateIfSameVehicle(){
-        if (motorVehicleLoadingOn == currentVehicle)
-            throw new IllegalArgumentException("Can't load the vehicle on itself!");
-        else
-            if (vehicleWithinLoadingRange() && !vehicleLoadedOnTransporter()) {
-                updateVehicleStatus();}
+    private void validateIfSameVehicle(Car car, T carTransporter){
+        boolean sameVehicle = car == carTransporter;
+        if (sameVehicle) {throw new IllegalArgumentException("Can't load the vehicle on itself!");}
     }
 
     /**
      * Controls if the vehicle is already loaded on a flatbed
      * @return boolean
      */
-    private boolean vehicleLoadedOnTransporter(){
-       return currentVehicle.getLoadedOnTransporter();
+    private boolean vehicleLoadedOnTransporter(Car car){
+       return car.getLoadedOnTransporter();
     }
 
     /**
      * Controls if the vehicles is within the required range to each other
      * @return If within loading range returns true, otherwise false if you cannot load
      */
-    private boolean vehicleWithinLoadingRange(){
-        boolean xRange = rangeAllowed(currentVehicle.getPosition().getX(), motorVehicleLoadingOn.getPosition().getX());
-        boolean yRange = rangeAllowed(currentVehicle.getPosition().getY(), motorVehicleLoadingOn.getPosition().getY());
+    private boolean vehiclesWithinLoadingRange(Car car, T carTransporter){
+        boolean xRange = rangeAllowed(car.getPosition().getX(), carTransporter.getPosition().getX());
+        boolean yRange = rangeAllowed(car.getPosition().getY(), carTransporter.getPosition().getY());
         return (xRange && yRange);
     }
 
@@ -77,21 +72,21 @@ public class LoaderHelper<T extends MotorVehicle> {
     /**
      * Car gets added to flatbeds array of cargo
      */
-    private void updateVehicleStatus(){
-        ownerFlatbed.loadCar(currentVehicle);
-        currentVehicle.setLoadedOnTransporter(true);
-        newLoadPosition();
+    private void updateVehicleStatus(Car car, T carTransporter){
+        ownerFlatbed.loadCar(car);
+        car.setLoadedOnTransporter(true);
+        newLoadPosition(car, carTransporter);
     }
 
     /**
      * Updates the position of the current vehicle to be the same as the vehicle loaded on top on
      */
-    private void newLoadPosition(){
-        double loadOffX = motorVehicleLoadingOn.getPosition().getX();
-        double loadOffY = motorVehicleLoadingOn.getPosition().getY();
+    private void newLoadPosition(Car car, T carTransporter){
+        double loadOffX = carTransporter.getPosition().getX();
+        double loadOffY = carTransporter.getPosition().getY();
         Point2D.Double newPosition = new Point2D.Double(loadOffX, loadOffY);
 
-        currentVehicle.setPosition(newPosition);
+        car.setPosition(newPosition);
     }
 
     /**
@@ -120,20 +115,21 @@ public class LoaderHelper<T extends MotorVehicle> {
         }
     }
 
-
-
     /**
      * Checks whether any cars are currently being carried
      * @return a boolean 
      */
     public boolean isEmpty(){
+        Car[] flatbedLoad = this.getLoad();
         boolean result = true;
-        for(int i = 0; i < this.getLoad().length; i++){
-            if(this.getLoad()[i] != null){
+        for(int loadIndex = 0; loadIndex < flatbedLoad.length; loadIndex++){
+            if(flatbedLoad[loadIndex] != null){
                 result = false;
                 break;
             }
         }
         return result;
     }
+
+
 }

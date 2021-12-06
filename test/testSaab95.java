@@ -25,6 +25,15 @@ public class testSaab95 {
     }
 
     @Test
+    void stopEngineSaab95(){
+        Saab95 saab95 = new Saab95(2, new TurboEngine(10), Color.green);
+        saab95.startEngine();
+        saab95.stopEngine();
+        assertEquals(saab95.getCurrentSpeed(), 0);
+        assertFalse(saab95.getTurbo());
+    }
+
+    @Test
     void turboOff(){
         Saab95 saab = new Saab95(4, new TurboEngine(300), Color.red);
         saab.turboOff();

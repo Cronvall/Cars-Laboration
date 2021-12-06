@@ -17,6 +17,7 @@ public class Main {
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();
+
     }
 
     private static void scaniaRun(){
