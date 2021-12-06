@@ -28,7 +28,7 @@ public class Scania extends Truck {
                 true, grossWeightInTons, 2);
         this.platform = platform;
         try{
-            image = ImageIO.read(new File("src/main/vehicle.pics/scania.jpg"));
+            image = ImageIO.read(new File("src/main/pics/scania.jpg"));
         }
         catch (IOException e){
             System.out.println("Faulty read of image in Scania!");

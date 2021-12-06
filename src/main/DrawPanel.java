@@ -11,6 +11,8 @@ public class DrawPanel extends JPanel{
 
     // Just a single image, TODO: Generalize
     BufferedImage volvoIMG;
+    BufferedImage saabIMG;
+    BufferedImage scaniaIMG;
 
     // To keep track of a singel cars position
     Point displayPoint = new Point();
@@ -26,12 +28,21 @@ public class DrawPanel extends JPanel{
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
-        //TODO FIX THE READING OF IMG FILE HERE
-        /*try {
-            volvoIMG = ImageIO.read(new File("pics/Volvo240.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        // Print an error message in case file is not found with a try/catch block
+        try {
+            // You can remove the "pics" part if running outside of IntelliJ and
+            // everything is in the same main folder.
+            // volvoImage = ImageIO.read(new File("Volvo240.jpg"));
+
+            // Rememember to rightclick src New -> Package -> name: pics -> MOVE *.jpg to pics.
+            // if you are starting in IntelliJ.
+            volvoIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
+            saabIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
+            scaniaIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg"));
+        } catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself

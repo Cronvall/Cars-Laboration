@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9eb14de2-b7bf-4224-8ac9-bcd42ebcdcd0" name="Changes" comment="">
+    <list default="true" id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +34,18 @@
     </recent_temporary>
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a6b78e0-c3f2-4672-ad8a-3dea5ddb707f" name="Changes" comment="" />
+      <created>1638463153458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638463153458</updated>
+      <workItem from="1638463153459" duration="40000" />
+      <workItem from="1638470384898" duration="5755000" />
+      <workItem from="1638518065594" duration="829000" />
+      <workItem from="1638570100138" duration="286000" />
+      <workItem from="1638799093684" duration="1447000" />
+    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
