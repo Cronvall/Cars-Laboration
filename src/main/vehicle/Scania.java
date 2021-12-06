@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Scania extends Truck {
 
-    private final Platform complexPlatform;
+    private final Platform platform;
     private  static BufferedImage image;
     /**
      * Initiates a new Truck of the class Scania
@@ -26,7 +26,7 @@ public class Scania extends Truck {
                   Platform platform) {
         super(engine, color, "vehicle.Scania",
                 true, grossWeightInTons, 2);
-        this.complexPlatform = complexPlatform;
+        this.platform = platform;
         try{
             image = ImageIO.read(new File("src/main/vehicle.pics/scania.jpg"));
         }
@@ -58,7 +58,7 @@ public class Scania extends Truck {
      */
     public void lowerPlatform(int angle){
         if(getCurrentSpeed() == 0)
-        complexPlatform.lower(angle);
+        platform.lower(angle);
         else System.out.println("You need to stop before lowering platform");
     }
 
