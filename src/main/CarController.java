@@ -38,10 +38,12 @@ public class CarController {
 
                 frame.drawPanel.moveit(x, y * direction, car);
 
-                if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0){
+                if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0 && car.isRunning()){
+                    car.turnLeft(); // Turns 180 degrees
                     car.turnLeft();
-                    car.turnLeft();
-
+                    car.move(); //Move so that we don't get stuck in a position of 500 or 0
+                    car.stopEngine();
+                    car.startEngine();
                 }
                 if(car.getDirection() == 1){
                     direction = 1;

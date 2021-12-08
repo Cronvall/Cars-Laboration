@@ -40,5 +40,7 @@ public class Engine implements IEngine{
         this.engineRunning = false;
     }
 
+    public boolean isRunning(){return this.engineRunning;}
+
 
 }

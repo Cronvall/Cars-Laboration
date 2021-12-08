@@ -96,9 +96,21 @@ public abstract class MotorVehicle implements Movable {
         return position;
     }
 
+    /**
+    * Returns Position.x
+    * @return the position of x-axle
+     */
+    @Override
     public double getX(){return position.getX();}
+    /**
+     * Returns Position.y
+     * @return the position of y-axle
+     */
+    @Override
     public double getY(){return position.getY();}
 
+
+    public boolean isRunning(){return engine.isRunning();}
     /**
      * Returns the vehicle's model name as a String
      *

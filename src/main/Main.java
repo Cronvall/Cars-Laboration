@@ -11,7 +11,7 @@ public class Main {
         CarController controller = new CarController();
         controller.cars.add(MotorVehicleFactory.buildVolvo240(4, new Engine(50), Color.red));
         controller.cars.add(MotorVehicleFactory.buildSaab95(2, new TurboEngine(50), Color.CYAN));
-        controller.cars.add(MotorVehicleFactory.buildScania(new Engine(50), Color.green, 10));
+        controller.cars.add(MotorVehicleFactory.buildScania(new Engine(500), Color.green, 5));
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();

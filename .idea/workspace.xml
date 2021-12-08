@@ -12,15 +12,14 @@
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Saab95.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Volvo240.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrawPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/LoaderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/LoaderHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Movable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/vehicle/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/Flatbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/TurboEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/helperAttributes/TurboEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <workItem from="1638518065594" duration="829000" />
       <workItem from="1638570100138" duration="286000" />
       <workItem from="1638799093684" duration="7815000" />
-      <workItem from="1638953837513" duration="1025000" />
+      <workItem from="1638953837513" duration="5732000" />
     </task>
     <servers />
   </component>
