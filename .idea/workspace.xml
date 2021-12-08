@@ -8,25 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$TimerListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/VehicleModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Factory/MotorVehicleFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Factory/MotorVehicleFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +146,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/CarView.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="vehicle.Saab95" memberName="position" />

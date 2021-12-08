@@ -1,3 +1,6 @@
+import vehicle.MotorVehicle;
+import vehicle.Saab95;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -112,9 +115,19 @@ public class CarView extends JFrame implements Observer{
     }
     */
 
+    public void paintCars(Graphics g){
+        int countX = 0;
+        for (MotorVehicle vehicle: model.getVehicles()){
+                g.drawImage(vehicle.getImage(), countX, (int)vehicle.getY(), null);
+                countX = countX +100;
+            }
+        }
+
+
 
     @Override
     public void update(){
-        repaint();
+       //repaint();
+        //paintCars();
     }
 }

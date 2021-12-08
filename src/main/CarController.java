@@ -85,8 +85,6 @@ public class CarController {
             }
         });
 
-
-
         view.stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

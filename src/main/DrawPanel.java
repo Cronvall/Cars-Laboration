@@ -50,14 +50,16 @@ public class DrawPanel extends JPanel{
 
         CarView view = new CarView("Cars-laboration", model);
 
+        model.addObserver(view);
+
         CarController controller = new CarController(model, view);
 
 
-        model.cars.add(MotorVehicleFactory.buildVolvo240(4,100, Color.red));
-        model.cars.add(MotorVehicleFactory.buildSaab95(2, 100, Color.CYAN));
-        model.cars.add(MotorVehicleFactory.buildScania(1337, Color.green, 1));
+        model.vehicles.add(MotorVehicleFactory.buildVolvo240(4,100, Color.red));
+        model.vehicles.add(MotorVehicleFactory.buildSaab95(2, 100, Color.CYAN));
+        model.vehicles.add(MotorVehicleFactory.buildScania(1337, Color.green, 1));
 
-        controller.getTimer().start();
+        model.start();
     }
 
 
@@ -77,7 +79,6 @@ public class DrawPanel extends JPanel{
             volvoIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
             saabIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
             scaniaIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg"));
-
 
         } catch (IOException ex)
         {

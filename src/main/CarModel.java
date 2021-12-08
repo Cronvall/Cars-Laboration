@@ -1,14 +1,12 @@
 import vehicle.MotorVehicle;
 import vehicle.Saab95;
 import vehicle.Scania;
-
 import java.util.ArrayList;
-
 public class CarModel {
 
     ArrayList<MotorVehicle> vehicles;
     ArrayList<Observer> observers;
-    private int ticker;
+    int ticker;
 
     public CarModel() {
         ticker = 0;
@@ -51,9 +49,9 @@ public class CarModel {
             } else if (vehicle.getDirection() == 4) {
                 direction = -1;
             }
-            // repaint() calls the paintComponent method of the panel
-            //view.drawPanel.repaint();
-            //frame.drawPanel.drawCars(frame.getGraphics(), car);
+            for (Observer observer: observers){
+                observer.update();
+            }
         }
     }
     // Calls the gas method for each car once
@@ -118,10 +116,13 @@ public class CarModel {
         try {
             while (true) {
                 Thread.sleep(500);
+                System.out.println("Hello");
                 update();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+
 }
