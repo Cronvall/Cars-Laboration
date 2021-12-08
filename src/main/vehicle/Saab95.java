@@ -23,10 +23,9 @@ public class Saab95 extends Car {
         super(nrDoors,engine,col,"Saab-95");
         this.engine = engine;
         try{
-            image = ImageIO.read(new File("src/main/pics/Saab95.jpg"));
-        }
-        catch (IOException e){
-            System.out.println("Faulty read of image in Saab!");
+            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

@@ -11,9 +11,9 @@ public class Main {
 
     public static void main(String[] args){
         CarController controller = new CarController();
-        controller.cars.add(new Volvo240(2, new Engine(350, 1.5),Color.red));
+        controller.cars.add(new Volvo240(2, new Engine(100, 1.5),Color.red));
         controller.cars.add(new Saab95(2,new TurboEngine(250),Color.red));
-        controller.cars.add(new Scania(new Engine(400),Color.red,4,new Platform()));
+        controller.cars.add(new Scania(new Engine(500),Color.red,4,new Platform()));
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();

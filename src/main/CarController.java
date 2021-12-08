@@ -15,7 +15,7 @@ public class CarController {
     // member fields:
 
     // The delay (ms) corresponds to (20 hz)
-    private final int delay = 50;
+    private final int delay = 10;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
@@ -33,20 +33,14 @@ public class CarController {
             int direction = 1;
             for (Car car : cars) {
                 car.move();
-                System.out.println("Current position Y-axis: " + Math.round(car.getPosition().getY()));
+                System.out.println("Current position for " + car.getClass().toString() + " Y-axis: " + Math.round(car.getPosition().getY()));
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
 
-                if (x < 200) {
-                    frame.drawPanel.moveit(x, y);
-                    // repaint() calls the paintComponent method of the panel
-                    frame.drawPanel.repaint();
-                }
-                else{
-                    System.out.println("Outside");
-                }
-
                 frame.drawPanel.moveit(x, y * direction);
+                // repaint() calls the paintComponent method of the panel
+                frame.drawPanel.paintCar(frame.getGraphics(), car);
+                frame.drawPanel.repaint();
                 if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0){
                     car.turnLeft();
                     car.turnLeft();
@@ -55,9 +49,6 @@ public class CarController {
                     direction = 1;
                 else if(car.getDirection() == 4)
                     direction = -1;
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
-                frame.drawPanel.drawCars(frame.getGraphics(), cars);
             }
         }
     }

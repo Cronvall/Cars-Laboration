@@ -3,10 +3,7 @@ import vehicle.Car;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -56,12 +53,12 @@ public class DrawPanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(volvoIMG, displayPoint.x,displayPoint.y,null);
+        //g.drawImage(volvoIMG, 0,displayPoint.y,null);
+        //g.drawImage(saabIMG, 150,displayPoint.y,null);
+        //g.drawImage(scaniaIMG, 300,displayPoint.y,null);
     }
 
-    public void drawCars(Graphics g, ArrayList<Car> cars){
-        for(Car car : cars){
-            g.drawImage(car.getImage(), displayPoint.x, displayPoint.y,null);
-        }
+    protected void paintCar(Graphics g, Car car){
+        g.drawImage(car.getImage(), (int)car.getPosition().getX(), (int)car.getPosition().getY(), null);
     }
 }
