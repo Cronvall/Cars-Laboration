@@ -14,7 +14,7 @@ public class CarController {
     // member fields:
 
     // The delay (ms) corresponds to (20 hz)
-    private final int delay = 50;
+    private final int delay = 10;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
@@ -38,10 +38,12 @@ public class CarController {
 
                 frame.drawPanel.moveit(x, y * direction, car);
 
-                if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0){
+                if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0 && car.isRunning()){
+                    car.turnLeft(); // Turns 180 degrees
                     car.turnLeft();
-                    car.turnLeft();
-
+                    car.move(); //Move so that we don't get stuck in a position of 500 or 0
+                    car.stopEngine();
+                    car.startEngine();
                 }
                 if(car.getDirection() == 1){
                     direction = 1;

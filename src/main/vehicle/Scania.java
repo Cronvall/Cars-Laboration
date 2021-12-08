@@ -28,10 +28,9 @@ public class Scania extends Truck {
                 true, grossWeightInTons, 2);
         this.platform = platform;
         try{
-            image = ImageIO.read(new File("src/main/pics/scania.jpg"));
-        }
-        catch (IOException e){
-            System.out.println("Faulty read of image in Scania!");
+            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -50,6 +49,7 @@ public class Scania extends Truck {
      */
     public void raisePlatform(int angle){
         platform.raise(angle);
+        System.out.println("Platform raised");
     }
 
     /**
@@ -57,8 +57,11 @@ public class Scania extends Truck {
      * @param angle decides how much to lower the platform
      */
     public void lowerPlatform(int angle){
-        if(getCurrentSpeed() == 0)
-        platform.lower(angle);
+        if(Math.round(getCurrentSpeed()) == 0){
+            setCurrentSpeed(0);
+            platform.lower(angle);
+            System.out.println("Platform lowered");
+        }
         else System.out.println("You need to stop before lowering platform");
     }
 
@@ -71,7 +74,7 @@ public class Scania extends Truck {
             super.move();}
         else{
             stopEngine();
-            throw new IllegalArgumentException("platform needs to be up before movement");
+            System.out.println("platform needs to be up before movement");
         }
     }
 }

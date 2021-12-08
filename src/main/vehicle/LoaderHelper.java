@@ -82,8 +82,8 @@ public class LoaderHelper<T extends MotorVehicle> {
      * Updates the position of the current vehicle to be the same as the vehicle loaded on top on
      */
     private void newLoadPosition(Car car, T carTransporter){
-        double loadOffX = carTransporter.getPosition().getX();
-        double loadOffY = carTransporter.getPosition().getY();
+        double loadOffX = carTransporter.getX();
+        double loadOffY = carTransporter.getY();
         Point2D.Double newPosition = new Point2D.Double(loadOffX, loadOffY);
 
         car.setPosition(newPosition);

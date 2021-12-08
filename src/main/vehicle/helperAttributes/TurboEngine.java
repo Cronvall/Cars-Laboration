@@ -22,9 +22,11 @@ public class TurboEngine extends Engine{
 
     public void turboOff(){
         this.turboOn = false;
+        System.out.println("Turbo is off!");
     }
 
     public void turboOn(){
         this.turboOn = true;
+        System.out.println("Turbo is now on!");
     }
 }

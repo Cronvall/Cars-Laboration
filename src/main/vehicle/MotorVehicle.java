@@ -14,7 +14,7 @@ public abstract class MotorVehicle implements Movable {
 
     private int currentDirectionInteger = 1; //Start value 1 = Forward positive Y-axis.
     // Directions are integers: Y= 1, X = 2, -Y = 3, -X = 4
-    private BufferedImage image;
+    protected BufferedImage image;
     private Point2D.Double position = new Point2D.Double();
     private boolean loadedOnTransporter;
     private final String modelName;
@@ -99,6 +99,21 @@ public abstract class MotorVehicle implements Movable {
         return position;
     }
 
+    /**
+    * Returns Position.x
+    * @return the position of x-axle
+     */
+    @Override
+    public double getX(){return position.getX();}
+    /**
+     * Returns Position.y
+     * @return the position of y-axle
+     */
+    @Override
+    public double getY(){return position.getY();}
+
+
+    public boolean isRunning(){return engine.isRunning();}
     /**
      * Returns the vehicle's model name as a String
      *

@@ -4,7 +4,7 @@ import vehicle.helperAttributes.Engine;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -13,7 +13,6 @@ import java.util.Objects;
  */
 public class Volvo240 extends Car {
 
-    private static BufferedImage image;
     /**
      * Initiates a new Car of the class Volvo240
      * @param nrDoors Describes the Car's number of doors
