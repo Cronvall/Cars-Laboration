@@ -2,11 +2,9 @@ package vehicle;
 
 import vehicle.helperAttributes.Engine;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * A Volvo240 is a Car with a constant trim factor as its speed factor
