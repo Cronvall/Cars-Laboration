@@ -26,34 +26,7 @@ public class CarModel {
         vehicles.add(vehicle);
     }
 
-    private void update() {
-        ticker++;
-        int direction = 1;
 
-        for (MotorVehicle vehicle : vehicles) {
-            vehicle.move();
-            int x = (int) Math.round(vehicle.getPosition().getX());
-            int y = (int) Math.round(vehicle.getPosition().getY());
-
-            //view.drawPanel.moveit(x, y * direction, vehicle);
-
-            if (vehicle.getPosition().getY() >= 500 || vehicle.getPosition().getY() <= 0 && vehicle.isRunning()) {
-                vehicle.turnLeft(); // Turns 180 degrees
-                vehicle.turnLeft();
-                vehicle.move(); //Move so that we don't get stuck in a position of 500 or 0
-                vehicle.stopEngine();
-                vehicle.startEngine();
-            }
-            if (vehicle.getDirection() == 1) {
-                direction = 1;
-            } else if (vehicle.getDirection() == 4) {
-                direction = -1;
-            }
-            for (Observer observer: observers){
-                observer.update();
-            }
-        }
-    }
     // Calls the gas method for each car once
     void gas ( int amt){
         double g = ((double) amt) / 100;
@@ -112,11 +85,43 @@ public class CarModel {
         }
     }
 
-    public void start() {
+    private void movementUpdate(){
+        int direction = 1;
+        for (MotorVehicle vehicle : vehicles) {
+            vehicle.move();
+            int x = (int) Math.round(vehicle.getPosition().getX());
+            int y = (int) Math.round(vehicle.getPosition().getY());
+
+            //view.drawPanel.moveit(x, y * direction, vehicle);
+
+            if (vehicle.getPosition().getY() >= 500 || vehicle.getPosition().getY() <= 0 && vehicle.isRunning()) {
+                vehicle.turnLeft(); // Turns 180 degrees
+                vehicle.turnLeft();
+                vehicle.move(); //Move so that we don't get stuck in a position of 500 or 0
+                vehicle.stopEngine();
+                vehicle.startEngine();
+            }
+            if (vehicle.getDirection() == 1) {
+                direction = 1;
+            } else if (vehicle.getDirection() == 4) {
+                direction = -1;
+            }
+        }
+    }
+
+
+    private void update() {
+        movementUpdate();
+        for (Observer observer: observers){
+            observer.update();
+        }
+    }
+
+    public void start(){
         try {
             while (true) {
-                Thread.sleep(500);
-                System.out.println("Hello");
+                Thread.sleep(16);
+                System.out.println("Model Updated!");
                 update();
             }
         } catch (InterruptedException e) {

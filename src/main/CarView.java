@@ -123,11 +123,9 @@ public class CarView extends JFrame implements Observer{
             }
         }
 
-
-
     @Override
     public void update(){
-       //repaint();
-        //paintCars();
+        paintCars();
     }
+
 }
