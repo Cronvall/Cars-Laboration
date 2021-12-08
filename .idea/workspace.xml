@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9eb14de2-b7bf-4224-8ac9-bcd42ebcdcd0" name="Changes" comment="" />
+    <list default="true" id="9eb14de2-b7bf-4224-8ac9-bcd42ebcdcd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$TimerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/VehicleModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Factory/MotorVehicleFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Factory/MotorVehicleFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +64,26 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DrawPanel (1)">
+    <configuration name="DrawPanel (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DrawPanel" />
+      <module name="Cars-Laboration" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MVC.DrawPanel" />
+      <module name="Cars-Laboration" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Cars-Laboration" />
@@ -73,6 +115,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DrawPanel (1)" />
+        <item itemvalue="Application.DrawPanel" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Cars-Laboration" />
         <item itemvalue="JUnit.workshops in Cars-Laboration" />

@@ -1,7 +1,10 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 import vehicle.*;
 
 /*
@@ -12,6 +15,13 @@ import vehicle.*;
 
 public class CarController {
     // member fields:
+    CarModel model;
+
+    // The frame that represents this instance View of the MVC pattern
+    CarView view;
+
+
+    int gasAmount = 0;
 
     // The delay (ms) corresponds to (20 hz)
     private final int delay = 10;
@@ -19,8 +29,87 @@ public class CarController {
     // each step between delays.
     private Timer timer = new Timer(delay, new TimerListener());
 
-    // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+
+    public CarController(CarModel model, CarView view){
+        this.model = model;
+        this.view = view;
+
+        setListeners();
+    }
+
+    private void setListeners(){
+        //The gas & brake spinner
+        SpinnerModel PaceKoefficentSpinnerModel =new SpinnerNumberModel(
+                0, 0, 100,1);
+        view.gasSpinner = new JSpinner(PaceKoefficentSpinnerModel);
+        view.gasSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }});
+
+        //Engine management
+        view.startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.startEngines();
+            }});
+
+
+        //Pace management
+        view.gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.gas(gasAmount);
+            }
+        });
+
+        view.brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.brake(gasAmount);
+            }
+        });
+
+        //Turbo management
+        view.turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.turboOn();
+            }
+        });
+
+        view.turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.turboOff();
+            }
+        });
+
+
+
+        view.stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.stopEngines();
+            }
+        });
+
+        //Platform management
+        view.liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.liftRamp();
+            }
+        });
+        view.lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.lowerRamp();
+            }
+        });
+
+    }
+
     // A list of cars, modify if needed
     ArrayList<Car> cars = new ArrayList<>();
 
@@ -36,7 +125,7 @@ public class CarController {
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
 
-                frame.drawPanel.moveit(x, y * direction, car);
+                view.drawPanel.moveit(x, y * direction, car);
 
                 if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0 && car.isRunning()){
                     car.turnLeft(); // Turns 180 degrees
@@ -53,69 +142,14 @@ public class CarController {
                 }
 
                 // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.repaint();
+                view.drawPanel.repaint();
                 //frame.drawPanel.drawCars(frame.getGraphics(), car);
             }
         }
     }
 
-    // Calls the gas method for each car once
-    void gas(int amount) {
-        double gas = ((double) amount) / 100;
-        for (Car car : cars ) {
-            car.gas(gas);
-        }
-    }
 
-    //Calls the brake method for each car once
-    void brake(int amount){
-        double brake = ((double) amount) / 100;
-        for(Car car: cars){
-            car.brake(brake);
-        }
-    }
 
-    //Turbo management for SAAB
-    void turboOn(){
-        for(Car car: cars){
-            if (car.getClass() == Saab95.class){
-                ((Saab95) car).turboOn();
-            }
-        }
-    }
-    void turboOff(){
-        for(Car car: cars){
-            if (car.getClass() == Saab95.class){
-                ((Saab95) car).turboOff();
-            }
-        }
-    }
-
-    void liftRamp(){
-        for(Car car: cars){
-            if(car.getClass() == Scania.class){
-                ((Scania)car).raisePlatform(70);
-            }
-        }
-    }
-    void lowerRamp(){
-        for(Car car: cars){
-            if(car.getClass() == Scania.class){
-                ((Scania)car).lowerPlatform(70);
-            }
-        }
-    }
-
-    void startEngines(){
-        for(Car car : cars){
-            car.startEngine();
-        }
-    }
-    void stopEngines(){
-        for(Car car : cars){
-            car.stopEngine();
-        }
-    }
 
     //Getters
     public Timer getTimer(){
@@ -125,4 +159,12 @@ public class CarController {
     public ArrayList<Car> getCars(){
         return cars;
     }
+
+
+
+
+
+
+
+
 }

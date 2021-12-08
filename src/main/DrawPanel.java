@@ -1,16 +1,13 @@
-
 import vehicle.Car;
+import vehicle.Factory.MotorVehicleFactory;
 import vehicle.Saab95;
 import vehicle.Scania;
 import vehicle.Volvo240;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 
 // This panel represent the animated part of the view with the car images.
 
@@ -46,6 +43,23 @@ public class DrawPanel extends JPanel{
             throw new IllegalArgumentException("this is terrible programming");
         }
     }
+
+    public static void main(String[] args){
+
+        CarModel model = new CarModel();
+
+        CarView view = new CarView("Cars-laboration", model);
+
+        CarController controller = new CarController(model, view);
+
+
+        model.cars.add(MotorVehicleFactory.buildVolvo240(4,100, Color.red));
+        model.cars.add(MotorVehicleFactory.buildSaab95(2, 100, Color.CYAN));
+        model.cars.add(MotorVehicleFactory.buildScania(1337, Color.green, 1));
+
+        controller.getTimer().start();
+    }
+
 
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y){
