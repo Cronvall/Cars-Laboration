@@ -15,7 +15,7 @@ public class testWorkshop {
     @Test
     void addingVehicleToWorkshop(){
         VolvoExclusiveWorkShop volvoW = new VolvoExclusiveWorkShop(new Point(2,4), 5);
-        Volvo240 volvo1 = new Volvo240(2, new Engine(150, 1.25), Color.red);
+        Volvo240 volvo1 = new Volvo240(2, 150, Color.red);
 
         volvoW.addVehicle(volvo1);
         ArrayList<MotorVehicle> workshop = volvoW.getVehiclesInWorkshop();
@@ -28,8 +28,8 @@ public class testWorkshop {
     @Test
     void maxCapacity(){
         VolvoExclusiveWorkShop volvoW = new VolvoExclusiveWorkShop(new Point(2, 2), 1);
-        Volvo240 v1 = new Volvo240(2, new Engine(30), Color.green);
-        Volvo240 v2 = new Volvo240(2, new Engine(30), Color.black);
+        Volvo240 v1 = new Volvo240(2, 30, Color.green);
+        Volvo240 v2 = new Volvo240(2, 30, Color.black);
 
         volvoW.addVehicle(v1);
 
@@ -42,7 +42,7 @@ public class testWorkshop {
     @Test
     void removingVehicleFromWorkshop(){
         SaabExclusiveWorkShop saabWorkS = new SaabExclusiveWorkShop(new Point(0, 1), 4);
-        Saab95 saab1 = new Saab95(2,new TurboEngine(420), Color.green);
+        Saab95 saab1 = new Saab95(2,420, Color.green);
 
         saabWorkS.addVehicle(saab1);
         saabWorkS.changeTires(saab1);
@@ -53,7 +53,7 @@ public class testWorkshop {
     @Test
     void methodsInGeneral(){
         VolvoExclusiveWorkShop workshop = new VolvoExclusiveWorkShop(new Point(1,2), 4);
-        Volvo240 volvo = new Volvo240(2, new Engine(30), Color.green);
+        Volvo240 volvo = new Volvo240(2,30, Color.green);
 
         workshop.changeOilFilter(volvo);
         workshop.changeTires(volvo);
@@ -63,8 +63,8 @@ public class testWorkshop {
 
     @Test
     void removeSaabFromWorkshop(){
-        Saab95 saab = new Saab95(2, new TurboEngine(330), Color.RED);
-        Saab95 saabOtherOne = new Saab95(2, new TurboEngine(332), Color.RED);
+        Saab95 saab = new Saab95(2, 330, Color.RED);
+        Saab95 saabOtherOne = new Saab95(2, 332, Color.RED);
         WorkShop<MotorVehicle> workshop = new WorkShop<MotorVehicle>(new Point(2, 2), 3);
         workshop.addVehicle(saab);
         workshop.addVehicle(saabOtherOne);
@@ -77,7 +77,7 @@ public class testWorkshop {
     @Test
     void vehicleAlreadyInWorkShop(){
         SaabExclusiveWorkShop saabW = new SaabExclusiveWorkShop(new Point(2,3), 3);
-        Saab95 saab = new Saab95(2, new TurboEngine(320), Color.red);
+        Saab95 saab = new Saab95(2, 320, Color.red);
         saabW.addVehicle(saab);
 
         assertThrows(IllegalArgumentException.class,

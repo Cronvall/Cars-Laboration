@@ -19,9 +19,9 @@ public class Saab95 extends Car {
      * @param nrDoors Describes the Car's number of doors
      * @param col Describes the color of the Car
      */
-    public Saab95(int nrDoors, TurboEngine engine, Color col){
-        super(nrDoors,engine,col,"Saab-95");
-        this.engine = engine;
+    public Saab95(int nrDoors, double enginePower, Color col){
+        super(nrDoors,enginePower ,col,"Saab-95");
+        this.engine = new TurboEngine(enginePower);
         try{
             image = ImageIO.read(new File("src/main/pics/Saab95.jpg"));
         }
@@ -39,7 +39,7 @@ public class Saab95 extends Car {
     @Override
     public void stopEngine(){
         setCurrentSpeed(0);
-        this.getEngine().stopEngine();;
+        this.engine.stopEngine();;
     }
 
     public void turboOff(){

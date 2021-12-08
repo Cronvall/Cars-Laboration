@@ -17,7 +17,7 @@ public class testMotorVehicle {
         int saab_doors = 2;
         Color saab_color = Color.green;
 
-        Saab95 saab = new Saab95(saab_doors, new TurboEngine(200), saab_color);
+        Saab95 saab = new Saab95(saab_doors, 200, saab_color);
 
         Point initial_position = new Point(0, 0);
 
@@ -46,7 +46,7 @@ public class testMotorVehicle {
 
     @Test
     void testTurnLeft(){
-        Volvo240 volvo = new Volvo240(2,new Engine(200),Color.red);
+        Volvo240 volvo = new Volvo240(2,200,Color.red);
 
         assertEquals(1, volvo.getDirection(), "Assert start direction is forward (1)");
         volvo.turnLeft();
@@ -57,7 +57,7 @@ public class testMotorVehicle {
 
     @Test
     void testTurnRight(){
-        Saab95 saab = new Saab95(2,new TurboEngine(16),Color.CYAN);
+        Saab95 saab = new Saab95(2,16,Color.CYAN);
         assertEquals(1, saab.getDirection(), "Asserts start direction is forward (1)");
         saab.turnRight();
         assertEquals(2, saab.getDirection(), "Asserts that turn right turns right");
@@ -69,7 +69,7 @@ public class testMotorVehicle {
 
     @Test
     void testMovement(){
-        Volvo240 volvo = new Volvo240(4,new Engine(100, 1.25),Color.red);
+        Volvo240 volvo = new Volvo240(4,100,Color.red);
         volvo.startEngine();
 
         volvo.gas(1);
@@ -108,7 +108,7 @@ public class testMotorVehicle {
 
     @Test
     void testAccelerationDeceleration(){
-        Saab95 saab = new Saab95(2,new TurboEngine(120),Color.black);
+        Saab95 saab = new Saab95(2,120,Color.black);
         saab.startEngine();
 
         saab.gas(1);
@@ -131,7 +131,7 @@ public class testMotorVehicle {
 
     @Test
     void shutEngineOff(){
-        Scania scania = new Scania(new Engine(200), Color.red, 20, new Platform());
+        Scania scania = new Scania(200, Color.red, 20, new Platform());
         scania.startEngine();
         scania.move();
         scania.brake(1);
@@ -142,7 +142,7 @@ public class testMotorVehicle {
 
     @Test
     void engineStarted(){
-        Saab95 saab95 = new Saab95(2, new TurboEngine(200), Color.green);
+        Saab95 saab95 = new Saab95(2, 200, Color.green);
 
         assertThrows(IllegalArgumentException.class, () -> saab95.gas(0.54));
     }
@@ -150,7 +150,7 @@ public class testMotorVehicle {
     @Test
     void loadedOnTransporter(){
         CarTransporter truck = new CarTransporter(3);
-        Volvo240 volvo240 = new Volvo240(2, new Engine(200), Color.green);
+        Volvo240 volvo240 = new Volvo240(2, 200, Color.green);
 
         truck.getRamp().lower();
         truck.loadCar(volvo240);
@@ -160,7 +160,7 @@ public class testMotorVehicle {
 
     @Test
     void testGas(){
-        Saab95 saab = new Saab95(2,new TurboEngine(200),Color.blue);
+        Saab95 saab = new Saab95(2,200,Color.blue);
         saab.startEngine();
 
         for(int i = -50; i < 150; i++){
@@ -187,14 +187,14 @@ public class testMotorVehicle {
 
     @Test
     void toTheString(){ // For 100% testing... but it didn't work!
-        Scania smolTruck = new Scania(new Engine(100), Color.RED, 20, new Platform());
+        Scania smolTruck = new Scania(100, Color.RED, 20, new Platform());
         String truckText = smolTruck.toString();
         assertTrue(truckText instanceof String);
 
     }
     @Test
     void testBreak(){
-        Saab95 saab = new Saab95(2,new TurboEngine(200),Color.blue);
+        Saab95 saab = new Saab95(2,200,Color.blue);
         saab.startEngine();
 
         for(int i = -50; i < 150; i++){

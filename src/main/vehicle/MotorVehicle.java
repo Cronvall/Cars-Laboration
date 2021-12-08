@@ -25,12 +25,12 @@ public abstract class MotorVehicle implements Movable {
     /**
      * Initiates a new object of the class MotorVehicle
      *
-     * @param engine    Describes the engine
+     * @param enginePower Describes the power of the engine
      * @param col       Describes the color of the vehicle
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
-    public MotorVehicle(Engine engine, Color col, String modelName) {
-        this.engine = engine;
+    public MotorVehicle(double enginePower, Color col, String modelName) {
+        this.engine = new Engine(enginePower);
         this.color = col;
         this.loadedOnTransporter = false;
         this.modelName = modelName;
@@ -59,6 +59,9 @@ public abstract class MotorVehicle implements Movable {
     protected Engine getEngine() {
         return this.engine;
     }
+
+    protected double getTrimFactor(){return this.engine.getTrimFactor();}
+
 
     /**
      * Returns the engine's power as a double

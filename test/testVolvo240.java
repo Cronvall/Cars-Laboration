@@ -9,7 +9,7 @@ public class testVolvo240 {
 
     @Test
     void testSpeedFactor(){
-        Volvo240 volvo = new Volvo240(4,new Engine(420, 1.25),Color.yellow);
+        Volvo240 volvo = new Volvo240(4,420,Color.yellow);
         double desiredVal = 420 * 0.01 * 1.25;
         assertEquals(desiredVal,volvo.speedFactor());
     }

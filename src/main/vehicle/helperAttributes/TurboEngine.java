@@ -22,11 +22,9 @@ public class TurboEngine extends Engine{
 
     public void turboOff(){
         this.turboOn = false;
-        throw new IllegalArgumentException("Turbo is off!");
     }
 
     public void turboOn(){
         this.turboOn = true;
-        throw new IllegalArgumentException("Turbo is now on!");
     }
 }
