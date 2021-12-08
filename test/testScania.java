@@ -52,6 +52,6 @@ public class testScania {
         scan.lowerPlatform(90);
         System.out.println("Current angle: " + scan.getRamp().getAngle());
         scan.startEngine();
-        assertThrows(IllegalArgumentException.class, () -> scan.move(), "Platform is down!");
+        assertThrows(IllegalArgumentException.class, () -> scan.move(), "platform is down");
     }
 }

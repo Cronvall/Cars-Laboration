@@ -255,8 +255,8 @@ public abstract class MotorVehicle implements Movable {
          */
         public void startEngine () {
             this.engine.startEngine();
-            if(0.1 > currentSpeed)
             currentSpeed = 0.1;
+
         }
 
         /**

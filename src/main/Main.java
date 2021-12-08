@@ -1,19 +1,17 @@
 import vehicle.*;
+import vehicle.Factory.MotorVehicleFactory;
 import vehicle.helperAttributes.Engine;
 import vehicle.helperAttributes.Platform;
 import vehicle.helperAttributes.TurboEngine;
-import workshops.*;
 import java.awt.*;
-import java.awt.image.ConvolveOp;
-import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args){
         CarController controller = new CarController();
-        controller.cars.add(new Volvo240(2, new Engine(350, 1.5),Color.red));
-        controller.cars.add(new Saab95(2,new TurboEngine(250),Color.red));
-        controller.cars.add(new Scania(new Engine(400),Color.red,4,new Platform()));
+        controller.cars.add(MotorVehicleFactory.buildVolvo240(4, new Engine(50), Color.red));
+        controller.cars.add(MotorVehicleFactory.buildSaab95(2, new TurboEngine(50), Color.CYAN));
+        controller.cars.add(MotorVehicleFactory.buildScania(new Engine(50), Color.green, 10));
 
         controller.frame = new CarView("Cars-laboration",controller);
         controller.getTimer().start();

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -31,33 +30,29 @@ public class CarController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             int direction = 1;
+
             for (Car car : cars) {
                 car.move();
-                System.out.println("Current position Y-axis: " + Math.round(car.getPosition().getY()));
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
 
-                if (x < 200) {
-                    frame.drawPanel.moveit(x, y);
-                    // repaint() calls the paintComponent method of the panel
-                    frame.drawPanel.repaint();
-                }
-                else{
-                    System.out.println("Outside");
-                }
+                frame.drawPanel.moveit(x, y * direction, car);
 
-                frame.drawPanel.moveit(x, y * direction);
                 if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0){
                     car.turnLeft();
                     car.turnLeft();
+
                 }
-                if(car.getDirection() == 1)
+                if(car.getDirection() == 1){
                     direction = 1;
-                else if(car.getDirection() == 4)
+                }
+                else if(car.getDirection() == 4) {
                     direction = -1;
+                }
+
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
-                frame.drawPanel.drawCars(frame.getGraphics(), cars);
+                //frame.drawPanel.drawCars(frame.getGraphics(), car);
             }
         }
     }

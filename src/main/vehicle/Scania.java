@@ -70,8 +70,8 @@ public class Scania extends Truck {
         if (platform.getAllowMotion()){
             super.move();}
         else{
-            System.out.println("ComplexPlatform is down");
             stopEngine();
+            throw new IllegalArgumentException("platform needs to be up before movement");
         }
     }
 }
