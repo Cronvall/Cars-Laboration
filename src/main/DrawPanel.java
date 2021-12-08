@@ -1,11 +1,16 @@
 
 import vehicle.Car;
+import vehicle.Saab95;
+import vehicle.Scania;
+import vehicle.Volvo240;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
 
 // This panel represent the animated part of the view with the car images.
 
@@ -16,13 +21,30 @@ public class DrawPanel extends JPanel{
     BufferedImage saabIMG;
     BufferedImage scaniaIMG;
 
-    // To keep track of a singel cars position
-    Point displayPoint = new Point();
+    // To keep track of a single cars position
+    //Point displayPoint = new Point();
+    Point volvoPosition = new Point();
+    Point saabPosition = new Point();
+    Point scaniaPosition = new Point();
 
-    // TODO: Make this genereal for all cars
-    void moveit(int x, int y){
-        displayPoint.x = x;
-        displayPoint.y = y;
+    // TODO: Make this general for all cars
+    void moveit(int x, int y, Car car){
+
+        if(car instanceof Volvo240) {
+            volvoPosition.x = x;
+            volvoPosition.y = y;
+        }
+        else if (car instanceof Saab95){
+            saabPosition.x = x;
+            saabPosition.y = y;
+        }
+        else if(car instanceof Scania){
+            scaniaPosition.x = x;
+            scaniaPosition.y = y;
+        }
+        else{
+            throw new IllegalArgumentException("this is terrible programming");
+        }
     }
 
     // Initializes the panel and reads the images
@@ -41,6 +63,8 @@ public class DrawPanel extends JPanel{
             volvoIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg"));
             saabIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg"));
             scaniaIMG = ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg"));
+
+
         } catch (IOException ex)
         {
             ex.printStackTrace();
@@ -53,12 +77,10 @@ public class DrawPanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        //g.drawImage(volvoIMG, 0,displayPoint.y,null);
-        //g.drawImage(saabIMG, 150,displayPoint.y,null);
-        //g.drawImage(scaniaIMG, 300,displayPoint.y,null);
+        g.drawImage(volvoIMG, volvoPosition.x,volvoPosition.y,null);
+        g.drawImage(saabIMG, saabPosition.x + 100, saabPosition.y, null);
+        g.drawImage(scaniaIMG, scaniaPosition.x + 200, scaniaPosition.y, null);
     }
 
-    protected void paintCar(Graphics g, Car car){
-        g.drawImage(car.getImage(), (int)car.getPosition().getX(), (int)car.getPosition().getY(), null);
-    }
+
 }

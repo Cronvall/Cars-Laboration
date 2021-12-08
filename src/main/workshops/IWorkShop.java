@@ -4,9 +4,17 @@ import vehicle.MotorVehicle;
 
 public interface IWorkShop<T extends MotorVehicle> {
 
-
+    /**
+     * Adds a vehicle to the workshop
+     * @param vehicle to be added to the workshop
+     */
     void addVehicle(T vehicle);
 
+
+    /**
+     * Removes a vehicle from the workshop
+     * @param vehicle to be removed from the workshop
+     */
     void removeVehicle(T vehicle);
 
     /**

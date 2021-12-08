@@ -45,8 +45,9 @@ public class testWorkshop {
         Saab95 saab1 = new Saab95(2,new TurboEngine(420), Color.green);
 
         saabWorkS.addVehicle(saab1);
-        ArrayList<MotorVehicle> workshop = saabWorkS.getVehiclesInWorkshop();
-        assertEquals(1, workshop.size());
+        saabWorkS.changeTires(saab1);
+        saabWorkS.removeVehicle(saab1);
+        assertFalse(saabWorkS.getVehiclesInWorkshop().contains(saab1));
     }
 
     @Test

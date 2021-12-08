@@ -9,24 +9,24 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * A Scania is a Truck with a complexPlatform
+ * A Scania is a Truck with a platform
  */
 public class Scania extends Truck {
 
-    private final Platform complexPlatform;
+    private final Platform platform;
     private  static BufferedImage image;
     /**
      * Initiates a new Truck of the class Scania
      * @param engine Describes the engine
      * @param color Describes the color of the Truck
      * @param grossWeightInTons Describes the Truck's gross weight in tons
-     * @param complexPlatform Describes the object of the Truck's complexPlatform
+     * @param platform Describes the object of the Truck's platform
      */
     public Scania(Engine engine, Color color, double grossWeightInTons,
-                  Platform complexPlatform) {
+                  Platform platform) {
         super(engine, color, "vehicle.Scania",
                 true, grossWeightInTons, 2);
-        this.complexPlatform = complexPlatform;
+        this.platform = platform;
         try{
             image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
         } catch (IOException e) {
@@ -39,25 +39,25 @@ public class Scania extends Truck {
      * @return the object platform mounted on scania
      */
     public Platform getRamp() {
-        return complexPlatform;
+        return platform;
     }
 
 
     /**
-     * Raises complexPlatform
-     * @param angle decides how much to raise the complexPlatform
+     * Raises platform
+     * @param angle decides how much to raise the platform
      */
     public void raisePlatform(int angle){
-        complexPlatform.raise(angle);
+        platform.raise(angle);
     }
 
     /**
-     * Lowers complexPlatform
-     * @param angle decides how much to lower the complexPlatform
+     * Lowers platform
+     * @param angle decides how much to lower the platform
      */
     public void lowerPlatform(int angle){
         if(getCurrentSpeed() == 0)
-        complexPlatform.lower(angle);
+        platform.lower(angle);
         else System.out.println("You need to stop before lowering platform");
     }
 
@@ -66,12 +66,11 @@ public class Scania extends Truck {
      */
     @Override
     public void move(){
-        if (complexPlatform.getAllowMotion()){
-            super.move();
-        }
+        if (platform.getAllowMotion()){
+            super.move();}
         else{
-            System.out.println("ComplexPlatform is down");
             stopEngine();
+            throw new IllegalArgumentException("platform needs to be up before movement");
         }
     }
 }
