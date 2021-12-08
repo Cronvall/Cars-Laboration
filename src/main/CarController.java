@@ -35,7 +35,7 @@ public class CarController {
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
-
+    
                 frame.drawPanel.moveit(x, y * direction, car);
 
                 if(car.getPosition().getY() >= 500 || car.getPosition().getY() <= 0 && car.isRunning()){
