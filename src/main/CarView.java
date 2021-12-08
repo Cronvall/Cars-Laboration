@@ -13,12 +13,12 @@ import java.awt.event.ActionListener;
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
-public class CarView extends JFrame{
+public class CarView extends JFrame implements Observer{
     private static final int X = 800;
     private static final int Y = 800;
 
     // The controller member
-    CarController carC;
+    CarModel model;
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
@@ -41,8 +41,8 @@ public class CarView extends JFrame{
     JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public CarView(String framename, CarController cc){
-        this.carC = cc;
+    public CarView(String framename, CarController cc, CarModel model){
+        this.model = model;
         initComponents(framename);
     }
 
@@ -56,7 +56,6 @@ public class CarView extends JFrame{
 
         this.add(drawPanel);
 
-
         //The gas & brake spinner
         SpinnerModel PaceKoefficentSpinnerModel =new SpinnerNumberModel(
                 0, 0, 100,1);
@@ -66,9 +65,6 @@ public class CarView extends JFrame{
                 gasAmount = (int) ((JSpinner)e.getSource()).getValue();
             }
         });
-
-
-
 
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasBrakeLabel, BorderLayout.PAGE_START);
@@ -86,7 +82,6 @@ public class CarView extends JFrame{
         controlPanel.add(lowerBedButton, 5);
         controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
         this.add(controlPanel);
-        controlPanel.setBackground(Color.CYAN);
 
 
         startButton.setBackground(Color.blue);
@@ -107,14 +102,14 @@ public class CarView extends JFrame{
         gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.gas(gasAmount);
+                model.gas(gasAmount);
             }
         });
 
         brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.brake(gasAmount);
+                model.brake(gasAmount);
             }
         });
 
@@ -122,14 +117,14 @@ public class CarView extends JFrame{
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.turboOn();
+                model.turboOn();
             }
         });
 
         turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.turboOff();
+                model.turboOff();
             }
         });
 
@@ -137,14 +132,14 @@ public class CarView extends JFrame{
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.startEngines();
+                model.startEngines();
             }
         });
 
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.stopEngines();
+                model.stopEngines();
             }
         });
 
@@ -152,13 +147,13 @@ public class CarView extends JFrame{
         liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.liftRamp();
+                model.liftRamp();
             }
         });
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                carC.lowerRamp();
+                model.lowerRamp();
             }
         });
 
@@ -173,5 +168,10 @@ public class CarView extends JFrame{
         this.setVisible(true);
         // Make sure the frame exits when "x" is pressed
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    @Override
+    public void update(){
+        repaint();
     }
 }
