@@ -108,8 +108,7 @@ public class CarController {
 
     }
 
-    // A list of cars, modify if needed
-    ArrayList<Car> cars = new ArrayList<>();
+
 
     /* Each step the TimerListener moves all the cars in the list and tells the
     * view to update its images. Change this method to your needs.
@@ -118,7 +117,7 @@ public class CarController {
         public void actionPerformed(ActionEvent e) {
             int direction = 1;
 
-            for (Car car : cars) {
+            for (MotorVehicle car : model.getVehicles()) {
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
@@ -154,8 +153,8 @@ public class CarController {
         return timer;
     }
 
-    public ArrayList<Car> getCars(){
-        return cars;
+    public ArrayList<MotorVehicle> getCars(){
+        return model.getVehicles();
     }
 
 

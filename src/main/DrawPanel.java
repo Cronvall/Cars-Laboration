@@ -1,8 +1,6 @@
-import vehicle.Car;
+import vehicle.*;
 import vehicle.Factory.MotorVehicleFactory;
-import vehicle.Saab95;
-import vehicle.Scania;
-import vehicle.Volvo240;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -25,7 +23,7 @@ public class DrawPanel extends JPanel{
     Point scaniaPosition = new Point();
 
     // TODO: Make this general for all cars
-    void moveit(int x, int y, Car car){
+    void moveit(int x, int y, MotorVehicle car){
 
         if(car instanceof Volvo240) {
             volvoPosition.x = x;
