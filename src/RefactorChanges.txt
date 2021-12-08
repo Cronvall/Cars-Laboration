@@ -1,0 +1,42 @@
+-------------------Analyze dependencies, cohesion, coupling----------------
+1) Which dependencies are necessary?
+
+Currently, we're dependent on the on abstractions such as MotorVehicle, Car and Truck. These are vital
+for the function of other classes. Thereby in those examples we are dependent on abstractions and not
+on concrete implementation.
+
+In the same way, the exclusive workshops are dependent on the Workshop class. This is not an abstractions though.
+The question remains if it should be. In the state we are now, we can create a workshop that is non-exclusive.
+
+TO THE POINT: some dependencies are just right awful. We have dependencies from the model on the view and controller.
+    We need to introduce a ModelCLASS that acts as a FACADE for the rest of the models in the system.
+    After that we need to empty View and Controller from ModelClass-methods
+
+    Engine is now only initiated in the MotorVehicle-class
+
+2) Which classes are dependant that not should be? (Violations of principles?)
+
+In the current state we got vehicles that transport cars. All these vehicles gets an object of the type
+LoaderHelper. Should the vehicle loading have the LoaderHelper or should the vehicle flatbed loading on
+have the LoaderHelper?
+
+##Back to this question
+
+
+-------------------------------Analyze Seperation of Concern and SRP---------------------------------
+1) What responsibilities do the classes have?
+
+a) Does flatbed break the SoC? It only handles loading. But it does load in two different ways
+b) One place where we handled SoC was by breaking up Platform into Ramp And Platform.
+    Now we have one that raises with degrees and one that only is up and down (the RamP)
+c) The CarTransporter and Ferry loads vehicles. Should they have the logic for loading the vehicle or not?
+d) LoaderHelper is an example where there is more than one thing done. It both loads the cars
+    and updates the positions of the vehicles.
+
+e) One problem we got is in the motorVehicle. Of the name you might think that it only handles the stuff
+    that the "actor" driver does. But it also updates the vehicles position. Should the position be its own
+    separate class? The LoaderHelper also uses the position. A need fo LocationClass?
+
+2) What reasons do they have to change?
+    d) and e) definitely does more than one thing. I.e. they have reasons to change
+

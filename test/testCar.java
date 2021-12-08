@@ -8,7 +8,7 @@ import java.awt.*;
 public class testCar {
     @Test
     void testGetNrOfDoors(){
-        Volvo240 volvo = new Volvo240(2,new Engine(200),Color.RED);
+        Volvo240 volvo = new Volvo240(2,200,Color.RED);
         assertEquals(2, volvo.getNrOfDoors());
 
 
@@ -16,7 +16,7 @@ public class testCar {
 
     @Test
     void testToString(){
-        Volvo240 volvo = new Volvo240(2,new Engine(200),Color.RED);
+        Volvo240 volvo = new Volvo240(2,200,Color.RED);
         String carToString = volvo.toString();
         assertTrue(carToString instanceof String);
     }

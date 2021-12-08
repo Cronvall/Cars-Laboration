@@ -18,7 +18,7 @@ public class CarTransporter extends Truck implements ILoadCar {
      * @param slots Describes how many cars the CarTransporter can carry
      */
     public CarTransporter(int slots){
-        super(new Engine(300), Color.CYAN, "DAF",
+        super(300, Color.CYAN, "DAF",
                 true, 20, 2);
         this.flatbed = new Flatbed(slots, Flatbed.LoadingMethod.FirstOnLastOff);
         this.loaderHelper = new LoaderHelper(flatbed);

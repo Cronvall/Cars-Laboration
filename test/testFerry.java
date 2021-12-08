@@ -18,8 +18,8 @@ public class testFerry {
         assertEquals(desiredSpeedFactor,f.speedFactor(), "Test of the speedfactor");
 
         f.getPlatform().lower(70);
-        f.loadCar(new Saab95(2,new TurboEngine(200), Color.red));
-        f.loadCar(new Volvo240(4,new Engine(200), Color.red));
+        f.loadCar(new Saab95(2,200, Color.red));
+        f.loadCar(new Volvo240(4,200, Color.red));
         f.getPlatform().raise(70);
         f.move();
         assertEquals(f.getPosition(), f.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");

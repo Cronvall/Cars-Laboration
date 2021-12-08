@@ -9,7 +9,7 @@ public class testSaab95 {
 
     @Test
     void testSpeedFactorWithTurboOff(){
-        Saab95 saab = new Saab95(4,new TurboEngine(150), Color.black);
+        Saab95 saab = new Saab95(4,150, Color.black);
         saab.turboOff();
         double desiredVal = 150 * 0.01;
         assertEquals(desiredVal,saab.speedFactor(), "Test without turbo");
@@ -17,7 +17,7 @@ public class testSaab95 {
 
     @Test
     void testSpeedFactorWithTurboOn(){
-        Saab95 saab = new Saab95(4,new TurboEngine(150), Color.black);
+        Saab95 saab = new Saab95(4,150, Color.black);
         saab.turboOn();
         double desiredVal = 150 * 0.01 * 1.3;
         assertEquals(desiredVal,saab.speedFactor(), "Test with turbo.");
@@ -26,7 +26,7 @@ public class testSaab95 {
 
     @Test
     void stopEngineSaab95(){
-        Saab95 saab95 = new Saab95(2, new TurboEngine(10), Color.green);
+        Saab95 saab95 = new Saab95(2, 10, Color.green);
         saab95.startEngine();
         saab95.stopEngine();
         assertEquals(saab95.getCurrentSpeed(), 0);
@@ -35,14 +35,14 @@ public class testSaab95 {
 
     @Test
     void turboOff(){
-        Saab95 saab = new Saab95(4, new TurboEngine(300), Color.red);
+        Saab95 saab = new Saab95(4, 300, Color.red);
         saab.turboOff();
         assertFalse(saab.getTurbo());
     }
 
     @Test
     void turboOn(){
-        Saab95 saab = new Saab95(4, new TurboEngine(150), Color.red);
+        Saab95 saab = new Saab95(4, 150, Color.red);
         saab.turboOn();
         assertTrue(saab.getTurbo());
     }

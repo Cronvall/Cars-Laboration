@@ -14,8 +14,8 @@ public class testCarTransporter {
         CarTransporter transporter = new CarTransporter(3);
 
         transporter.getRamp().lower();
-        transporter.loadCar(new Saab95(2,new TurboEngine(200), Color.red));
-        transporter.loadCar(new Volvo240(4,new Engine(200), Color.red));
+        transporter.loadCar(new Saab95(2,200, Color.red));
+        transporter.loadCar(new Volvo240(4,200, Color.red));
         transporter.getRamp().raise();
         transporter.move();
         assertEquals(transporter.getPosition(), transporter.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");

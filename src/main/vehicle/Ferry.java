@@ -16,7 +16,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
      * Initiates a new MotorVehicle of the class Ferry
      */
     public Ferry( int capacity){
-        super(new Engine(200), Color.white,"vehicle.Ferry");
+        super(200, Color.white,"vehicle.Ferry");
         this.flatbed = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
         this.loaderHelper = new LoaderHelper<>(flatbed);
     }

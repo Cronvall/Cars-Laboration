@@ -13,12 +13,12 @@ public abstract class Car  extends MotorVehicle {
     /**
      * Initiates a new MotorVehicle of the Class Car
      * @param nrDoors Describes the car's number of doors
-     * @param engine Describes the engine
+     * @param enginePower Describes the enginepower
      * @param color Describes the color of the Car
      * @param modelName Displays the name of the model(Volvo240, Saab95 etc.)
      */
-    protected Car(int nrDoors, Engine engine, Color color, String modelName){
-        super(engine, color, modelName);
+    protected Car(int nrDoors, double enginePower, Color color, String modelName){
+        super(enginePower, color, modelName);
         this.nrDoors = nrDoors;
     }
 
