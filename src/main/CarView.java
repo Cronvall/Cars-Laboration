@@ -62,12 +62,6 @@ public class CarView extends JFrame implements Observer{
 
         this.add(drawPanel);
 
-
-        gasPanel.setLayout(new BorderLayout());
-        gasPanel.add(gasBrakeLabel, BorderLayout.PAGE_START);
-        gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
-
-
         //The gas & brake spinner
         SpinnerModel PaceKoefficentSpinnerModel =new SpinnerNumberModel(
                 0, 0, 100,1);
@@ -76,6 +70,10 @@ public class CarView extends JFrame implements Observer{
             public void stateChanged(ChangeEvent e) {
                 gasAmount = (int) ((JSpinner)e.getSource()).getValue();
             }});
+
+        gasPanel.setLayout(new BorderLayout());
+        gasPanel.add(gasBrakeLabel, BorderLayout.PAGE_START);
+        gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
 
         this.add(gasPanel);
 
@@ -125,6 +123,10 @@ public class CarView extends JFrame implements Observer{
     @Override
     public void update(){
         drawPanel.repaint();
+    }
+
+    public int getGasAmount(){
+        return gasAmount;
     }
 
 }

@@ -28,7 +28,6 @@ public class CarController {
     }
 
     private void setListeners(){
-        int gasAmount = view.gasAmount;
 
         //Engine management
         view.startButton.addActionListener(new ActionListener() {
@@ -42,14 +41,14 @@ public class CarController {
         view.gasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                model.gas(gasAmount);
+                model.gas(view.getGasAmount());
             }
         });
 
         view.brakeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                model.brake(gasAmount);
+                model.brake(view.getGasAmount());
             }
         });
 
