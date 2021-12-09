@@ -14,10 +14,9 @@ import java.io.IOException;
 public class Scania extends Truck {
 
     private final Platform platform;
-    private  static BufferedImage image;
     /**
      * Initiates a new Truck of the class Scania
-     * @param engine Describes the engine
+     * @param enginePower Describes the engines power
      * @param color Describes the color of the Truck
      * @param grossWeightInTons Describes the Truck's gross weight in tons
      * @param platform Describes the object of the Truck's platform
@@ -28,7 +27,7 @@ public class Scania extends Truck {
                 true, grossWeightInTons, 2);
         this.platform = platform;
         try{
-            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+            image = ImageIO.read(new File("src/main/pics/Scania.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -13,7 +13,6 @@ import java.io.IOException;
 public class Saab95 extends Car {
 
     private final TurboEngine engine;
-    private BufferedImage image;
     /**
      * Initiates a new Car of the class Saab95
      * @param nrDoors Describes the Car's number of doors
@@ -23,7 +22,7 @@ public class Saab95 extends Car {
         super(nrDoors,enginePower ,col,"Saab-95");
         this.engine = new TurboEngine(enginePower);
         try{
-            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+            image = ImageIO.read(new File("src/main/pics/Saab95.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }

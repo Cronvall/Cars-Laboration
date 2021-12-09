@@ -19,6 +19,11 @@ public class Volvo240 extends Car {
      */
     public Volvo240(int nrDoors, double enginePower, Color col){
         super(nrDoors,enginePower,col,"Volvo-240");
+        try{
+            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

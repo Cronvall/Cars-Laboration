@@ -1,7 +1,7 @@
 import vehicle.MotorVehicle;
-import vehicle.Saab95;
-
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 /**
@@ -13,13 +13,15 @@ import java.awt.*;
  **/
 
 public class CarView extends JFrame implements Observer{
+    int gasAmount = 0;
     private static final int X = 800;
     private static final int Y = 800;
 
     // The controller member
     CarModel model;
+    DrawVehicles vehicleDrawer;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    DrawPanel drawPanel;
 
     JPanel controlPanel = new JPanel();
 
@@ -42,9 +44,10 @@ public class CarView extends JFrame implements Observer{
 
 
     // Constructor
-    public CarView(String framename,  CarModel model){
+    public CarView(String framename,  CarModel model ){
         this.model = model;
-
+        this.vehicleDrawer = new DrawVehicles(this.model);
+        drawPanel = new DrawPanel(X, Y-240, new DrawVehicles(model));
         initComponents(framename);
     }
 
@@ -63,6 +66,16 @@ public class CarView extends JFrame implements Observer{
         gasPanel.setLayout(new BorderLayout());
         gasPanel.add(gasBrakeLabel, BorderLayout.PAGE_START);
         gasPanel.add(gasSpinner, BorderLayout.PAGE_END);
+
+
+        //The gas & brake spinner
+        SpinnerModel PaceKoefficentSpinnerModel =new SpinnerNumberModel(
+                0, 0, 100,1);
+        gasSpinner = new JSpinner(PaceKoefficentSpinnerModel);
+        gasSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }});
 
         this.add(gasPanel);
 
@@ -92,6 +105,7 @@ public class CarView extends JFrame implements Observer{
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
 
+
         // Make the frame pack all it's components by respecting the sizes if possible.
         this.pack();
 
@@ -105,27 +119,12 @@ public class CarView extends JFrame implements Observer{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    //TODO
     /**
-    @Override
-    public void paint(Graphics g){
-        for(MotorVehicle vehicle: model.getVehicles()){
-            vehicle.paint();
-        }
-    }
-    */
-
-    public void paintCars(Graphics g){
-        int countX = 0;
-        for (MotorVehicle vehicle: model.getVehicles()){
-                g.drawImage(vehicle.getImage(), countX, (int)vehicle.getY(), null);
-                countX = countX +100;
-            }
-        }
-
+     * Update the painting of vehicles
+     */
     @Override
     public void update(){
-        paintCars();
+        drawPanel.repaint();
     }
 
 }

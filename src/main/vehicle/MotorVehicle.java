@@ -186,7 +186,6 @@ public abstract class MotorVehicle implements Movable {
 
     /**
      * Will increase the vehicle's speed if the amount is within the accepted interval
-     *
      * @param amount Describes by how much (approx. 1-100%) the speed should increase
      */
     public void gas(double amount) {
