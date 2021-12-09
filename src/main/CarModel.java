@@ -28,7 +28,7 @@ public class CarModel {
 
 
     // Calls the gas method for each car once
-    void gas ( int amt){
+    void gas (int amt){
         double g = ((double) amt) / 100;
         for (MotorVehicle vehicle : vehicles) {
             vehicle.gas(g);
@@ -120,8 +120,7 @@ public class CarModel {
     public void start(){
         try {
             while (true) {
-                Thread.sleep(16);
-                System.out.println("Model Updated!");
+                Thread.sleep(25);
                 update();
             }
         } catch (InterruptedException e) {
