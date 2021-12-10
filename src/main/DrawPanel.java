@@ -9,7 +9,7 @@ public class DrawPanel extends JPanel{
 
     public static void main(String[] args){
         CarModel model = CarModelFactory.makeDefaultModel();
-        CarView view = new CarView("Cars-laboration", model);
+        CarView view = new CarView("Forza Horizon 5 - Green World DLC", model);
         model.addObserver(view);
         CarController controller = new CarController(model, view);
         model.start();

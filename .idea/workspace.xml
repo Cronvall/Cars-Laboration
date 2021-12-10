@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9eb14de2-b7bf-4224-8ac9-bcd42ebcdcd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/CarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/DrawPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/MotorVehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Cars-Laboration/vehicle/Volvo240.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CarModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CarModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/vehicle/Volvo240.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +139,8 @@
       <workItem from="1638901834448" duration="98000" />
       <workItem from="1638953761326" duration="66000" />
       <workItem from="1638953849022" duration="7796000" />
-      <workItem from="1639056088305" duration="4723000" />
+      <workItem from="1639056088305" duration="7828000" />
+      <workItem from="1639126734455" duration="972000" />
     </task>
     <servers />
   </component>
@@ -143,15 +160,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/vehicle/MotorVehicle.java</url>
-          <line>194</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="vehicle.Saab95" memberName="position" />

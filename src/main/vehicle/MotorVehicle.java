@@ -1,7 +1,5 @@
 package vehicle;
 import vehicle.helperAttributes.Engine;
-import vehicle.helperAttributes.IEngine;
-import vehicle.helperAttributes.TurboEngine;
 
 import java.awt.*;
 import java.awt.geom.Point2D;

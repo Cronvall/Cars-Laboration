@@ -1,6 +1,5 @@
 package vehicle;
 
-import vehicle.helperAttributes.Engine;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;

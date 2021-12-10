@@ -6,10 +6,8 @@ public class CarModel {
 
     ArrayList<MotorVehicle> vehicles;
     ArrayList<Observer> observers;
-    int ticker;
 
     public CarModel() {
-        ticker = 0;
         vehicles = new ArrayList<>();
         observers = new ArrayList<>();
     }
