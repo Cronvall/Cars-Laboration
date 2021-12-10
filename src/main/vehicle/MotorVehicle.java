@@ -33,6 +33,12 @@ public abstract class MotorVehicle implements Movable {
         this.loadedOnTransporter = false;
         this.modelName = modelName;
     }
+    public MotorVehicle(double enginePower, Color col, String modeName, double speedFactor){
+        this.engine = new Engine(enginePower, speedFactor);
+        this.color = col;
+        this.loadedOnTransporter = false;
+        this.modelName = modeName;
+    }
 
     //Get methods
 

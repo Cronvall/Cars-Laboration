@@ -9,7 +9,6 @@ import java.awt.*;
  */
 public class CarTransporter extends Truck implements ILoadCar {
 
-    private final LoaderHelper<CarTransporter> loaderHelper;
     private final Flatbed flatbed;
     private Ramp ramp = new Ramp();
 
@@ -21,8 +20,13 @@ public class CarTransporter extends Truck implements ILoadCar {
         super(300, Color.CYAN, "DAF",
                 true, 20, 2);
         this.flatbed = new Flatbed(slots, Flatbed.LoadingMethod.FirstOnLastOff);
-        this.loaderHelper = new LoaderHelper(flatbed);
     }
+
+    @Override
+    public Car[] getCargo(){
+       return this.flatbed.getCarLoad();
+    }
+
 
     /**
      * Moves the vehicle one of four directions in a 2d plane
@@ -31,11 +35,16 @@ public class CarTransporter extends Truck implements ILoadCar {
     public void move(){
         if(ramp.getAllowMotion()){
             super.move();
-            if(!loaderHelper.isEmpty()){
-                loaderHelper.moveLoad(this);
+            if(!flatbed.isEmpty()){
+                flatbed.moveCargo(this);
             }
         }
         else throw new IllegalArgumentException("The ramp needs to be raised in order to move!");
+    }
+
+    @Override
+    public Flatbed getFlatbed(){
+        return this.flatbed;
     }
 
     /**
@@ -45,7 +54,7 @@ public class CarTransporter extends Truck implements ILoadCar {
     @Override
     public void loadCar(Car car){
         if(ramp.getAllowLoading())
-        loaderHelper.loadCar(car, this);
+        flatbed.getLoaderHelper().loadCar(car, this);
         else System.out.println("You need to lower the ramp to load a car");
     }
     /**
@@ -54,7 +63,7 @@ public class CarTransporter extends Truck implements ILoadCar {
     @Override
     public void loadOffCar(){
         if(ramp.getAllowLoading())
-        loaderHelper.loadOffCar();
+        flatbed.getLoaderHelper().loadOffCar(this.flatbed);
         else System.out.println("You need to lower the ramp to unload a car");
     }
 
@@ -63,7 +72,7 @@ public class CarTransporter extends Truck implements ILoadCar {
      * @return the load that is loaded upon the flatbed
      */
     public MotorVehicle[] getLoad(){
-        return loaderHelper.getLoad();
+        return flatbed.getCarLoad();
     }
 
     /**

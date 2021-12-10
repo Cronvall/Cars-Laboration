@@ -9,7 +9,6 @@ import java.awt.*;
  */
 public class Ferry extends MotorVehicle implements ILoadCar {
 
-    private LoaderHelper<Ferry> loaderHelper;
     private Flatbed flatbed;
     private Platform complexPlatform = new Platform();
     /**
@@ -18,7 +17,18 @@ public class Ferry extends MotorVehicle implements ILoadCar {
     public Ferry( int capacity){
         super(200, Color.white,"vehicle.Ferry");
         this.flatbed = new Flatbed(capacity, Flatbed.LoadingMethod.FirstOnFirstOff);
-        this.loaderHelper = new LoaderHelper<>(flatbed);
+
+    }
+
+
+    @Override
+    public Car[] getCargo(){
+        return this.flatbed.getCarLoad();
+    }
+
+    @Override
+    public Flatbed getFlatbed() {
+        return this.flatbed;
     }
 
     @Override
@@ -31,8 +41,8 @@ public class Ferry extends MotorVehicle implements ILoadCar {
         if(complexPlatform.getAllowMotion()){
 
             super.move();
-           if(!loaderHelper.isEmpty()){
-               loaderHelper.moveLoad(this);
+           if(!this.flatbed.getLoaderHelper().isEmpty(flatbed.getCarLoad())){
+               this.flatbed.getLoaderHelper().moveLoad(flatbed.getCarLoad(), this);
            }
         }
         else System.out.print("The complexPlatform needs to be raised before moving!");
@@ -45,7 +55,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
     @Override
     public void loadCar(Car car){
         if(complexPlatform.getAllowLoading())
-        loaderHelper.loadCar(car, this);
+        this.flatbed.getLoaderHelper().loadCar(car, this);
         else System.out.println("You need to lower the ramp to be able to load a car.");
     }
 
@@ -55,7 +65,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
     @Override
     public void loadOffCar(){
         if(complexPlatform.getAllowLoading())
-        loaderHelper.loadOffCar();
+        this.flatbed.getLoaderHelper().loadOffCar(this.flatbed);
         else System.out.println("You need to lower the platform to be able to unload a car");
     }
 
@@ -64,7 +74,7 @@ public class Ferry extends MotorVehicle implements ILoadCar {
      * @return an array of motor-vehicles gets returned
      */
     public MotorVehicle[] getLoad(){
-        return loaderHelper.getLoad();
+        return this.flatbed.getCarLoad();
     }
 
     /**

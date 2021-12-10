@@ -22,6 +22,11 @@ public abstract class Car  extends MotorVehicle {
         this.nrDoors = nrDoors;
     }
 
+    protected Car(int nrDoors, double enginePower, Color color, String modelName, double speedFactor){
+        super(enginePower, color, modelName, speedFactor);
+        this.nrDoors = nrDoors;
+    }
+
     /**
      * Returns the car's number of doors
      * @return an integer of the amount of doors

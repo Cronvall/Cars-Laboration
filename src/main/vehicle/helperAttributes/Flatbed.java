@@ -1,5 +1,6 @@
 package vehicle.helperAttributes;
 import vehicle.Car;
+import vehicle.ILoadCar;
 import vehicle.LoaderHelper;
 import vehicle.MotorVehicle;
 
@@ -8,6 +9,7 @@ import vehicle.MotorVehicle;
  */
 public class Flatbed{
 
+    private LoaderHelper loaderHelper;
     private Car[] carLoad;
     private final LoadingMethod loadingMethod;
     private int currentIndex;
@@ -19,6 +21,7 @@ public class Flatbed{
      * @param loadingMethod Describes by which order the flatbed loads off cars
      */
     public Flatbed(int loadingCapacity, LoadingMethod loadingMethod){
+        this.loaderHelper = new LoaderHelper();
         if(loadingCapacity > 0)
             carLoad = new Car[loadingCapacity];
         else
@@ -30,6 +33,21 @@ public class Flatbed{
         if(loadingMethod == LoadingMethod.FirstOnFirstOff)
             currentLoadOffIndex = 0;
         else currentLoadOffIndex = loadingCapacity - 1;
+    }
+
+    public boolean isEmpty(){
+        return this.loaderHelper.isEmpty(carLoad);
+    }
+
+    public Flatbed getFlatBed(){
+        return this;
+    }
+
+    public LoaderHelper getLoaderHelper(){
+        return this.loaderHelper;
+    }
+    public void moveCargo(MotorVehicle vehicle){
+        this.loaderHelper.moveLoad(carLoad, vehicle);
     }
 
     /**
