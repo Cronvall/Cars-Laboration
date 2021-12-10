@@ -6,8 +6,8 @@ import java.awt.*;
 
 public final class MotorVehicleFactory {
 
-    public static Volvo240 buildVolvo240(int nrDoors, int enginePower , Color color){
-        Volvo240 volvo240 = new Volvo240(nrDoors, enginePower, color);
+    public static Volvo240 buildVolvo240(int nrDoors, int enginePower , Color color, double trimFactor){
+        Volvo240 volvo240 = new Volvo240(nrDoors, enginePower, color, trimFactor);
         return volvo240;
     }
 

@@ -26,6 +26,16 @@ public class Volvo240 extends Car {
         }
     }
 
+    public Volvo240(int nrDoors, double enginePower, Color col, double speedFactor) {
+        super(nrDoors, enginePower,  col, "Volvo-240", speedFactor);
+        try{
+            image = ImageIO.read(new File("src/main/pics/Volvo240.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public double speedFactor(){
         double trimFactor = this.getTrimFactor();

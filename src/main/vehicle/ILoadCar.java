@@ -1,5 +1,7 @@
 package vehicle;
 
+import vehicle.helperAttributes.Flatbed;
+
 public interface ILoadCar {
 
     /**
@@ -12,5 +14,9 @@ public interface ILoadCar {
      * Removes a car from a vehicle
      */
     void loadOffCar();
+
+    Car[] getCargo();
+
+    Flatbed getFlatbed();
 
 }

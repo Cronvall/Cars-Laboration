@@ -1,30 +1,30 @@
+package View;
 import vehicle.MotorVehicle;
 import vehicle.Saab95;
 import vehicle.Scania;
 import java.util.ArrayList;
+
 public class CarModel {
 
-    ArrayList<MotorVehicle> vehicles;
-    ArrayList<Observer> observers;
-    int ticker;
+    private ArrayList<MotorVehicle> vehicles;
+    private ArrayList<Observer> observerSubscriptions;
 
-    public CarModel() {
-        ticker = 0;
+    CarModel() {
+
         vehicles = new ArrayList<>();
-        observers = new ArrayList<>();
+        observerSubscriptions = new ArrayList<>();
     }
 
-    public void addObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    public ArrayList<MotorVehicle> getVehicles() {
+    ArrayList<MotorVehicle> getVehicles() {
         return vehicles;
     }
-
-    public void addMotorvehicle(MotorVehicle vehicle) {
+    void observerSubscribe(Observer observer) {
+        observerSubscriptions.add(observer);
+    }
+    void addMotorvehicle(MotorVehicle vehicle) {
         vehicles.add(vehicle);
     }
+
 
 
     // Calls the gas method for each car once
@@ -51,6 +51,7 @@ public class CarModel {
             }
         }
     }
+
     void turboOff () {
         for (MotorVehicle vehicle : vehicles) {
             if (vehicle.getClass() == Saab95.class) {
@@ -66,6 +67,7 @@ public class CarModel {
             }
         }
     }
+
     void lowerRamp () {
         for (MotorVehicle vehicle : vehicles) {
             if (vehicle.getClass() == Scania.class) {
@@ -79,6 +81,7 @@ public class CarModel {
             vehicle.startEngine();
         }
     }
+
     void stopEngines () {
         for (MotorVehicle vehicle : vehicles) {
             vehicle.stopEngine();
@@ -86,33 +89,30 @@ public class CarModel {
     }
 
     private void movementUpdate(){
-        int direction = 1;
         for (MotorVehicle vehicle : vehicles) {
             vehicle.move();
-            int x = (int) Math.round(vehicle.getPosition().getX());
-            int y = (int) Math.round(vehicle.getPosition().getY());
 
-            //view.drawPanel.moveit(x, y * direction, vehicle);
+            if (vehicle.getPosition().getY() >= 686 || vehicle.getPosition().getY() < 0 && vehicle.isRunning()) {
+                makeUturn(vehicle);
+            }
 
-            if (vehicle.getPosition().getY() >= 500 || vehicle.getPosition().getY() <= 0 && vehicle.isRunning()) {
-                vehicle.turnLeft(); // Turns 180 degrees
-                vehicle.turnLeft();
-                vehicle.move(); //Move so that we don't get stuck in a position of 500 or 0
-                vehicle.stopEngine();
-                vehicle.startEngine();
-            }
-            if (vehicle.getDirection() == 1) {
-                direction = 1;
-            } else if (vehicle.getDirection() == 4) {
-                direction = -1;
-            }
+
+
         }
+    }
+
+    private void makeUturn(MotorVehicle vehicle){
+        vehicle.turnLeft();
+        vehicle.turnLeft();
+        vehicle.move(); //Move so that we don't get stuck in a position of 500 or 0
+        vehicle.stopEngine();
+        vehicle.startEngine();
     }
 
 
     private void update() {
         movementUpdate();
-        for (Observer observer: observers){
+        for (Observer observer: observerSubscriptions){
             observer.update();
         }
     }

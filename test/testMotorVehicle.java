@@ -69,7 +69,7 @@ public class testMotorVehicle {
 
     @Test
     void testMovement(){
-        Volvo240 volvo = new Volvo240(4,100,Color.red);
+        Volvo240 volvo = new Volvo240(4,100,Color.red, 1.25);
         volvo.startEngine();
 
         volvo.gas(1);

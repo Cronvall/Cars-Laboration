@@ -20,6 +20,7 @@ public class testCarTransporter {
         transporter.move();
         assertEquals(transporter.getPosition(), transporter.getLoad()[0].getPosition(), "Asserts that the load move with the ferry");
 
+
         System.out.println(Arrays.toString(transporter.getLoad()));
         assertNotNull(transporter.getLoad()[0], "Should be a SAAB here");
         assertNotNull(transporter.getLoad()[1], "Should be a volvo here");
